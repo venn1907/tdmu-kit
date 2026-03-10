@@ -1,0 +1,79 @@
+﻿.tdmu-panel--utilities {
+  min-height: 100%;
+}
+
+.tdmu-utility-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.82rem;
+}
+
+.tdmu-utility-card {
+  display: block;
+  text-decoration: none;
+  min-height: 126px;
+  border: 1px solid rgba(26, 98, 185, 0.2);
+  border-radius: 4px;
+  padding: 0.9rem;
+  background: #fff;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.tdmu-utility-card:hover,
+.tdmu-utility-card:focus-visible {
+  border-color: rgba(11, 94, 215, 0.4);
+  background: #f9fbff;
+}
+
+.tdmu-utility-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.42rem;
+}
+
+.tdmu-utility-icon,
+.tdmu-utility-arrow {
+  color: #0b5ed7;
+}
+
+.tdmu-utility-icon {
+  font-size: 20px;
+}
+
+.tdmu-utility-arrow {
+  font-size: 17px;
+}
+
+.tdmu-utility-title {
+  color: #0a1930;
+  margin-bottom: 0.34rem;
+  font-size: 1.16rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.tdmu-utility-meta {
+  color: #35506f;
+  font-size: 0.88rem;
+  line-height: 1.58;
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-utility-meta {
+    font-size: 0.92rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .tdmu-utility-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .tdmu-utility-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+

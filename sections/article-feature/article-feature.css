@@ -1,0 +1,126 @@
+﻿.tdmu-article-feature-panel {
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 10px;
+  background: #fff;
+  padding: 1.1rem;
+}
+
+.tdmu-article-feature-header {
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.tdmu-article-feature-breadcrumb .breadcrumb-item,
+.tdmu-article-feature-breadcrumb .breadcrumb-item a {
+  font-size: 0.86rem;
+  color: #425474;
+}
+
+.tdmu-article-feature-breadcrumb .breadcrumb-item.active {
+  color: #0c417f;
+}
+
+.tdmu-article-feature-title {
+  margin: 0.42rem 0 0;
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.1;
+  color: #0f223f;
+  font-weight: 700;
+}
+
+.tdmu-article-feature-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.52rem;
+  margin-top: 0.75rem;
+}
+
+.tdmu-article-feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  color: #304561;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.26rem 0.56rem;
+}
+
+.tdmu-article-feature-chip--category {
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f4a95;
+  font-weight: 700;
+  background: rgba(11, 94, 215, 0.08);
+  border-color: rgba(11, 94, 215, 0.18);
+}
+
+.tdmu-article-feature-cover {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 470px;
+}
+
+.tdmu-article-feature-body {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.tdmu-article-feature-content {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #1f334f;
+}
+
+.tdmu-article-feature-content h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.85rem;
+  color: #102745;
+  font-size: clamp(22px, 2.1vw, 30px);
+}
+
+.tdmu-article-feature-content ul {
+  padding-left: 1.1rem;
+}
+
+.tdmu-article-feature-content li + li {
+  margin-top: 0.28rem;
+}
+
+.tdmu-article-feature-content blockquote {
+  border-left: 3px solid rgba(11, 94, 215, 0.45);
+  padding: 0.2rem 0 0.2rem 0.82rem;
+  margin: 1.35rem 0;
+  color: #243a5a;
+  font-style: italic;
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-article-feature-panel {
+    padding: 0.88rem;
+    border-radius: 8px;
+  }
+
+  .tdmu-article-feature-title {
+    font-size: clamp(28px, 7vw, 38px);
+  }
+
+  .tdmu-article-feature-meta {
+    gap: 0.36rem;
+  }
+
+  .tdmu-article-feature-chip {
+    font-size: 0.76rem;
+  }
+
+  .tdmu-article-feature-content {
+    font-size: 0.95rem;
+    line-height: 1.76;
+  }
+}
+

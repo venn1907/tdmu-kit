@@ -1,0 +1,79 @@
+﻿.tdmu-panel--events {
+  min-height: 100%;
+}
+
+.tdmu-events-list {
+  position: relative;
+  display: grid;
+  gap: 0.55rem;
+  padding-left: 1.28rem;
+}
+
+.tdmu-events-list::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.35rem;
+  left: 0.34rem;
+  width: 1px;
+  background: rgba(11, 94, 215, 0.42);
+}
+
+.tdmu-event-item {
+  position: relative;
+  display: grid;
+  gap: 0.18rem;
+  padding: 0.58rem 0.66rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(11, 94, 215, 0.14);
+}
+
+.tdmu-event-dot {
+  position: absolute;
+  left: -1.02rem;
+  top: 1rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #0b5ed7;
+}
+
+.tdmu-event-time {
+  font-size: 0.76rem;
+  color: #0c4baf;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tdmu-event-title {
+  margin-bottom: 0;
+  color: #0b1830;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tdmu-event-meta {
+  font-size: 0.88rem;
+  color: #334d74;
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-events-list {
+    padding-left: 1.06rem;
+  }
+
+  .tdmu-event-dot {
+    left: -0.86rem;
+  }
+
+  .tdmu-event-title {
+    font-size: 1.01rem;
+  }
+
+  .tdmu-event-meta {
+    font-size: 0.92rem;
+  }
+}
+

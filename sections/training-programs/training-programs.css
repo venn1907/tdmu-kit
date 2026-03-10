@@ -1,0 +1,97 @@
+﻿.tdmu-panel--programs {
+  min-height: 100%;
+}
+
+.tdmu-program-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.84rem;
+  align-items: stretch;
+}
+
+.tdmu-program-card {
+  position: relative;
+  border: 1px solid rgba(19, 107, 136, 0.2);
+  border-radius: 4px;
+  padding: 0.9rem 0.88rem;
+  background: #fff;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.tdmu-program-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #0b5ed7;
+}
+
+.tdmu-program-card:hover {
+  border-color: rgba(11, 94, 215, 0.38);
+  background: #fbfdff;
+}
+
+.tdmu-program-title {
+  color: #0d1f38;
+  margin-bottom: 0.42rem;
+  font-size: 1.22rem;
+  line-height: 1.18;
+  font-weight: 700;
+}
+
+.tdmu-program-desc {
+  color: #36516e;
+  font-size: 0.89rem;
+  line-height: 1.6;
+}
+
+.tdmu-program-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.58rem;
+  color: #294863;
+  font-size: 0.88rem;
+  line-height: 1.58;
+}
+
+.tdmu-program-list li {
+  position: relative;
+  padding-left: 0.92rem;
+}
+
+.tdmu-program-list li + li {
+  margin-top: 0.2rem;
+}
+
+.tdmu-program-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.54rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: #0b5ed7;
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-program-desc,
+  .tdmu-program-list {
+    font-size: 0.92rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .tdmu-program-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .tdmu-program-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+

@@ -1,0 +1,86 @@
+﻿.tdmu-related-articles-panel {
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 10px;
+  background: #fff;
+  padding: 1.1rem;
+}
+
+.tdmu-related-articles-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 0.95rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.tdmu-related-articles-head h2 {
+  margin: 0;
+  font-size: clamp(22px, 2.1vw, 28px);
+  color: #102745;
+}
+
+.tdmu-related-articles-head a {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #134482;
+  text-decoration: none;
+}
+
+.tdmu-related-articles-head a:hover {
+  color: #0b5ed7;
+}
+
+#relatedArticlesGrid .card {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 8px;
+  box-shadow: none;
+  overflow: hidden;
+  background: #fff;
+}
+
+#relatedArticlesGrid .card-header {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+#relatedArticlesGrid .card-body {
+  padding: 0.92rem;
+}
+
+#relatedArticlesGrid .card .thumb {
+  border-radius: 0;
+  aspect-ratio: 16 / 9;
+}
+
+#relatedArticlesGrid .badge {
+  border-radius: 4px;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#relatedArticlesGrid h5 {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+#relatedArticlesGrid h5 a {
+  color: #0f243f;
+}
+
+#relatedArticlesGrid h5 a:hover {
+  color: #0b5ed7;
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-related-articles-panel {
+    padding: 0.88rem;
+    border-radius: 8px;
+  }
+}
+

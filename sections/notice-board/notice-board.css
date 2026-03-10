@@ -1,0 +1,129 @@
+﻿.tdmu-panel--notice {
+  min-height: 100%;
+  background: linear-gradient(180deg, rgba(246, 249, 255, 0.94), rgba(255, 255, 255, 1));
+  border-color: rgba(37, 60, 151, 0.2);
+}
+
+.tdmu-tabs-strip {
+  position: relative;
+  margin-bottom: 0.88rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.tdmu-notice-tabs {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 0.42rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.08rem;
+  scrollbar-width: thin;
+  background: transparent;
+}
+
+.tdmu-notice-tab {
+  flex: 0 0 auto;
+  border: 1px solid rgba(37, 60, 151, 0.26);
+  border-radius: 4px;
+  background: #fff;
+  color: #253c97;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.44rem 0.74rem;
+  min-height: 38px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.tdmu-notice-tab:hover {
+  border-color: #253c97;
+  background: #f4f8ff;
+}
+
+.tdmu-notice-tab.is-active {
+  background: #253c97;
+  color: #fff;
+  border-color: #253c97;
+}
+
+.tdmu-notice-tab:focus-visible {
+  outline: 2px solid rgba(37, 60, 151, 0.3);
+  outline-offset: 1px;
+}
+
+.tdmu-notice-list {
+  display: grid;
+  gap: 0.46rem;
+  min-width: 0;
+}
+
+.tdmu-notice-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.82rem;
+  padding: 0.64rem 0.74rem;
+  border: 1px solid rgba(37, 60, 151, 0.18);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.tdmu-notice-item-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #17335f;
+  text-decoration: none;
+  font-size: 0.94rem;
+  line-height: 1.48;
+  font-weight: 700;
+}
+
+.tdmu-notice-item-title:hover,
+.tdmu-notice-item-title:focus-visible {
+  color: #253c97;
+}
+
+.tdmu-notice-item-date {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: #253c97;
+  margin-top: 0.08rem;
+  padding: 0.2rem 0.42rem;
+  border-radius: 4px;
+  background: rgba(76, 168, 221, 0.14);
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-notice-tab {
+    min-width: 122px;
+    font-size: 0.84rem;
+    min-height: 40px;
+  }
+
+  .tdmu-notice-item {
+    flex-direction: column;
+    gap: 0.24rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .tdmu-notice-item-date {
+    margin-top: 0;
+    white-space: normal;
+    font-size: 0.81rem;
+    align-self: flex-start;
+  }
+}
+
