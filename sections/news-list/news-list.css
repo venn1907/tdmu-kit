@@ -1,50 +1,37 @@
-﻿.tdmu-panel {
-  background: var(--tdmu-surface);
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 8px;
-  padding: 1.1rem;
-  box-shadow: none;
-  overflow: hidden;
+.tdmu-panel {
+  background: #fff;
+  border: 1px solid rgba(16, 36, 71, 0.12);
+  border-radius: 0;
+  padding: 1.4rem 1.5rem 1.3rem;
   position: relative;
-}
-
-.tdmu-panel > * {
-  position: relative;
-  z-index: 1;
 }
 
 .tdmu-section-head {
   display: flex;
-  align-items: baseline;
+  align-items: end;
   justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 1.05rem;
-  padding-bottom: 0.54rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 2px solid rgba(16, 36, 71, 0.1);
 }
 
 .tdmu-section-title {
   margin-bottom: 0;
-  font-size: clamp(22px, 2.3vw, 30px);
-  line-height: 1.1;
-  color: #0d203a;
-  font-weight: 700;
-  letter-spacing: -0.018em;
+  font-size: clamp(28px, 2.8vw, 38px);
+  line-height: 1;
+  color: #09182f;
+  font-weight: 800;
+  letter-spacing: -0.035em;
 }
 
 .tdmu-section-link {
-  color: #18457f;
-  font-size: 0.88rem;
-  font-weight: 600;
+  color: #173f7a;
+  font-size: 0.76rem;
+  font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-}
-
-.tdmu-section-link:hover,
-.tdmu-section-link:focus-visible {
-  color: #0b5ed7;
-  text-decoration: underline;
+  letter-spacing: 0.1em;
 }
 
 .tdmu-panel--article-list {
@@ -53,18 +40,12 @@
 
 .tdmu-article-list {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 0;
-  min-width: 0;
-  width: 100%;
 }
 
 .tdmu-article-card {
-  min-width: 0;
-  width: 100%;
-  padding-top: 0.62rem;
-  padding-bottom: 0.62rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(16, 36, 71, 0.08);
 }
 
 .tdmu-article-card:last-child {
@@ -73,104 +54,80 @@
 
 .tdmu-article-card--feature {
   display: grid;
-  grid-template-columns: 148px minmax(0, 1fr);
-  gap: 0.8rem;
-  padding-right: 0.1rem;
-}
-
-.tdmu-article-card--compact {
-  padding-left: 0;
-  padding-right: 0;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 1rem;
+  padding-top: 0;
 }
 
 .tdmu-article-thumb {
   display: block;
   width: 100%;
-  max-width: 100%;
-  height: 100%;
-  min-height: 96px;
-  border-radius: 4px;
+  height: 168px;
+  border-radius: 0;
   object-fit: cover;
 }
 
 .tdmu-article-meta {
-  font-size: 0.75rem;
-  color: #4f5f7b;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.28rem;
+  color: #5b6d8c;
+  font-size: 0.74rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
 }
 
 .tdmu-article-title {
-  font-size: 1rem;
-  line-height: 1.45;
-  margin-bottom: 0.22rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.08rem;
+  line-height: 1.38;
   font-weight: 700;
-  word-break: break-word;
-  overflow-wrap: anywhere;
 }
 
 .tdmu-article-title a {
-  display: block;
-  max-width: 100%;
-  color: #0c1a31;
+  color: #0d1b35;
   text-decoration: none;
 }
 
 .tdmu-article-title a:hover,
 .tdmu-article-title a:focus-visible {
-  color: #0b5ed7;
+  color: var(--tdmu-primary);
+}
+
+.tdmu-article-card--feature .tdmu-article-title {
+  font-size: 1.4rem;
+  line-height: 1.22;
 }
 
 .tdmu-article-excerpt {
-  display: block;
-  max-width: 100%;
-  font-size: 0.9rem;
-  color: #3f5170;
-  line-height: 1.58;
-  word-break: break-word;
-  overflow-wrap: anywhere;
+  color: #465a79;
+  font-size: 0.93rem;
+  line-height: 1.7;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .tdmu-panel {
-    padding: 0.92rem;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    padding: 1rem;
   }
 
   .tdmu-section-head {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 0.74rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
   .tdmu-section-title {
-    font-size: 1.7rem;
-  }
-
-  .tdmu-section-link {
-    width: 100%;
-    margin-top: -0.1rem;
+    font-size: clamp(26px, 8vw, 34px);
   }
 
   .tdmu-article-card--feature {
     grid-template-columns: 1fr;
-    gap: 0.62rem;
   }
 
-  .tdmu-article-card--feature .tdmu-article-thumb {
-    height: 148px;
+  .tdmu-article-thumb {
+    height: 220px;
   }
 
-  .tdmu-article-title {
-    font-size: 1.01rem;
-  }
-
-  .tdmu-article-excerpt {
-    font-size: 0.91rem;
+  .tdmu-article-card--feature .tdmu-article-title {
+    font-size: 1.16rem;
   }
 }
-

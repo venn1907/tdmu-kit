@@ -1,0 +1,858 @@
+.tdmu-system-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  pointer-events: none;
+  box-shadow:
+    0 1px 0 rgba(16, 36, 71, 0.08),
+    0 10px 18px rgba(7, 18, 44, 0.08);
+  transition: box-shadow 0.24s ease;
+}
+
+.tdmu-system-header > * {
+  pointer-events: auto;
+}
+
+.tdmu-header-utility {
+  max-height: 34px;
+  overflow: hidden;
+  background: rgba(10, 27, 58, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    max-height 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    border-bottom-width 0.16s linear,
+    border-bottom-color 0.16s linear;
+}
+
+.tdmu-header-utility-inner {
+  width: 100%;
+  padding: 0 18px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tdmu-utility-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tdmu-utility-links a {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.tdmu-utility-links a:hover,
+.tdmu-utility-links a:focus-visible {
+  color: #fff;
+}
+
+.tdmu-header-shell {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 0;
+  align-items: stretch;
+}
+
+.tdmu-brand-block,
+.tdmu-nav-block {
+  position: relative;
+  min-height: 72px;
+  border-radius: 0;
+  box-shadow: inset 0 -1px 0 rgba(16, 36, 71, 0.08);
+}
+
+.tdmu-brand-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--tdmu-text);
+  background: #fff;
+  border: 0;
+  border-right: 1px solid rgba(16, 36, 71, 0.1);
+}
+
+.tdmu-brand-block::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--tdmu-primary), var(--tdmu-accent));
+}
+
+.tdmu-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 72px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.tdmu-brand-logo {
+  width: 168px;
+  max-width: none;
+  height: auto;
+  display: block;
+  transform: scale(1.18);
+  transform-origin: center;
+}
+
+.tdmu-nav-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  padding: 0 1rem 0 1.15rem;
+  overflow: visible;
+  background: linear-gradient(90deg, #183f7a 0%, #214d91 60%, #2f72ba 100%);
+  border: 0;
+}
+
+.tdmu-nav-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 88px;
+  opacity: 0.08;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14)),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 7px,
+      rgba(255, 255, 255, 0.16) 7px 8px
+    );
+}
+
+.tdmu-desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.tdmu-nav-item {
+  position: relative;
+}
+
+.tdmu-nav-link,
+.tdmu-nav-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 72px;
+  padding: 0 0.9rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tdmu-nav-trigger::after {
+  content: "expand_more";
+  font-family: "Material Symbols Rounded";
+  font-size: 18px;
+  margin-left: 0.15rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.tdmu-nav-item.is-open .tdmu-nav-trigger::after {
+  transform: rotate(180deg);
+}
+
+.tdmu-nav-link:hover,
+.tdmu-nav-link:focus-visible,
+.tdmu-nav-link.is-active,
+.tdmu-nav-trigger:hover,
+.tdmu-nav-trigger:focus-visible,
+.tdmu-nav-item.is-open .tdmu-nav-trigger {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.tdmu-nav-link.is-active,
+.tdmu-nav-item.is-open .tdmu-nav-trigger {
+  box-shadow: inset 0 -3px 0 #fff;
+}
+
+.tdmu-header-tools {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.tdmu-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 44px;
+  padding: 0.14rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.tdmu-lang-chip,
+.tdmu-tool-button,
+.tdmu-header-cta {
+  min-height: 44px;
+}
+
+.tdmu-lang-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  min-width: 46px;
+  min-height: 36px;
+  padding: 0 0.4rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.tdmu-lang-chip.is-active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.tdmu-lang-flag {
+  width: 14px;
+  height: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+.tdmu-tool-button,
+.tdmu-mobile-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tdmu-tool-button .material-symbols-rounded,
+.tdmu-mobile-toggle .material-symbols-rounded {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.tdmu-mobile-toggle {
+  display: none;
+}
+
+.tdmu-tool-button:hover,
+.tdmu-tool-button:focus-visible,
+.tdmu-mobile-toggle:hover,
+.tdmu-mobile-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.tdmu-header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  background: #fff;
+  color: var(--tdmu-primary-600);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tdmu-menu-panel {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  min-width: 420px;
+  max-width: min(760px, 92vw);
+  padding: 1rem;
+  border-radius: 0;
+  background: #fff;
+  border: 1px solid rgba(16, 36, 71, 0.12);
+  box-shadow: 0 14px 30px rgba(16, 36, 71, 0.08);
+}
+
+.tdmu-menu-panel--wide {
+  width: min(980px, 92vw);
+  max-width: min(980px, 92vw);
+}
+
+.tdmu-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem 1rem;
+  align-items: start;
+}
+
+.tdmu-panel-grid--sections {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tdmu-panel-group {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+
+.tdmu-panel-label {
+  margin: 0;
+  color: #5f7498;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tdmu-panel-card,
+.tdmu-panel-link {
+  display: grid;
+  gap: 0.14rem;
+  text-decoration: none;
+}
+
+.tdmu-panel-card {
+  padding: 0.72rem 0.78rem;
+  border: 1px solid rgba(17, 41, 88, 0.08);
+  background: rgba(37, 60, 151, 0.02);
+}
+
+.tdmu-panel-link {
+  padding: 0.72rem 0.85rem;
+  border-bottom: 1px solid rgba(17, 41, 88, 0.08);
+}
+
+.tdmu-panel-card strong,
+.tdmu-panel-link strong {
+  color: #10203f;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.tdmu-panel-card span,
+.tdmu-panel-link span {
+  color: #5d6f8e;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.tdmu-panel-card:hover,
+.tdmu-panel-card:focus-visible,
+.tdmu-panel-link:hover,
+.tdmu-panel-link:focus-visible {
+  background: rgba(37, 60, 151, 0.06);
+}
+
+.tdmu-search-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 15;
+  width: 100%;
+  margin: 0;
+  padding: 0 14px 0 198px;
+  border-radius: 0;
+}
+
+.tdmu-search-panel[hidden] {
+  display: none !important;
+}
+
+.tdmu-search-form {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 0.9rem 1rem;
+  border-radius: 0;
+  background: #fff;
+  border: 1px solid rgba(16, 36, 71, 0.12);
+  box-shadow: 0 14px 30px rgba(16, 36, 71, 0.08);
+}
+
+.tdmu-search-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #354d75;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tdmu-search-field {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 52px;
+  padding: 0 0.32rem 0 0.8rem;
+  border-radius: 0;
+  background: #fff;
+  border: 1px solid rgba(17, 41, 88, 0.1);
+}
+
+.tdmu-search-field .material-symbols-rounded {
+  color: #5872a4;
+}
+
+.tdmu-search-field input {
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  color: #10203f;
+  background: transparent;
+}
+
+.tdmu-search-field button {
+  min-height: 40px;
+  padding: 0 0.95rem;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(135deg, var(--tdmu-primary), #3562bf);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.tdmu-mobile-backdrop,
+.tdmu-mobile-drawer {
+  display: none;
+}
+
+.tdmu-system-header.is-over-hero .tdmu-header-utility {
+  background: rgba(10, 27, 58, 0.76);
+}
+
+.tdmu-system-header.is-over-hero .tdmu-brand-block {
+  background: rgba(255, 255, 255, 0.94);
+  border-left: 0;
+  border-top: 0;
+  border-right: 1px solid rgba(16, 36, 71, 0.1);
+}
+
+.tdmu-system-header.is-over-hero .tdmu-nav-block {
+  border-top: 0;
+  background: linear-gradient(90deg, rgba(24, 63, 122, 0.9), rgba(33, 77, 145, 0.9) 60%, rgba(47, 114, 186, 0.88));
+}
+
+.tdmu-system-header.is-sticky .tdmu-header-utility {
+  max-height: 0;
+  border-bottom-width: 0;
+  border-bottom-color: transparent;
+}
+
+.tdmu-system-header.is-sticky {
+  box-shadow:
+    0 1px 0 rgba(16, 36, 71, 0.1),
+    0 12px 20px rgba(7, 18, 44, 0.12);
+}
+
+.tdmu-site-footer {
+  margin-top: 3.5rem;
+  padding: 3rem 0 1.25rem;
+  background: #102443;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.tdmu-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tdmu-footer-logo {
+  width: 188px;
+  height: auto;
+}
+
+.tdmu-footer-title {
+  margin: 1rem 0 0.45rem;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.tdmu-footer-copy {
+  max-width: 36ch;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.tdmu-footer-column h3 {
+  margin: 0 0 0.9rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tdmu-footer-column p,
+.tdmu-footer-column a {
+  display: block;
+  margin: 0 0 0.55rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.tdmu-footer-column a:hover,
+.tdmu-footer-column a:focus-visible {
+  color: #fff;
+}
+
+.tdmu-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.tdmu-footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.88rem;
+}
+
+.tdmu-scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(11, 94, 215, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--tdmu-primary-600);
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.14);
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease,
+    transform 0.18s ease;
+}
+
+.tdmu-scroll-top .material-symbols-rounded {
+  font-size: 22px;
+}
+
+.tdmu-scroll-top:hover,
+.tdmu-scroll-top:focus-visible {
+  background: #fff;
+  border-color: rgba(11, 94, 215, 0.5);
+  color: var(--tdmu-primary);
+}
+
+.tdmu-scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (max-width: 1199.98px) {
+  .tdmu-header-utility {
+    display: block;
+  }
+
+  .tdmu-header-utility-inner {
+    width: 100%;
+    min-height: 30px;
+    padding: 0 10px;
+  }
+
+  .tdmu-utility-links {
+    gap: 0.85rem;
+  }
+
+  .tdmu-utility-links a {
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+  }
+
+  .tdmu-header-shell,
+  .tdmu-system-header.is-sticky .tdmu-header-shell,
+  .tdmu-system-header.is-over-hero .tdmu-header-shell {
+    width: 100%;
+    grid-template-columns: 168px minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .tdmu-brand-block,
+  .tdmu-nav-block,
+  .tdmu-system-header.is-sticky .tdmu-brand-block,
+  .tdmu-system-header.is-sticky .tdmu-nav-block {
+    min-height: 64px;
+  }
+
+  .tdmu-brand-mark,
+  .tdmu-system-header.is-sticky .tdmu-brand-mark {
+    min-height: 64px;
+  }
+
+  .tdmu-brand-logo,
+  .tdmu-system-header.is-sticky .tdmu-brand-logo {
+    width: 156px;
+    transform: scale(1.05);
+  }
+
+  .tdmu-desktop-nav,
+  .tdmu-header-cta {
+    display: none;
+  }
+
+  .tdmu-nav-block {
+    justify-content: flex-end;
+    min-width: 120px;
+    padding: 0.55rem;
+  }
+
+  .tdmu-nav-block::after {
+    display: none;
+  }
+
+  .tdmu-mobile-toggle,
+  .tdmu-mobile-backdrop,
+  .tdmu-mobile-drawer {
+    display: block;
+  }
+
+  .tdmu-search-panel {
+    padding: 0 10px;
+  }
+
+  .tdmu-search-form {
+    padding: 0.8rem;
+  }
+
+  .tdmu-mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    background: rgba(7, 16, 34, 0.4);
+  }
+
+  .tdmu-mobile-drawer {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    z-index: 1201;
+    width: min(380px, calc(100vw - 16px));
+    padding: 1rem 0.95rem;
+    background: #fff;
+    border: 1px solid rgba(37, 60, 151, 0.08);
+    box-shadow: 0 26px 54px rgba(7, 18, 44, 0.2);
+    overflow-y: auto;
+  }
+
+  .tdmu-mobile-drawer-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .tdmu-mobile-eyebrow {
+    margin: 0 0 0.16rem;
+    color: #5470a1;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .tdmu-mobile-title {
+    margin: 0;
+    color: #0e1d39;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .tdmu-mobile-close {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: rgba(37, 60, 151, 0.08);
+    color: var(--tdmu-primary-600);
+  }
+
+  .tdmu-mobile-quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+  }
+
+  .tdmu-mobile-quick-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.35rem 0.7rem;
+    background: rgba(37, 60, 151, 0.08);
+    color: var(--tdmu-primary-600);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .tdmu-mobile-nav {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .tdmu-mobile-link,
+  .tdmu-mobile-trigger {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid rgba(37, 60, 151, 0.08);
+    background: #fff;
+    color: #10203f;
+    font-size: 0.96rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .tdmu-mobile-trigger::after {
+    content: "expand_more";
+    font-family: "Material Symbols Rounded";
+    font-size: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .tdmu-mobile-trigger[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+
+  .tdmu-mobile-panel {
+    display: grid;
+    gap: 0.22rem;
+    padding: 0.35rem 0.15rem 0.2rem;
+  }
+
+  .tdmu-mobile-sublink {
+    padding: 0.72rem 0.85rem;
+    color: #465c84;
+    text-decoration: none;
+    background: rgba(37, 60, 151, 0.04);
+  }
+
+  .tdmu-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tdmu-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tdmu-header-utility-inner {
+    min-height: 28px;
+    padding: 0 8px;
+  }
+
+  .tdmu-utility-links {
+    gap: 0.55rem;
+  }
+
+  .tdmu-utility-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+  }
+
+  .tdmu-header-shell,
+  .tdmu-system-header.is-sticky .tdmu-header-shell {
+    grid-template-columns: 138px minmax(0, 1fr);
+  }
+
+  .tdmu-brand-mark,
+  .tdmu-system-header.is-sticky .tdmu-brand-mark {
+    min-height: 58px;
+  }
+
+  .tdmu-brand-logo,
+  .tdmu-system-header.is-sticky .tdmu-brand-logo {
+    width: 128px;
+    transform: scale(1.02);
+  }
+
+  .tdmu-search-panel {
+    top: calc(100% + 4px);
+    padding: 0 8px;
+  }
+
+  .tdmu-search-field {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .tdmu-search-field button {
+    grid-column: 1 / -1;
+  }
+
+  .tdmu-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-scroll-top {
+    right: 12px;
+    bottom: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+}

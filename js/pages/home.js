@@ -12,14 +12,14 @@ import { initStudentUtilities } from "../../sections/student-utilities/student-u
 
 const LANDING_SECTIONS = [
   {
-    slot: "#intro-strip-slot",
-    file: "sections/intro-strip/intro-strip.html",
-    init: () => initIntroStrip(),
-  },
-  {
     slot: "#featured-slider-slot",
     file: "sections/featured-slider/featured-slider.html",
     init: () => initFeaturedSlider(newsData),
+  },
+  {
+    slot: "#intro-strip-slot",
+    file: "sections/intro-strip/intro-strip.html",
+    init: () => initIntroStrip(),
   },
   {
     slot: "#spotlight-story-slot",

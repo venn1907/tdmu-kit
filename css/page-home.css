@@ -1,0 +1,7 @@
+body[data-page="home"] {
+  padding-top: 0;
+}
+
+body[data-page="home"] .tdmu-landing-main {
+  background: var(--tdmu-bg);
+}
