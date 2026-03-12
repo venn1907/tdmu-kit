@@ -1,9 +1,9 @@
 :root {
   --tdmu-font-sans: "Roboto", "Segoe UI", Arial, sans-serif;
   --tdmu-font-heading: "Roboto", "Segoe UI", Arial, sans-serif;
-  --tdmu-primary: #173f7a;
+  --tdmu-primary: #30409a;
   --tdmu-primary-600: #12315e;
-  --tdmu-accent: #2f7dc7;
+  --tdmu-accent: #42ade2;
   --tdmu-bg: #eef2f6;
   --tdmu-surface: #ffffff;
   --tdmu-border: rgba(16, 36, 71, 0.12);
@@ -60,8 +60,6 @@ h6 {
   vertical-align: middle;
   line-height: 1;
 }
-
-
 
 a:focus-visible,
 button:focus-visible,
@@ -133,74 +131,6 @@ select:focus-visible {
   border-bottom: 0 !important;
 }
 
-#mainNavbar {
-  background: linear-gradient(90deg, var(--tdmu-primary) 0%, #2c56b3 58%, var(--tdmu-accent) 100%) !important;
-  border-bottom: 1px solid rgba(16, 32, 63, 0.08);
-  box-shadow: none;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-#mainNavbar > .container-fluid {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  position: relative;
-  min-height: 58px;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-}
-
-#mainNavbar .tdmu-navbar-brand {
-  opacity: 0;
-  visibility: hidden;
-  width: 0;
-  margin-right: 0;
-  overflow: hidden;
-  transition: opacity 0.2s ease;
-}
-
-#mainHeader.is-scrolled #mainNavbar .tdmu-navbar-brand {
-  opacity: 1;
-  visibility: visible;
-  width: auto;
-  margin-right: 0.7rem;
-  overflow: visible;
-}
-
-@media (min-width: 1400px) {
-  #mainNavbar > .container-fluid {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    transition: none;
-  }
-
-  #mainHeader.is-scrolled #mainNavbar .navbar-collapse {
-    display: flex !important;
-    justify-content: flex-end;
-  }
-
-  #mainHeader.is-scrolled #mainNavbar .main-nav-list {
-    margin-left: auto !important;
-    margin-right: 0 !important;
-  }
-}
-
-#mainNavbar .nav-link,
-#mainNavbar .navbar-toggler {
-  color: #fff;
-}
-
-#mainNavbar .navbar-toggler {
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 8px;
-  width: 48px;
-  height: 42px;
-  padding: 0;
-}
-
 .tdmu-navbar-toggler-icon {
   display: block;
   width: 19px;
@@ -227,49 +157,6 @@ select:focus-visible {
 
 .tdmu-navbar-toggler-icon::after {
   top: 6px;
-}
-
-#mainNavbar .nav-link:hover,
-#mainNavbar .nav-link:focus,
-#mainNavbar .navbar-nav .nav-link.show,
-#mainNavbar .navbar-nav .nav-link.is-active {
-  color: #fff;
-}
-
-#mainNavbar .nav-link {
-  font-size: 0.95rem;
-  border-radius: 0;
-  padding-left: 0.78rem !important;
-  padding-right: 0.78rem !important;
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#mainNavbar .main-nav-list > .nav-item > .nav-link:hover,
-#mainNavbar .main-nav-list > .nav-item > .nav-link:focus-visible,
-#mainNavbar .main-nav-list > .nav-item > .nav-link.is-active {
-  background: rgba(255, 255, 255, 0.14);
-}
-
-#mainNavbar .main-nav-list > .dropdown > .nav-link.dropdown-toggle::after {
-  content: "expand_more";
-  font-family: "Material Symbols Rounded";
-  font-size: 18px;
-  line-height: 1;
-  display: inline-block;
-  margin-left: 0.15rem;
-  vertical-align: middle;
-  border: 0;
-  color: currentColor;
-  transform-origin: center;
-  transform: rotate(0deg);
-  transition: transform 0.28s ease;
-}
-
-#mainNavbar .main-nav-list > .dropdown > .nav-link.dropdown-toggle.show::after {
-  content: "expand_more";
-  transform: rotate(180deg);
 }
 
 #mainHeader .btn .material-symbols-rounded {
@@ -330,33 +217,11 @@ select:focus-visible {
   box-shadow: 0 10px 24px rgba(16, 32, 63, 0.08);
 }
 
-#mainNavbar .navbar-nav > .dropdown {
-  position: relative;
-}
-
-#mainNavbar .navbar-nav > .dropdown > .dropdown-menu {
-  left: 0;
-  right: auto;
-}
-
-#mainNavbar .navbar-nav > .dropdown > .dropdown-menu::before,
-#mainNavbar .navbar-nav > .dropdown > .dropdown-menu::after {
-  content: none !important;
-  display: none !important;
-}
-
-#mainNavbar .navbar-nav > .dropdown:last-child > .dropdown-menu,
-#mainNavbar .navbar-nav > .dropdown:nth-last-child(2) > .dropdown-menu {
-  left: auto;
-  right: 0;
-}
-
 .tdmu-menu-grid {
   display: inline-grid;
   grid-template-columns: max-content;
   gap: 0.7rem 1rem;
 }
-
 
 .tdmu-menu-group-title {
   font-size: 0.85rem;
@@ -448,7 +313,6 @@ select:focus-visible {
   line-height: 1;
 }
 
-
 .tdmu-social-links {
   display: grid;
   gap: 0.42rem;
@@ -474,124 +338,10 @@ select:focus-visible {
     padding-top: var(--header-offset, 132px);
   }
 
-  #mainHeader.is-scrolled #mainNavbar .tdmu-navbar-brand {
-    margin-right: 0.6rem;
-  }
-
-  #mainNavbar .nav-logo-sm {
-    height: 30px;
-  }
-
-  #mainNavbar {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  #mainNavbar > .container-fluid {
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    padding-left: 0.8rem !important;
-    padding-right: 0.8rem !important;
-  }
-
-  #mainNavbar .navbar-toggler {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #mainNavbar .container {
-    position: relative;
-  }
-
-  #mainNavbar .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: auto;
-    transform: none;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 1100;
-    background: var(--tdmu-surface);
-    border: 1px solid var(--tdmu-border);
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 12px 22px rgba(16, 32, 63, 0.08);
-    margin-top: 0;
-    max-height: 75vh;
-    overflow-y: auto;
-    padding-top: 0.5rem;
-    padding-bottom: 0.6rem;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-  }
-
-  #mainNavbar .main-nav-list {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  #mainNavbar .main-nav-list .nav-item {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  #mainNavbar .main-nav-list .nav-link {
-    color: var(--tdmu-text);
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
-    padding-top: 0.7rem !important;
-    padding-bottom: 0.7rem !important;
-    border-radius: 6px;
-  }
-
-  #mainNavbar .navbar-collapse .nav-link:hover,
-  #mainNavbar .navbar-collapse .nav-link:focus,
-  #mainNavbar .navbar-collapse .navbar-nav .nav-link.show,
-  #mainNavbar .navbar-collapse .navbar-nav .nav-link.is-active {
-    color: var(--tdmu-primary-600);
-  }
-
-  #mainNavbar .navbar-collapse .main-nav-list > .nav-item > .nav-link:hover,
-  #mainNavbar .navbar-collapse .main-nav-list > .nav-item > .nav-link:focus-visible,
-  #mainNavbar .navbar-collapse .main-nav-list > .nav-item > .nav-link.show,
-  #mainNavbar .navbar-collapse .main-nav-list > .nav-item > .nav-link.is-active {
-    background: rgba(37, 60, 151, 0.08);
-  }
-
   .tdmu-main-menu {
     min-width: 100%;
     margin-top: 0.12rem !important;
     padding: 0.7rem;
-  }
-
-  #mainNavbar .navbar-nav .dropdown-menu {
-    margin-top: 0.12rem !important;
-  }
-
-  #mainNavbar .navbar-nav .dropdown .dropdown-menu {
-    position: static !important;
-    inset: auto !important;
-    transform: none !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    box-shadow: none !important;
-    display: none;
-  }
-
-  #mainNavbar .navbar-nav .dropdown .dropdown-menu.show {
-    display: block;
-  }
-
-  #mainNavbar .navbar-nav .dropdown .dropdown-menu.dropdown-menu-animation,
-  #mainNavbar .navbar-nav .dropdown .dropdown-menu.dropdown-menu-animation.show {
-    height: auto !important;
-    padding-top: 0.7rem !important;
-    padding-bottom: 0.7rem !important;
   }
 
   .tdmu-menu-grid {
@@ -634,21 +384,10 @@ select:focus-visible {
     height: 30px;
   }
 
-  #mainHeader .header-top .d-flex.align-items-center.gap-3.flex-wrap.justify-content-end {
+  #mainHeader
+    .header-top
+    .d-flex.align-items-center.gap-3.flex-wrap.justify-content-end {
     gap: 0.45rem !important;
-  }
-
-  #mainNavbar {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  #mainNavbar .navbar-collapse {
-    left: 0;
-    right: auto;
-    transform: none;
-    width: 100%;
-    max-height: 72vh;
   }
 }
 
@@ -659,4 +398,3 @@ body.tdmu-no-scroll {
 body.tdmu-has-hero {
   padding-top: 0;
 }
-

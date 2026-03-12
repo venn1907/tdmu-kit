@@ -1,7 +1,6 @@
 import { injectFragment } from "../core/include.js";
 import { newsData } from "../data/news.js";
 import { eventsData } from "../data/events.js";
-import { initIntroStrip } from "../../sections/intro-strip/intro-strip.js";
 import { initFeaturedSlider } from "../../sections/featured-slider/featured-slider.js";
 import { initSpotlightStory } from "../../sections/spotlight-story/spotlight-story.js";
 import { initNewsList } from "../../sections/news-list/news-list.js";
@@ -15,11 +14,6 @@ const LANDING_SECTIONS = [
     slot: "#featured-slider-slot",
     file: "sections/featured-slider/featured-slider.html",
     init: () => initFeaturedSlider(newsData),
-  },
-  {
-    slot: "#intro-strip-slot",
-    file: "sections/intro-strip/intro-strip.html",
-    init: () => initIntroStrip(),
   },
   {
     slot: "#spotlight-story-slot",

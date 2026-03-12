@@ -6,8 +6,9 @@
   z-index: 1100;
   pointer-events: none;
   box-shadow:
-    0 1px 0 rgba(16, 36, 71, 0.08),
-    0 10px 18px rgba(7, 18, 44, 0.08);
+    0 1px 0 rgba(16, 36, 71, 0.1),
+    0 8px 18px rgba(7, 18, 44, 0.08),
+    0 16px 30px rgba(7, 18, 44, 0.12);
   transition: box-shadow 0.24s ease;
 }
 
@@ -60,9 +61,12 @@
   width: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
+  grid-template-columns: 270px minmax(0, 1fr);
   gap: 0;
   align-items: stretch;
+  box-shadow:
+    inset 0 -3px 0 var(--tdmu-primary),
+    inset 0 -4px 0 rgba(66, 173, 226, 0.22);
 }
 
 .tdmu-brand-block,
@@ -76,42 +80,31 @@
 .tdmu-brand-block {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0;
-  overflow: hidden;
+  justify-content: flex-start;
+  padding: 0 1.5rem 0 1rem;
   text-decoration: none;
   color: var(--tdmu-text);
   background: #fff;
   border: 0;
-  border-right: 1px solid rgba(16, 36, 71, 0.1);
-}
-
-.tdmu-brand-block::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--tdmu-primary), var(--tdmu-accent));
+  border-right: 1px solid rgba(48, 64, 154, 0.14);
 }
 
 .tdmu-brand-mark {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  justify-content: flex-start;
+  width: auto;
+  max-width: 100%;
   min-height: 72px;
-  overflow: hidden;
-  background: #fff;
+  padding-right: 0.25rem;
 }
 
 .tdmu-brand-logo {
-  width: 168px;
-  max-width: none;
+  width: 238px;
+  max-width: 100%;
   height: auto;
   display: block;
-  transform: scale(1.18);
-  transform-origin: center;
 }
 
 .tdmu-nav-block {
@@ -121,26 +114,8 @@
   gap: 0.25rem;
   padding: 0 1rem 0 1.15rem;
   overflow: visible;
-  background: linear-gradient(90deg, #183f7a 0%, #214d91 60%, #2f72ba 100%);
+  background: #fff;
   border: 0;
-}
-
-.tdmu-nav-block::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 88px;
-  opacity: 0.08;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14)),
-    repeating-linear-gradient(
-      180deg,
-      transparent 0 7px,
-      rgba(255, 255, 255, 0.16) 7px 8px
-    );
 }
 
 .tdmu-desktop-nav {
@@ -163,11 +138,13 @@
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: rgba(255, 255, 255, 0.94);
+  color: #18345f;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .tdmu-nav-trigger::after {
@@ -189,13 +166,13 @@
 .tdmu-nav-trigger:hover,
 .tdmu-nav-trigger:focus-visible,
 .tdmu-nav-item.is-open .tdmu-nav-trigger {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  background: rgba(48, 64, 154, 0.06);
+  color: var(--tdmu-primary);
 }
 
 .tdmu-nav-link.is-active,
 .tdmu-nav-item.is-open .tdmu-nav-trigger {
-  box-shadow: inset 0 -3px 0 #fff;
+  box-shadow: inset 0 -4px 0 var(--tdmu-primary);
 }
 
 .tdmu-header-tools {
@@ -211,8 +188,8 @@
   gap: 0.2rem;
   min-height: 44px;
   padding: 0.14rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #fff;
+  border: 1px solid rgba(48, 64, 154, 0.14);
 }
 
 .tdmu-lang-chip,
@@ -231,14 +208,14 @@
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: rgba(255, 255, 255, 0.8);
+  color: #4f6386;
   font-size: 0.76rem;
   font-weight: 700;
 }
 
 .tdmu-lang-chip.is-active {
-  background: rgba(255, 255, 255, 0.16);
-  color: #fff;
+  background: rgba(48, 64, 154, 0.08);
+  color: var(--tdmu-primary);
 }
 
 .tdmu-lang-flag {
@@ -255,11 +232,13 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(48, 64, 154, 0.18);
   border-radius: 0;
-  background: transparent;
-  color: #fff;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  background: #fff;
+  color: var(--tdmu-primary);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .tdmu-tool-button .material-symbols-rounded,
@@ -276,8 +255,8 @@
 .tdmu-tool-button:focus-visible,
 .tdmu-mobile-toggle:hover,
 .tdmu-mobile-toggle:focus-visible {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(48, 64, 154, 0.06);
+  border-color: rgba(48, 64, 154, 0.28);
 }
 
 .tdmu-header-cta {
@@ -285,10 +264,10 @@
   align-items: center;
   justify-content: center;
   padding: 0 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--tdmu-primary);
   border-radius: 0;
-  background: #fff;
-  color: var(--tdmu-primary-600);
+  background: var(--tdmu-primary);
+  color: #fff;
   font-size: 0.88rem;
   font-weight: 700;
   text-decoration: none;
@@ -458,15 +437,13 @@
 }
 
 .tdmu-system-header.is-over-hero .tdmu-brand-block {
-  background: rgba(255, 255, 255, 0.94);
-  border-left: 0;
-  border-top: 0;
-  border-right: 1px solid rgba(16, 36, 71, 0.1);
+  background: rgba(255, 255, 255, 0.96);
+  border-right: 1px solid rgba(48, 64, 154, 0.12);
 }
 
 .tdmu-system-header.is-over-hero .tdmu-nav-block {
   border-top: 0;
-  background: linear-gradient(90deg, rgba(24, 63, 122, 0.9), rgba(33, 77, 145, 0.9) 60%, rgba(47, 114, 186, 0.88));
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .tdmu-system-header.is-sticky .tdmu-header-utility {
@@ -477,40 +454,34 @@
 
 .tdmu-system-header.is-sticky {
   box-shadow:
-    0 1px 0 rgba(16, 36, 71, 0.1),
-    0 12px 20px rgba(7, 18, 44, 0.12);
+    0 1px 0 rgba(16, 36, 71, 0.12),
+    0 10px 22px rgba(7, 18, 44, 0.1),
+    0 18px 36px rgba(7, 18, 44, 0.14);
 }
 
 .tdmu-site-footer {
   margin-top: 3.5rem;
   padding: 3rem 0 1.25rem;
-  background: #102443;
+  background: var(--tdmu-primary);
   color: rgba(255, 255, 255, 0.82);
 }
 
 .tdmu-footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
   gap: 2rem;
   padding-bottom: 1.6rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tdmu-footer-logo {
-  width: 188px;
+  width: 288px;
   height: auto;
 }
 
-.tdmu-footer-title {
-  margin: 1rem 0 0.45rem;
-  color: #fff;
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
 .tdmu-footer-copy {
+  margin: 1rem 0 0.45rem;
   max-width: 36ch;
-  margin: 0;
   color: rgba(255, 255, 255, 0.72);
 }
 
@@ -538,10 +509,6 @@
 }
 
 .tdmu-footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
   padding-top: 1rem;
 }
 
@@ -603,10 +570,15 @@
     width: 100%;
     min-height: 30px;
     padding: 0 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
   }
 
   .tdmu-utility-links {
     gap: 0.85rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
   }
 
   .tdmu-utility-links a {
@@ -618,7 +590,7 @@
   .tdmu-system-header.is-sticky .tdmu-header-shell,
   .tdmu-system-header.is-over-hero .tdmu-header-shell {
     width: 100%;
-    grid-template-columns: 168px minmax(0, 1fr);
+    grid-template-columns: 220px minmax(0, 1fr);
     gap: 0;
   }
 
@@ -632,12 +604,12 @@
   .tdmu-brand-mark,
   .tdmu-system-header.is-sticky .tdmu-brand-mark {
     min-height: 64px;
+    padding-right: 0.2rem;
   }
 
   .tdmu-brand-logo,
   .tdmu-system-header.is-sticky .tdmu-brand-logo {
-    width: 156px;
-    transform: scale(1.05);
+    width: 188px;
   }
 
   .tdmu-desktop-nav,
@@ -649,10 +621,6 @@
     justify-content: flex-end;
     min-width: 120px;
     padding: 0.55rem;
-  }
-
-  .tdmu-nav-block::after {
-    display: none;
   }
 
   .tdmu-mobile-toggle,
@@ -790,11 +758,6 @@
   .tdmu-footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .tdmu-footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 @media (max-width: 767.98px) {
@@ -808,24 +771,72 @@
   }
 
   .tdmu-utility-links a {
-    font-size: 0.68rem;
-    letter-spacing: 0.04em;
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
   }
 
   .tdmu-header-shell,
   .tdmu-system-header.is-sticky .tdmu-header-shell {
-    grid-template-columns: 138px minmax(0, 1fr);
+    grid-template-columns: 140px minmax(0, 1fr);
+  }
+
+  .tdmu-brand-block,
+  .tdmu-system-header.is-sticky .tdmu-brand-block {
+    padding: 0 0.5rem 0 0.35rem;
   }
 
   .tdmu-brand-mark,
   .tdmu-system-header.is-sticky .tdmu-brand-mark {
     min-height: 58px;
+    padding-right: 0.05rem;
   }
 
   .tdmu-brand-logo,
   .tdmu-system-header.is-sticky .tdmu-brand-logo {
-    width: 128px;
-    transform: scale(1.02);
+    width: 114px;
+  }
+
+  .tdmu-nav-block,
+  .tdmu-system-header.is-sticky .tdmu-nav-block {
+    padding: 0.3rem 0.4rem;
+    gap: 0.25rem;
+  }
+
+  .tdmu-header-tools {
+    gap: 0.18rem;
+  }
+
+  .tdmu-lang-switch {
+    height: 34px;
+    min-height: 34px;
+    padding: 0.08rem;
+    box-sizing: border-box;
+  }
+
+  .tdmu-lang-chip {
+    min-width: 34px;
+    min-height: 30px;
+    padding: 0 0.22rem;
+    gap: 0.18rem;
+    font-size: 0.64rem;
+  }
+
+  .tdmu-lang-flag {
+    width: 12px;
+    height: 9px;
+  }
+
+  .tdmu-tool-button,
+  .tdmu-mobile-toggle {
+    width: 34px;
+    height: 34px;
+    min-height: 34px;
+    box-sizing: border-box;
+  }
+
+  .tdmu-tool-button .material-symbols-rounded,
+  .tdmu-mobile-toggle .material-symbols-rounded {
+    font-size: 20px;
   }
 
   .tdmu-search-panel {
@@ -848,6 +859,59 @@
 }
 
 @media (max-width: 575.98px) {
+  .tdmu-header-shell,
+  .tdmu-system-header.is-sticky .tdmu-header-shell {
+    grid-template-columns: 118px minmax(0, 1fr);
+  }
+
+  .tdmu-brand-block,
+  .tdmu-system-header.is-sticky .tdmu-brand-block {
+    padding: 0 0.35rem 0 0.25rem;
+  }
+
+  .tdmu-brand-mark,
+  .tdmu-system-header.is-sticky .tdmu-brand-mark {
+    min-height: 52px;
+  }
+
+  .tdmu-brand-logo,
+  .tdmu-system-header.is-sticky .tdmu-brand-logo {
+    width: 98px;
+  }
+
+  .tdmu-nav-block,
+  .tdmu-system-header.is-sticky .tdmu-nav-block {
+    padding: 0.22rem 0.3rem;
+    gap: 0.14rem;
+  }
+
+  .tdmu-lang-switch {
+    height: 32px;
+    min-height: 32px;
+    padding: 0.06rem;
+    box-sizing: border-box;
+  }
+
+  .tdmu-lang-chip {
+    min-width: 30px;
+    min-height: 26px;
+    padding: 0 0.18rem;
+    font-size: 0.58rem;
+  }
+
+  .tdmu-tool-button,
+  .tdmu-mobile-toggle {
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
+    box-sizing: border-box;
+  }
+
+  .tdmu-tool-button .material-symbols-rounded,
+  .tdmu-mobile-toggle .material-symbols-rounded {
+    font-size: 18px;
+  }
+
   .tdmu-scroll-top {
     right: 12px;
     bottom: 12px;

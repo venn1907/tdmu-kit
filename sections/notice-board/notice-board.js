@@ -65,8 +65,14 @@ function renderNoticeList(items) {
     .map(
       (item) => `
       <article class="tdmu-notice-item">
+        <div class="tdmu-notice-item-meta">
+          <span class="tdmu-notice-item-time">
+            <span class="material-symbols-rounded tdmu-notice-item-time-icon">calendar_month</span>
+            <span>${escapeHtml(formatDate(item.date))}</span>
+          </span>
+          <span class="tdmu-notice-item-category">${escapeHtml(item.category || "Thông báo")}</span>
+        </div>
         <a class="tdmu-notice-item-title" href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}">${escapeHtml(item.title)}</a>
-        <span class="tdmu-notice-item-date">${escapeHtml(formatDate(item.date))}</span>
       </article>
     `,
     )

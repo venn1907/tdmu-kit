@@ -25,8 +25,9 @@ export function initFeaturedSlider(newsData) {
           <div class="tdmu-slide-overlay"></div>
           <div class="tdmu-slide-content">
             <p class="tdmu-slide-meta">${escapeHtml(formatDate(item.date))} • ${escapeHtml(item.category)}</p>
-            <h2 class="tdmu-slide-title"><a href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}">${escapeHtml(item.title)}</a></h2>
-            <p class="tdmu-slide-excerpt">${escapeHtml(item.excerpt)}</p>
+            <h2 class="tdmu-slide-title">
+              <a href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}">${escapeHtml(item.title)}</a>
+            </h2>
           </div>
         </article>
       `,
@@ -97,4 +98,3 @@ export function initFeaturedSlider(newsData) {
   apply(0);
   start();
 }
-

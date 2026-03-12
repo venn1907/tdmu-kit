@@ -4,4 +4,5 @@ body[data-page="home"] {
 
 body[data-page="home"] .tdmu-landing-main {
   background: var(--tdmu-bg);
+  margin-top: var(--header-total-height, 120px);
 }

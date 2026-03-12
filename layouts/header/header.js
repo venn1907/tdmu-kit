@@ -32,7 +32,7 @@ export function initHeaderLayout() {
 
 function detectHeroRoot() {
   if (document.body?.dataset?.page !== "home") return null;
-  return document.querySelector(".tdmu-intro-strip, .tdmu-hero-slider, [data-hero-root]");
+  return document.querySelector(".tdmu-hero-slider, [data-hero-root]");
 }
 
 function setActiveNav(header) {
@@ -101,16 +101,6 @@ function bindDesktopPanels(header, state) {
 
       openPanel(name);
     });
-
-    trigger.parentElement?.addEventListener("mouseenter", () => {
-      if (!desktopQuery.matches || !state.activePanel) return;
-      openPanel(name);
-    });
-  });
-
-  header.addEventListener("mouseleave", () => {
-    if (!desktopQuery.matches) return;
-    closePanels();
   });
 
   desktopQuery.addEventListener("change", () => {
@@ -247,6 +237,7 @@ function bindViewportState(header, shell, state) {
 
   if ("ResizeObserver" in window) {
     const observer = new ResizeObserver(() => apply());
+    observer.observe(header);
     observer.observe(shell);
   }
 

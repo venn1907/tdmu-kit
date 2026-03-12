@@ -20,7 +20,7 @@
 }
 
 .tdmu-spotlight-title {
-  max-width: 16ch;
+  width: 100%;
   margin-bottom: 0.8rem;
   font-size: clamp(32px, 3vw, 48px);
   color: #0a1830;
@@ -39,7 +39,10 @@
 }
 
 .tdmu-spotlight-excerpt {
-  max-width: 72ch;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: #3c4f6d;
   font-size: 1rem;
   line-height: 1.8;
@@ -70,7 +73,6 @@
   }
 
   .tdmu-spotlight-title {
-    max-width: 100%;
     font-size: clamp(28px, 8vw, 36px);
   }
 
