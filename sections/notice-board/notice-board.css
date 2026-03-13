@@ -5,15 +5,36 @@
 
 .tdmu-tabs-strip {
   margin-bottom: 1.25rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.2rem;
+  scrollbar-width: thin;
+  scrollbar-color: #173f7a rgba(16, 36, 71, 0.08);
+}
+
+.tdmu-tabs-strip::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tdmu-tabs-strip::-webkit-scrollbar-track {
+  background: rgba(16, 36, 71, 0.08);
+}
+
+.tdmu-tabs-strip::-webkit-scrollbar-thumb {
+  background: #173f7a;
 }
 
 .tdmu-notice-tabs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  width: max-content;
+  min-width: 100%;
   gap: 0.65rem;
+  white-space: nowrap;
 }
 
 .tdmu-notice-tab {
+  flex: 0 0 auto;
   border: 1px solid rgba(16, 36, 71, 0.14);
   border-radius: 0;
   background: #fff;

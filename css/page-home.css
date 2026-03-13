@@ -6,3 +6,27 @@ body[data-page="home"] .tdmu-landing-main {
   background: var(--tdmu-bg);
   margin-top: var(--header-total-height, 120px);
 }
+
+body[data-page="home"] .tdmu-landing-main > .tdmu-section,
+body[data-page="home"] .tdmu-landing-main > [id$="-slot"] + [id$="-slot"] {
+  margin-top: 1.5rem;
+}
+
+body[data-page="home"] .tdmu-landing-main > #featured-slider-slot {
+  margin-top: 0;
+}
+
+body[data-page="home"] .tdmu-landing-main > #featured-slider-slot + [id$="-slot"] {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 767.98px) {
+  body[data-page="home"] .tdmu-landing-main > .tdmu-section,
+  body[data-page="home"] .tdmu-landing-main > [id$="-slot"] + [id$="-slot"] {
+    margin-top: 1rem;
+  }
+
+  body[data-page="home"] .tdmu-landing-main > #featured-slider-slot + [id$="-slot"] {
+    margin-top: 1rem;
+  }
+}

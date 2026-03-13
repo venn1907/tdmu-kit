@@ -2,7 +2,6 @@ import { injectFragment } from "../core/include.js";
 import { newsData } from "../data/news.js";
 import { eventsData } from "../data/events.js";
 import { initFeaturedSlider } from "../../sections/featured-slider/featured-slider.js";
-import { initSpotlightStory } from "../../sections/spotlight-story/spotlight-story.js";
 import { initNewsList } from "../../sections/news-list/news-list.js";
 import { initNoticeBoard } from "../../sections/notice-board/notice-board.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
@@ -14,11 +13,6 @@ const LANDING_SECTIONS = [
     slot: "#featured-slider-slot",
     file: "sections/featured-slider/featured-slider.html",
     init: () => initFeaturedSlider(newsData),
-  },
-  {
-    slot: "#spotlight-story-slot",
-    file: "sections/spotlight-story/spotlight-story.html",
-    init: () => initSpotlightStory(newsData),
   },
   {
     slot: "#article-list-slot",

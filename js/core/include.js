@@ -1,11 +1,20 @@
 import { resolveAppUrl } from "./dom.js";
 
-function rewriteFragmentPaths(root) {
+function resolveFragmentAssetPath(value, fragmentUrl) {
+  if (value.startsWith("./") || value.startsWith("../")) {
+    const next = new URL(value, fragmentUrl);
+    return `${next.pathname}${next.search}${next.hash}`;
+  }
+
+  return resolveAppUrl(value);
+}
+
+function rewriteFragmentPaths(root, fragmentUrl) {
   root.querySelectorAll("[href], [src]").forEach((node) => {
     ["href", "src"].forEach((attr) => {
       const value = node.getAttribute(attr);
       if (!value) return;
-      node.setAttribute(attr, resolveAppUrl(value));
+      node.setAttribute(attr, resolveFragmentAssetPath(value, fragmentUrl));
     });
   });
 }
@@ -23,5 +32,5 @@ export async function injectFragment(selector, url) {
   }
 
   el.innerHTML = await res.text();
-  rewriteFragmentPaths(el);
+  rewriteFragmentPaths(el, new URL(resolveAppUrl(url), window.location.origin));
 }
