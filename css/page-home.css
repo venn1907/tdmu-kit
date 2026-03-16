@@ -23,6 +23,7 @@ body[data-page="home"] .tdmu-landing-main > #latest-events-slot,
 body[data-page="home"] .tdmu-landing-main > #training-programs-slot,
 body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot,
 body[data-page="home"] .tdmu-landing-main > #tdmu-network-slot,
+body[data-page="home"] .tdmu-landing-main > #team-advisors-slot,
 body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
   width: 100%;
   padding-top: 3.5rem;
@@ -47,6 +48,7 @@ body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot {
 }
 
 body[data-page="home"] .tdmu-landing-main > #tdmu-network-slot,
+body[data-page="home"] .tdmu-landing-main > #team-advisors-slot,
 body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
   background: linear-gradient(180deg, rgba(var(--tdmu-accent-rgb), 0.06), rgba(var(--tdmu-accent-rgb), 0)), var(--tdmu-surface-alt);
 }

@@ -1,15 +1,17 @@
 import { injectFragment } from "../core/include.js";
+import { heroSlidesData } from "../data/hero-slides.js";
 import { newsData } from "../data/news.js";
 import { eventsData } from "../data/events.js";
 import { initFeaturedSlider } from "../../sections/featured-slider/featured-slider.js";
 import { initMediaStream } from "../../sections/media-stream/media-stream.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
+import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
 
 const LANDING_SECTIONS = [
   {
     slot: "#featured-slider-slot",
     file: "sections/featured-slider/featured-slider.html",
-    init: () => initFeaturedSlider(newsData),
+    init: () => initFeaturedSlider(heroSlidesData),
   },
   {
     slot: "#tdmu-manifesto-slot",
@@ -36,6 +38,11 @@ const LANDING_SECTIONS = [
   {
     slot: "#tdmu-network-slot",
     file: "sections/tdmu-network/tdmu-network.html",
+  },
+  {
+    slot: "#team-advisors-slot",
+    file: "sections/team-advisors/team-advisors.html",
+    init: () => initTeamAdvisors(),
   },
   {
     slot: "#student-utilities-slot",

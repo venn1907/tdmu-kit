@@ -2,6 +2,11 @@
   min-height: 100%;
 }
 
+.tdmu-panel--events .tdmu-section-head {
+  justify-items: center;
+  text-align: center;
+}
+
 .tdmu-events-carousel {
   --tdmu-events-visible: 4;
 }

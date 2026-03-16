@@ -2,6 +2,11 @@
   min-height: 100%;
 }
 
+.tdmu-panel--utilities .tdmu-section-head {
+  justify-items: center;
+  text-align: center;
+}
+
 .tdmu-utility-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));

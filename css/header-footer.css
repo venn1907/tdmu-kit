@@ -311,15 +311,42 @@
   min-width: 420px;
   max-width: min(760px, 92vw);
   padding: 1rem;
+  max-height: calc(100vh - var(--header-total-height, 120px) - 24px);
+  overflow-y: auto;
   border-radius: var(--tdmu-radius);
   background: var(--tdmu-surface);
   border: 1px solid var(--tdmu-border);
   box-shadow: var(--tdmu-shadow-lg);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--tdmu-primary-rgb), 0.9) rgba(var(--tdmu-primary-rgb), 0.12);
 }
 
 .tdmu-menu-panel--wide {
   width: min(980px, 92vw);
   max-width: min(980px, 92vw);
+}
+
+.tdmu-menu-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tdmu-menu-panel::-webkit-scrollbar-track {
+  background: rgba(var(--tdmu-primary-rgb), 0.12);
+}
+
+.tdmu-menu-panel::-webkit-scrollbar-thumb {
+  background: rgba(var(--tdmu-primary-rgb), 0.9);
+  border-radius: 999px;
+}
+
+.tdmu-menu-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--tdmu-primary-rgb), 1);
+}
+
+.tdmu-menu-panel::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .tdmu-panel-grid {
@@ -503,6 +530,14 @@
   border-radius: 0;
   color: var(--tdmu-text);
   background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+.tdmu-search-field input:focus,
+.tdmu-search-field input:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
 .tdmu-search-field button {

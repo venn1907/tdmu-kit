@@ -1,11 +1,11 @@
-import { resolveAppUrl, escapeHtml, formatDate } from "../../js/core/dom.js";
-import { getArticleTemplateHref, bindArticleSelectionLinks } from "../../js/components/article-navigation.js";
+import { resolveAppUrl, escapeHtml } from "../../js/core/dom.js";
 
-export function initFeaturedSlider(newsData) {
+export function initFeaturedSlider(slidesData) {
   const mount = document.getElementById("featured-slider");
   if (!mount) return;
 
-  const slides = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 4);
+  const slides = Array.isArray(slidesData) ? slidesData.filter((item) => item?.image) : [];
+
   if (!slides.length) return;
 
   mount.innerHTML = `
@@ -13,43 +13,34 @@ export function initFeaturedSlider(newsData) {
       ${slides
         .map(
           (item, index) => `
-        <article class="tdmu-slide">
-          <img
-            class="tdmu-slide-media"
-            src="${escapeHtml(resolveAppUrl(item.cover))}"
-            alt="${escapeHtml(item.title)}"
-            loading="${index === 0 ? "eager" : "lazy"}"
-            decoding="async"
-            onerror="this.src='${resolveAppUrl("assets/img/bg-landing.jpg")}'"
-          />
-          <div class="tdmu-slide-overlay"></div>
-          <div class="tdmu-slide-content">
-            <div class="tdmu-slide-meta">
-              <span>${escapeHtml(formatDate(item.date))}</span>
-              <span className="tdmu-dot-sep">•</span>
-              <span>${escapeHtml(item.category)}</span>
-            </div>
-            <h1 class="tdmu-slide-title">
-              ${escapeHtml(item.title)}
-            </h1>
-            <a href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}" class="tdmu-slide-link">Đọc thêm</a>
-          </div>
-        </article>
-      `,
+            <figure class="tdmu-slide">
+              <img
+                class="tdmu-slide-media"
+                src="${escapeHtml(resolveAppUrl(item.image))}"
+                alt="${escapeHtml(item.alt || "Hero image")}"
+                loading="${index === 0 ? "eager" : "lazy"}"
+                decoding="async"
+                onerror="this.src='${resolveAppUrl("assets/img/bg-landing.jpg")}'"
+              />
+            </figure>
+          `,
         )
         .join("")}
     </div>
     <div class="tdmu-slider-controls">
-      <button class="tdmu-slider-control prev" type="button" aria-label="Slide trước">
+      <button class="tdmu-slider-control prev" type="button" aria-label="Ảnh trước">
         <span class="material-symbols-rounded">chevron_left</span>
       </button>
-      <button class="tdmu-slider-control next" type="button" aria-label="Slide tiếp">
+      <button class="tdmu-slider-control next" type="button" aria-label="Ảnh tiếp theo">
         <span class="material-symbols-rounded">chevron_right</span>
       </button>
     </div>
     <div class="tdmu-slider-dots">
       ${slides
-        .map((_, index) => `<button class="tdmu-slider-dot" type="button" data-slide="${index}" aria-label="Đi đến slide ${index + 1}"></button>`)
+        .map(
+          (_, index) =>
+            `<button class="tdmu-slider-dot" type="button" data-slide="${index}" aria-label="Đi đến ảnh ${index + 1}"></button>`,
+        )
         .join("")}
     </div>
   `;
@@ -101,7 +92,6 @@ export function initFeaturedSlider(newsData) {
   mount.addEventListener("mouseenter", stop);
   mount.addEventListener("mouseleave", start);
 
-  bindArticleSelectionLinks(mount);
   apply(0);
   start();
 }
