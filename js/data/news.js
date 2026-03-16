@@ -53,4 +53,22 @@
     cover: "assets/img/city-profile.jpg",
     excerpt: "Sân chơi cho sinh viên thử sức với bài toán thực tế, rèn teamwork.",
   },
+  {
+    id: "7",
+    title: "Cuộc thi học thuật: hackathon cấp viện (demo)",
+    date: "2026-01-28",
+    category: "Sinh viên",
+    views: 650,
+    cover: "assets/img/city-profile.jpg",
+    excerpt: "Sân chơi cho sinh viên thử sức với bài toán thực tế, rèn teamwork.",
+  },
+  {
+    id: "8",
+    title: "Cuộc thi học thuật: hackathon cấp viện (demo)",
+    date: "2026-01-28",
+    category: "Sinh viên",
+    views: 650,
+    cover: "assets/img/city-profile.jpg",
+    excerpt: "Sân chơi cho sinh viên thử sức với bài toán thực tế, rèn teamwork.",
+  },
 ];

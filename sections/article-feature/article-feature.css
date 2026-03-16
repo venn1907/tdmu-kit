@@ -1,31 +1,31 @@
-﻿.tdmu-article-feature-panel {
-  border: 1px solid rgba(15, 23, 42, 0.14);
+.tdmu-article-feature-panel {
+  border: 1px solid var(--tdmu-border);
   border-radius: 10px;
-  background: #fff;
+  background: var(--tdmu-surface);
   padding: 1.1rem;
 }
 
 .tdmu-article-feature-header {
   margin-bottom: 1.15rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  border-bottom: 1px solid var(--tdmu-border-light);
 }
 
 .tdmu-article-feature-breadcrumb .breadcrumb-item,
 .tdmu-article-feature-breadcrumb .breadcrumb-item a {
   font-size: 0.86rem;
-  color: #425474;
+  color: var(--tdmu-text-secondary);
 }
 
 .tdmu-article-feature-breadcrumb .breadcrumb-item.active {
-  color: #0c417f;
+  color: var(--tdmu-primary);
 }
 
 .tdmu-article-feature-title {
   margin: 0.42rem 0 0;
   font-size: clamp(30px, 3vw, 44px);
   line-height: 1.1;
-  color: #0f223f;
+  color: var(--tdmu-text);
   font-weight: 700;
 }
 
@@ -40,10 +40,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  border: 1px solid var(--tdmu-border-light);
   border-radius: 999px;
-  background: #fff;
-  color: #304561;
+  background: var(--tdmu-surface);
+  color: var(--tdmu-text-secondary);
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.26rem 0.56rem;
@@ -53,10 +53,10 @@
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #0f4a95;
+  color: var(--tdmu-primary);
   font-weight: 700;
-  background: rgba(11, 94, 215, 0.08);
-  border-color: rgba(11, 94, 215, 0.18);
+  background: rgba(var(--tdmu-accent-rgb), 0.12);
+  border-color: rgba(var(--tdmu-accent-rgb), 0.2);
 }
 
 .tdmu-article-feature-cover {
@@ -74,13 +74,13 @@
 .tdmu-article-feature-content {
   font-size: 1rem;
   line-height: 1.85;
-  color: #1f334f;
+  color: var(--tdmu-text-secondary);
 }
 
 .tdmu-article-feature-content h3 {
   margin-top: 1.75rem;
   margin-bottom: 0.85rem;
-  color: #102745;
+  color: var(--tdmu-text);
   font-size: clamp(22px, 2.1vw, 30px);
 }
 
@@ -93,10 +93,10 @@
 }
 
 .tdmu-article-feature-content blockquote {
-  border-left: 3px solid rgba(11, 94, 215, 0.45);
+  border-left: 3px solid rgba(var(--tdmu-primary-rgb), 0.45);
   padding: 0.2rem 0 0.2rem 0.82rem;
   margin: 1.35rem 0;
-  color: #243a5a;
+  color: var(--tdmu-text-secondary);
   font-style: italic;
 }
 
@@ -123,4 +123,3 @@
     line-height: 1.76;
   }
 }
-

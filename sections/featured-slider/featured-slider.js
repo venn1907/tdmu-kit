@@ -24,25 +24,32 @@ export function initFeaturedSlider(newsData) {
           />
           <div class="tdmu-slide-overlay"></div>
           <div class="tdmu-slide-content">
-            <p class="tdmu-slide-meta">${escapeHtml(formatDate(item.date))} • ${escapeHtml(item.category)}</p>
-            <h2 class="tdmu-slide-title">
-              <a href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}">${escapeHtml(item.title)}</a>
-            </h2>
+            <div class="tdmu-slide-meta">
+              <span>${escapeHtml(formatDate(item.date))}</span>
+              <span className="tdmu-dot-sep">•</span>
+              <span>${escapeHtml(item.category)}</span>
+            </div>
+            <h1 class="tdmu-slide-title">
+              ${escapeHtml(item.title)}
+            </h1>
+            <a href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}" class="tdmu-slide-link">Đọc thêm</a>
           </div>
         </article>
       `,
         )
         .join("")}
     </div>
-    <button class="tdmu-slider-control prev" type="button">
-      <span class="material-symbols-rounded">chevron_left</span>
-    </button>
-    <button class="tdmu-slider-control next" type="button">
-      <span class="material-symbols-rounded">chevron_right</span>
-    </button>
+    <div class="tdmu-slider-controls">
+      <button class="tdmu-slider-control prev" type="button" aria-label="Slide trước">
+        <span class="material-symbols-rounded">chevron_left</span>
+      </button>
+      <button class="tdmu-slider-control next" type="button" aria-label="Slide tiếp">
+        <span class="material-symbols-rounded">chevron_right</span>
+      </button>
+    </div>
     <div class="tdmu-slider-dots">
       ${slides
-        .map((_, index) => `<button class="tdmu-slider-dot" type="button" data-slide="${index}"></button>`)
+        .map((_, index) => `<button class="tdmu-slider-dot" type="button" data-slide="${index}" aria-label="Đi đến slide ${index + 1}"></button>`)
         .join("")}
     </div>
   `;

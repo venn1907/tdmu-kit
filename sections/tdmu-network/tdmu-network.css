@@ -1,0 +1,205 @@
+.tdmu-section--network-band {
+  background: linear-gradient(180deg, rgba(var(--tdmu-accent-rgb), 0.06), rgba(var(--tdmu-accent-rgb), 0)), var(--tdmu-surface-alt);
+}
+
+.tdmu-panel--network {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.tdmu-panel--network::before {
+  display: none;
+}
+
+.tdmu-network-copy {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+  padding-right: 0;
+}
+
+.tdmu-network-kicker {
+  margin: 0;
+  color: var(--tdmu-primary-light);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tdmu-network-title {
+  margin: 0;
+  color: var(--tdmu-text);
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.tdmu-network-intro {
+  margin: 0;
+  color: var(--tdmu-text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.tdmu-network-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.tdmu-network-tags span,
+.tdmu-network-partner {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--tdmu-border-light);
+  background: var(--tdmu-surface-alt);
+  color: var(--tdmu-text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: var(--tdmu-radius-sm);
+  transition: all var(--transition-base);
+}
+
+.tdmu-network-tags span:hover,
+.tdmu-network-partner:hover {
+  background: var(--tdmu-surface);
+  border-color: var(--tdmu-border);
+}
+
+.tdmu-network-stories {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.tdmu-network-story {
+  display: grid;
+  grid-template-rows: 180px 1fr;
+  border: 1px solid var(--tdmu-border-light);
+  background: var(--tdmu-surface);
+  border-radius: var(--tdmu-radius);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  box-shadow: var(--tdmu-shadow-xs);
+}
+
+.tdmu-network-story img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-base), filter var(--transition-base);
+}
+
+.tdmu-network-story-body {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.1rem 1rem 1rem;
+}
+
+.tdmu-network-story-kicker {
+  margin: 0;
+  color: var(--tdmu-primary-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tdmu-network-story-title {
+  margin: 0;
+  color: var(--tdmu-text);
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tdmu-network-story:hover,
+.tdmu-network-story:focus-within {
+  transform: translateY(-5px);
+  border-color: var(--tdmu-border);
+  box-shadow: var(--tdmu-shadow-md);
+}
+
+.tdmu-network-story:hover img,
+.tdmu-network-story:focus-within img {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
+
+.tdmu-network-partners {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--tdmu-border-light);
+}
+
+@media (max-width: 1199.98px) {
+  .tdmu-panel--network {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tdmu-network-stories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tdmu-network-title {
+    font-size: clamp(22px, 3.5vw, 32px);
+  }
+
+  .tdmu-network-stories {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tdmu-panel--network {
+    gap: 1.25rem;
+  }
+
+  .tdmu-network-title {
+    font-size: 1.65rem;
+  }
+
+  .tdmu-network-intro {
+    font-size: 0.95rem;
+  }
+
+  .tdmu-network-stories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .tdmu-network-story {
+    grid-template-rows: 150px auto;
+  }
+
+  .tdmu-network-story-title {
+    font-size: 0.95rem;
+  }
+}

@@ -4,7 +4,19 @@
       <div class="tdmu-section-head">
         <h2 class="tdmu-section-title">Sự kiện mới nhất</h2>
       </div>
-      <div id="events-list" class="tdmu-events-list"></div>
+      <div id="events-carousel" class="tdmu-events-carousel">
+        <div class="tdmu-events-controls">
+          <button class="tdmu-events-nav" type="button" data-events-prev aria-label="Xem sự kiện trước">
+            <span class="material-symbols-rounded">arrow_back</span>
+          </button>
+          <button class="tdmu-events-nav" type="button" data-events-next aria-label="Xem sự kiện tiếp theo">
+            <span class="material-symbols-rounded">arrow_forward</span>
+          </button>
+        </div>
+        <div class="tdmu-events-viewport">
+          <div id="events-list" class="tdmu-events-rail"></div>
+        </div>
+      </div>
     </section>
   </div>
 </section>

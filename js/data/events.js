@@ -27,4 +27,11 @@ export const eventsData = [
     location: "Trực tuyến qua MS Teams",
     cover: "assets/img/bg10.jpg",
   },
+  {
+    id: "ev-5",
+    title: "Tư vấn tuyển sinh sau đại học ngành Hệ thống thông tin",
+    datetime: "2026-04-04 19:00",
+    location: "Trực tuyến qua MS Teams",
+    cover: "assets/img/bg10.jpg",
+  },
 ];

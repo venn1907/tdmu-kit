@@ -1,7 +1,7 @@
-﻿.tdmu-related-articles-panel {
-  border: 1px solid rgba(15, 23, 42, 0.14);
+.tdmu-related-articles-panel {
+  border: 1px solid var(--tdmu-border);
   border-radius: 10px;
-  background: #fff;
+  background: var(--tdmu-surface);
   padding: 1.1rem;
 }
 
@@ -12,13 +12,13 @@
   gap: 0.7rem;
   margin-bottom: 0.95rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  border-bottom: 1px solid var(--tdmu-border-light);
 }
 
 .tdmu-related-articles-head h2 {
   margin: 0;
   font-size: clamp(22px, 2.1vw, 28px);
-  color: #102745;
+  color: var(--tdmu-text);
 }
 
 .tdmu-related-articles-head a {
@@ -26,20 +26,20 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #134482;
+  color: var(--tdmu-primary);
   text-decoration: none;
 }
 
 .tdmu-related-articles-head a:hover {
-  color: #0b5ed7;
+  color: var(--tdmu-accent-dark);
 }
 
 #relatedArticlesGrid .card {
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  border: 1px solid var(--tdmu-border-light);
   border-radius: 8px;
   box-shadow: none;
   overflow: hidden;
-  background: #fff;
+  background: var(--tdmu-surface);
 }
 
 #relatedArticlesGrid .card-header {
@@ -70,11 +70,11 @@
 }
 
 #relatedArticlesGrid h5 a {
-  color: #0f243f;
+  color: var(--tdmu-text);
 }
 
 #relatedArticlesGrid h5 a:hover {
-  color: #0b5ed7;
+  color: var(--tdmu-primary);
 }
 
 @media (max-width: 575.98px) {
@@ -83,4 +83,3 @@
     border-radius: 8px;
   }
 }
-

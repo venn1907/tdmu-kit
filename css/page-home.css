@@ -3,30 +3,62 @@ body[data-page="home"] {
 }
 
 body[data-page="home"] .tdmu-landing-main {
-  background: var(--tdmu-bg);
+  background: linear-gradient(180deg, var(--tdmu-bg) 0%, var(--tdmu-surface-alt) 100%);
   margin-top: var(--header-total-height, 120px);
 }
 
-body[data-page="home"] .tdmu-landing-main > .tdmu-section,
-body[data-page="home"] .tdmu-landing-main > [id$="-slot"] + [id$="-slot"] {
-  margin-top: 1.5rem;
+body[data-page="home"] .tdmu-landing-main > [id$="-slot"] {
+  position: relative;
+  border-top: 1px solid var(--tdmu-border-light);
 }
 
 body[data-page="home"] .tdmu-landing-main > #featured-slider-slot {
   margin-top: 0;
+  border-top: none;
 }
 
-body[data-page="home"] .tdmu-landing-main > #featured-slider-slot + [id$="-slot"] {
-  margin-top: 1.5rem;
+body[data-page="home"] .tdmu-landing-main > #tdmu-manifesto-slot,
+body[data-page="home"] .tdmu-landing-main > #media-stream-slot,
+body[data-page="home"] .tdmu-landing-main > #latest-events-slot,
+body[data-page="home"] .tdmu-landing-main > #training-programs-slot,
+body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot,
+body[data-page="home"] .tdmu-landing-main > #tdmu-network-slot,
+body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
+  width: 100%;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+body[data-page="home"] .tdmu-landing-main > #latest-events-slot,
+body[data-page="home"] .tdmu-landing-main > #training-programs-slot {
+  background: var(--tdmu-surface);
+}
+
+body[data-page="home"] .tdmu-landing-main > #media-stream-slot {
+  background: linear-gradient(180deg, rgba(var(--tdmu-primary-rgb), 0.04), rgba(var(--tdmu-primary-rgb), 0)), var(--tdmu-surface-alt);
+}
+
+body[data-page="home"] .tdmu-landing-main > #training-programs-slot {
+  background: var(--tdmu-surface);
+}
+
+body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot {
+  background: var(--tdmu-surface-alt);
+}
+
+body[data-page="home"] .tdmu-landing-main > #tdmu-network-slot,
+body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
+  background: linear-gradient(180deg, rgba(var(--tdmu-accent-rgb), 0.06), rgba(var(--tdmu-accent-rgb), 0)), var(--tdmu-surface-alt);
 }
 
 @media (max-width: 767.98px) {
-  body[data-page="home"] .tdmu-landing-main > .tdmu-section,
-  body[data-page="home"] .tdmu-landing-main > [id$="-slot"] + [id$="-slot"] {
-    margin-top: 1rem;
+  body[data-page="home"] .tdmu-landing-main > [id$="-slot"] {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
-  body[data-page="home"] .tdmu-landing-main > #featured-slider-slot + [id$="-slot"] {
-    margin-top: 1rem;
+  body[data-page="home"] .tdmu-landing-main > #featured-slider-slot {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
