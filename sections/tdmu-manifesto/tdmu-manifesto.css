@@ -98,28 +98,27 @@
 
 .tdmu-manifesto-media {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 160px;
-  gap: 1.2rem;
-  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 3.5rem;
 }
 
 .tdmu-manifesto-media::after {
   display: none;
 }
 
-.tdmu-manifesto-hero,
+.tdmu-manifesto-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
 .tdmu-manifesto-shot {
   margin: 0;
   overflow: hidden;
   border-radius: var(--tdmu-radius);
+  position: relative;
 }
 
-.tdmu-manifesto-hero {
-  min-height: 100%;
-}
-
-.tdmu-manifesto-hero img,
 .tdmu-manifesto-shot img {
   display: block;
   width: 100%;
@@ -128,37 +127,51 @@
   transition: transform var(--transition-slow);
 }
 
-.tdmu-manifesto-hero:hover img,
 .tdmu-manifesto-shot:hover img {
   transform: scale(1.04);
 }
 
-.tdmu-manifesto-hero img {
-  min-height: 380px;
-}
-
-.tdmu-manifesto-stack {
-  display: grid;
-  gap: 1rem;
-  align-self: center;
-}
-
 .tdmu-manifesto-shot {
-  height: 180px;
+  aspect-ratio: 1 / 1;
+}
+
+.tdmu-manifesto-shot--more::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 27, 53, 0.48);
+}
+
+.tdmu-manifesto-shot--more img {
+  filter: blur(1px) brightness(0.72);
+}
+
+.tdmu-manifesto-shot-more {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 .tdmu-manifesto-badge {
   position: absolute;
-  left: 0;
-  bottom: -60px;
-  width: min(100%, 380px);
+  left: -0.75rem;
+  right: 2rem;
+  bottom: 1rem;
   padding: 1.3rem 1.5rem;
   background: linear-gradient(135deg, var(--tdmu-primary), var(--tdmu-primary-600));
   border: 0;
   border-left: 0;
   color: #fff;
-  border-radius: var(--tdmu-radius);
+  border-radius: var(--tdmu-radius-sm);
   box-shadow: 0 6px 20px rgba(var(--tdmu-primary-rgb), 0.28);
+  z-index: 2;
 }
 
 .tdmu-manifesto-badge-label {
@@ -182,14 +195,9 @@
     gap: 2rem;
   }
 
-  .tdmu-manifesto-media {
-    position: static;
-  }
-
   .tdmu-manifesto-badge {
-    position: relative;
-    bottom: auto;
-    width: 100%;
+    left: 1rem;
+    right: 1rem;
   }
 }
 
@@ -238,20 +246,21 @@
   }
 
   .tdmu-manifesto-media {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    padding-bottom: 4.5rem;
   }
 
-  .tdmu-manifesto-hero img {
-    min-height: 240px;
+  .tdmu-manifesto-gallery {
+    gap: 0.65rem;
   }
 
-  .tdmu-manifesto-stack {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.9rem;
+  .tdmu-manifesto-badge {
+    left: 0.65rem;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    padding: 1rem 1.1rem;
   }
 
-  .tdmu-manifesto-shot {
-    height: 140px;
+  .tdmu-manifesto-badge-value {
+    font-size: 0.95rem;
   }
 }

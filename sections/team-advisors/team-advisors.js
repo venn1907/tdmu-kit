@@ -69,7 +69,7 @@ export function initTeamAdvisors() {
     autoTimer = window.setInterval(() => {
       currentIndex = currentIndex >= getMaxIndex() ? 0 : currentIndex + 1;
       update();
-    }, 5000);
+    }, 3000);
   };
 
   const restartAuto = () => {
