@@ -1,4 +1,4 @@
-import { injectFragment } from "../core/include.js";
+import { injectSections } from "../core/page-loader.js";
 import { getQueryParam } from "../core/dom.js";
 import { newsData } from "../data/news.js";
 import { emitArticleSelection } from "../components/article-navigation.js";
@@ -25,17 +25,8 @@ const KIT_SECTIONS = [
 ];
 
 export async function initSectionKit() {
-  if (document.body.dataset.page !== "section-kit") {
-    return;
-  }
-
-  await Promise.all(
-    KIT_SECTIONS.map((section) => injectFragment(section.slot, section.file)),
-  );
-
-  KIT_SECTIONS.forEach((section) => {
-    section.init();
-  });
+  if (document.body.dataset.page !== "section-kit") return;
+  await injectSections(KIT_SECTIONS);
 
   const initialArticleId = getQueryParam("article");
   if (initialArticleId) {

@@ -1,3 +1,0 @@
-/* Deprecated entry point. Load `core.css`, `header-footer.css`, and page CSS directly. */
-@import url("./core.css");
-@import url("./header-footer.css");

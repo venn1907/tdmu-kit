@@ -50,10 +50,12 @@ function buildRail(items) {
 
 export function initLatestEvents(items) {
   const shell = document.getElementById("events-carousel");
+  if (!shell || !items.length) return;
+
   const rail = document.getElementById("events-list");
   const prevButton = shell.querySelector("[data-events-prev]");
   const nextButton = shell.querySelector("[data-events-next]");
-  if (!shell || !rail || !items.length) return;
+  if (!rail) return;
 
   let visibleCount = getVisibleCount();
   let currentIndex = 0;

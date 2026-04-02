@@ -36,46 +36,117 @@
             Sections
           </button>
           <div class="tdmu-menu-panel" id="panelSections" hidden>
-            <div class="tdmu-panel-grid">
-              <section class="tdmu-panel-group">
-                <p class="tdmu-panel-label">Landing</p>
-                <a class="tdmu-panel-link" href="index.html#featured-slider-slot">
-                  <strong>Featured Slider</strong>
-                  <span>Hero tin nổi bật cho website viện, khoa, trung tâm.</span>
-                </a>
-                <a class="tdmu-panel-link" href="index.html#training-programs-slot">
-                  <strong>Training Programs</strong>
-                  <span>Khối giới thiệu hệ đào tạo với cấu trúc dễ tái sử dụng.</span>
-                </a>
-              </section>
+            <div class="tdmu-menu-tree">
+              <div class="tdmu-menu-branch">
+                <button
+                  class="tdmu-menu-node tdmu-menu-node--branch"
+                  type="button"
+                  data-submenu-trigger="sectionsLanding"
+                  aria-expanded="false"
+                  aria-controls="sectionsLanding"
+                >
+                  <span class="tdmu-menu-node-copy">
+                    <strong>Landing</strong>
+                    <span>Các section chính trên trang chủ.</span>
+                  </span>
+                </button>
+                <div class="tdmu-submenu-panel" id="sectionsLanding" hidden>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="index.html#featured-slider-slot">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Featured Slider</strong>
+                      <span>Hero slider đầu trang.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="index.html#tdmu-manifesto-slot">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>TDMU Manifesto</strong>
+                      <span>Giới thiệu tinh thần và định hướng trang.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="index.html#student-utilities-slot">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Student Utilities</strong>
+                      <span>Học vụ, biểu mẫu và lối tắt.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="index.html#tdmu-impact-slot">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>TDMU Impact</strong>
+                      <span>Các chỉ số và điểm nhấn hoạt động.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
 
-              <section class="tdmu-panel-group">
-                <p class="tdmu-panel-label">Thông tin và mẫu trang</p>
-                <a class="tdmu-panel-link" href="index.html#media-stream-slot">
-                  <strong>Media Stream</strong>
-                  <span>Khối truyền thông kết hợp tin tức nổi bật và thông báo nhanh.</span>
-                </a>
-                <a class="tdmu-panel-link" href="index.html#latest-events-slot">
-                  <strong>Latest Events</strong>
-                  <span>Lịch sự kiện theo dạng timeline cho học tập và hội thảo.</span>
-                </a>
-                <a class="tdmu-panel-link" href="index.html#student-utilities-slot">
-                  <strong>Student Utilities</strong>
-                  <span>Nhóm học vụ, e-learning, biểu mẫu và thao tác nhanh.</span>
-                </a>
-                <a class="tdmu-panel-link" href="pages/section-kit/index.html#news-discovery-section">
-                  <strong>News Discovery</strong>
-                  <span>Layout tin tức có tìm kiếm và lọc chuyên mục.</span>
-                </a>
-                <a class="tdmu-panel-link" href="pages/section-kit/index.html#article-feature-section">
-                  <strong>Article Feature</strong>
-                  <span>Chi tiết bài viết theo kiểu biên tập hiện đại.</span>
-                </a>
-                <a class="tdmu-panel-link" href="pages/section-kit/index.html#related-articles-section">
-                  <strong>Related Articles</strong>
-                  <span>Khối bài liên quan cho trang nội dung hoặc microsite.</span>
-                </a>
-              </section>
+              <div class="tdmu-menu-branch">
+                <button
+                  class="tdmu-menu-node tdmu-menu-node--branch"
+                  type="button"
+                  data-submenu-trigger="sectionsContent"
+                  aria-expanded="false"
+                  aria-controls="sectionsContent"
+                >
+                  <span class="tdmu-menu-node-copy">
+                    <strong>Thông tin và nội dung</strong>
+                    <span>Tin tức, sự kiện và khối truyền thông.</span>
+                  </span>
+                </button>
+                <div class="tdmu-submenu-panel" id="sectionsContent" hidden>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="index.html#media-stream-slot">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Media Stream</strong>
+                      <span>Cột tin tức và thông báo nhanh.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="index.html#latest-events-slot">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Latest Events</strong>
+                      <span>Timeline sự kiện và hoạt động.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="index.html#team-advisors-slot">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Team Advisors</strong>
+                      <span>Carousel đội ngũ tư vấn viên.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="tdmu-menu-branch">
+                <button
+                  class="tdmu-menu-node tdmu-menu-node--branch"
+                  type="button"
+                  data-submenu-trigger="sectionsTemplates"
+                  aria-expanded="false"
+                  aria-controls="sectionsTemplates"
+                >
+                  <span class="tdmu-menu-node-copy">
+                    <strong>Mẫu trang</strong>
+                    <span>Kho section và các mẫu bài viết.</span>
+                  </span>
+                </button>
+                <div class="tdmu-submenu-panel" id="sectionsTemplates" hidden>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="pages/section-kit/index.html#news-discovery-section">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>News Discovery</strong>
+                      <span>Danh sách tin có tìm kiếm và phân trang.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="pages/section-kit/index.html#article-feature-section">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Article Feature</strong>
+                      <span>Chi tiết bài viết và breadcrumb.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="pages/section-kit/index.html#related-articles-section">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Related Articles</strong>
+                      <span>Khối bài viết liên quan.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -91,33 +162,48 @@
             Đơn vị
           </button>
           <div class="tdmu-menu-panel" id="panelUnits" hidden>
-            <div class="tdmu-panel-grid">
-              <section class="tdmu-panel-group">
-                <p class="tdmu-panel-label">Khối chuyên môn</p>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Trung tâm Công nghệ thông tin</strong>
-                  <span>Hạ tầng số, hệ thống và dịch vụ nền tảng.</span>
-                </a>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Bộ môn Hệ thống thông tin</strong>
-                  <span>Dữ liệu, phân tích và hệ thống quản trị số.</span>
-                </a>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Bộ môn Công nghệ thông tin</strong>
-                  <span>Nền tảng CNTT, ứng dụng và kỹ năng nghề nghiệp.</span>
-                </a>
-              </section>
-              <section class="tdmu-panel-group">
-                <p class="tdmu-panel-label">Khối vận hành</p>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Phòng hạ tầng và phát triển phần mềm</strong>
-                  <span>Triển khai hệ thống nội bộ và cổng thông tin số.</span>
-                </a>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Phòng tổng hợp</strong>
-                  <span>Điều phối học vụ, kế hoạch và thông tin vận hành.</span>
-                </a>
-              </section>
+            <div class="tdmu-menu-tree">
+              <div class="tdmu-menu-branch">
+                <button
+                  class="tdmu-menu-node tdmu-menu-node--branch"
+                  type="button"
+                  data-submenu-trigger="unitsAcademic"
+                  aria-expanded="false"
+                  aria-controls="unitsAcademic"
+                >
+                  <span class="tdmu-menu-node-copy">
+                    <strong>Khối chuyên môn</strong>
+                    <span>Các đơn vị đào tạo và chuyên môn.</span>
+                  </span>
+                </button>
+                <div class="tdmu-submenu-panel" id="unitsAcademic" hidden>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Trung tâm Công nghệ thông tin</strong>
+                      <span>Hạ tầng số và dịch vụ nền tảng.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Bộ môn Hệ thống thông tin</strong>
+                      <span>Dữ liệu, phân tích và quản trị số.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Bộ môn Công nghệ thông tin</strong>
+                      <span>Nền tảng CNTT và phát triển ứng dụng.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                <span class="tdmu-menu-node-copy">
+                  <strong>Khối vận hành</strong>
+                  <span>Điều phối học vụ và triển khai hệ thống.</span>
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -133,33 +219,76 @@
             Đào tạo
           </button>
           <div class="tdmu-menu-panel" id="panelTraining" hidden>
-            <div class="tdmu-panel-grid">
-              <section class="tdmu-panel-group">
-                <p class="tdmu-panel-label">Bậc đại học</p>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Công nghệ thông tin</strong>
-                  <span>Định hướng ứng dụng, hệ thống và phát triển sản phẩm số.</span>
-                </a>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Hệ thống thông tin</strong>
-                  <span>Kết nối nghiệp vụ với dữ liệu và nền tảng số.</span>
-                </a>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Kỹ thuật phần mềm</strong>
-                  <span>Tập trung vào quy trình, chất lượng và triển khai thực tế.</span>
-                </a>
-              </section>
-              <section class="tdmu-panel-group">
-                <p class="tdmu-panel-label">Nâng cao</p>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Thạc sĩ Hệ thống thông tin</strong>
-                  <span>Phân tích, nghiên cứu và ứng dụng giải pháp số.</span>
-                </a>
-                <a class="tdmu-panel-link" href="#">
-                  <strong>Chứng chỉ ứng dụng CNTT</strong>
-                  <span>Đào tạo ngắn hạn cho sinh viên và người đi làm.</span>
-                </a>
-              </section>
+            <div class="tdmu-menu-tree">
+              <div class="tdmu-menu-branch">
+                <button
+                  class="tdmu-menu-node tdmu-menu-node--branch"
+                  type="button"
+                  data-submenu-trigger="trainingUndergrad"
+                  aria-expanded="false"
+                  aria-controls="trainingUndergrad"
+                >
+                  <span class="tdmu-menu-node-copy">
+                    <strong>Bậc đại học</strong>
+                    <span>Các ngành đào tạo chính quy.</span>
+                  </span>
+                </button>
+                <div class="tdmu-submenu-panel" id="trainingUndergrad" hidden>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Công nghệ thông tin</strong>
+                      <span>Phát triển sản phẩm và ứng dụng số.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Hệ thống thông tin</strong>
+                      <span>Dữ liệu, nghiệp vụ và hệ thống quản trị.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Kỹ thuật phần mềm</strong>
+                      <span>Quy trình, chất lượng và triển khai thực tế.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="tdmu-menu-branch">
+                <button
+                  class="tdmu-menu-node tdmu-menu-node--branch"
+                  type="button"
+                  data-submenu-trigger="trainingAdvanced"
+                  aria-expanded="false"
+                  aria-controls="trainingAdvanced"
+                >
+                  <span class="tdmu-menu-node-copy">
+                    <strong>Chương trình nâng cao</strong>
+                    <span>Sau đại học và đào tạo ngắn hạn.</span>
+                  </span>
+                </button>
+                <div class="tdmu-submenu-panel" id="trainingAdvanced" hidden>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Thạc sĩ Hệ thống thông tin</strong>
+                      <span>Phân tích, nghiên cứu và ứng dụng giải pháp số.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Chứng chỉ ứng dụng CNTT</strong>
+                      <span>Khóa học ngắn hạn cho sinh viên và người đi làm.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Workshop chuyên đề</strong>
+                      <span>Thực hành AI, Web, Mobile và Data.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -176,29 +305,47 @@
             Mẫu trang
           </button>
           <div class="tdmu-menu-panel" id="panelTemplates" hidden>
-            <div class="tdmu-panel-grid">
-              <section class="tdmu-panel-group">
-                <p class="tdmu-panel-label">Trang mẫu</p>
-                <a class="tdmu-panel-link" href="pages/section-kit/index.html">
+            <div class="tdmu-menu-tree">
+              <a class="tdmu-menu-node tdmu-menu-node--leaf" href="pages/section-kit/index.html">
+                <span class="tdmu-menu-node-copy">
                   <strong>Kho section</strong>
-                  <span>Tổng hợp các section nội dung để xem, chọn và áp dụng.</span>
-                </a>
-                <a class="tdmu-panel-link" href="pages/section-kit/index.html#article-feature-section">
-                  <strong>Mẫu bài viết</strong>
-                  <span>Chi tiết bài viết và các khối nội dung liên quan.</span>
-                </a>
-              </section>
-              <section class="tdmu-panel-group">
-                <p class="tdmu-panel-label">Đi nhanh</p>
-                <a class="tdmu-panel-link" href="pages/section-kit/index.html#news-discovery-section">
-                  <strong>Khám phá tin tức</strong>
-                  <span>Danh mục, tìm kiếm và bố cục tin tức.</span>
-                </a>
-                <a class="tdmu-panel-link" href="pages/section-kit/index.html#related-articles-section">
-                  <strong>Bài liên quan</strong>
-                  <span>Khối bài gợi ý cho trang nội dung hoặc landing phụ.</span>
-                </a>
-              </section>
+                  <span>Tổng hợp các section để xem và tái sử dụng.</span>
+                </span>
+              </a>
+              <div class="tdmu-menu-branch">
+                <button
+                  class="tdmu-menu-node tdmu-menu-node--branch"
+                  type="button"
+                  data-submenu-trigger="templatesNews"
+                  aria-expanded="false"
+                  aria-controls="templatesNews"
+                >
+                  <span class="tdmu-menu-node-copy">
+                    <strong>Nhóm tin tức</strong>
+                    <span>Danh mục và trang bài viết mẫu.</span>
+                  </span>
+                </button>
+                <div class="tdmu-submenu-panel" id="templatesNews" hidden>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="pages/section-kit/index.html#news-discovery-section">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Khám phá tin tức</strong>
+                      <span>Tìm kiếm, lọc danh mục và phân trang.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="pages/section-kit/index.html#article-feature-section">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Article Feature</strong>
+                      <span>Header bài viết và nội dung chính.</span>
+                    </span>
+                  </a>
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="pages/section-kit/index.html#related-articles-section">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Related Articles</strong>
+                      <span>Khối gợi ý bài viết liên quan.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -281,16 +428,62 @@
         <button
           class="tdmu-mobile-trigger"
           type="button"
-          data-drawer-trigger="drawerSections"
+          data-submenu-trigger="drawerSections"
           aria-expanded="false"
           aria-controls="drawerSections"
         >
           Sections
         </button>
-        <div class="tdmu-mobile-panel" id="drawerSections" hidden>
-          <a class="tdmu-mobile-sublink" href="index.html#featured-slider-slot">Featured Slider</a>
-          <a class="tdmu-mobile-sublink" href="index.html#media-stream-slot">Media Stream</a>
-          <a class="tdmu-mobile-sublink" href="pages/section-kit/index.html#news-discovery-section">News Discovery</a>
+        <div class="tdmu-mobile-panel tdmu-mobile-panel--level-2" id="drawerSections" hidden>
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+              type="button"
+              data-submenu-trigger="drawerSectionsLanding"
+              aria-expanded="false"
+              aria-controls="drawerSectionsLanding"
+            >
+              Landing
+            </button>
+            <div class="tdmu-mobile-panel tdmu-mobile-panel--level-3" id="drawerSectionsLanding" hidden>
+              <a class="tdmu-mobile-sublink" href="index.html#featured-slider-slot">Featured Slider</a>
+              <a class="tdmu-mobile-sublink" href="index.html#tdmu-manifesto-slot">TDMU Manifesto</a>
+              <a class="tdmu-mobile-sublink" href="index.html#student-utilities-slot">Student Utilities</a>
+              <a class="tdmu-mobile-sublink" href="index.html#tdmu-impact-slot">TDMU Impact</a>
+            </div>
+          </div>
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+              type="button"
+              data-submenu-trigger="drawerSectionsContent"
+              aria-expanded="false"
+              aria-controls="drawerSectionsContent"
+            >
+              Thông tin và nội dung
+            </button>
+            <div class="tdmu-mobile-panel tdmu-mobile-panel--level-3" id="drawerSectionsContent" hidden>
+              <a class="tdmu-mobile-sublink" href="index.html#media-stream-slot">Media Stream</a>
+              <a class="tdmu-mobile-sublink" href="index.html#latest-events-slot">Latest Events</a>
+              <a class="tdmu-mobile-sublink" href="index.html#team-advisors-slot">Team Advisors</a>
+            </div>
+          </div>
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+              type="button"
+              data-submenu-trigger="drawerSectionsTemplates"
+              aria-expanded="false"
+              aria-controls="drawerSectionsTemplates"
+            >
+              Mẫu trang
+            </button>
+            <div class="tdmu-mobile-panel tdmu-mobile-panel--level-3" id="drawerSectionsTemplates" hidden>
+              <a class="tdmu-mobile-sublink" href="pages/section-kit/index.html#news-discovery-section">News Discovery</a>
+              <a class="tdmu-mobile-sublink" href="pages/section-kit/index.html#article-feature-section">Article Feature</a>
+              <a class="tdmu-mobile-sublink" href="pages/section-kit/index.html#related-articles-section">Related Articles</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -298,17 +491,76 @@
         <button
           class="tdmu-mobile-trigger"
           type="button"
-          data-drawer-trigger="drawerTraining"
+          data-submenu-trigger="drawerUnits"
+          aria-expanded="false"
+          aria-controls="drawerUnits"
+        >
+          Đơn vị
+        </button>
+        <div class="tdmu-mobile-panel tdmu-mobile-panel--level-2" id="drawerUnits" hidden>
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+              type="button"
+              data-submenu-trigger="drawerUnitsAcademic"
+              aria-expanded="false"
+              aria-controls="drawerUnitsAcademic"
+            >
+              Khối chuyên môn
+            </button>
+            <div class="tdmu-mobile-panel tdmu-mobile-panel--level-3" id="drawerUnitsAcademic" hidden>
+              <a class="tdmu-mobile-sublink" href="#">Trung tâm Công nghệ thông tin</a>
+              <a class="tdmu-mobile-sublink" href="#">Bộ môn Hệ thống thông tin</a>
+              <a class="tdmu-mobile-sublink" href="#">Bộ môn Công nghệ thông tin</a>
+            </div>
+          </div>
+          <a class="tdmu-mobile-sublink" href="#">Khối vận hành</a>
+        </div>
+      </div>
+
+      <div class="tdmu-mobile-group">
+        <button
+          class="tdmu-mobile-trigger"
+          type="button"
+          data-submenu-trigger="drawerTraining"
           aria-expanded="false"
           aria-controls="drawerTraining"
         >
           Đào tạo
         </button>
-        <div class="tdmu-mobile-panel" id="drawerTraining" hidden>
-          <a class="tdmu-mobile-sublink" href="#">Công nghệ thông tin</a>
-          <a class="tdmu-mobile-sublink" href="#">Hệ thống thông tin</a>
-          <a class="tdmu-mobile-sublink" href="#">Kỹ thuật phần mềm</a>
-          <a class="tdmu-mobile-sublink" href="#">Chứng chỉ ứng dụng CNTT</a>
+        <div class="tdmu-mobile-panel tdmu-mobile-panel--level-2" id="drawerTraining" hidden>
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+              type="button"
+              data-submenu-trigger="drawerTrainingUndergrad"
+              aria-expanded="false"
+              aria-controls="drawerTrainingUndergrad"
+            >
+              Bậc đại học
+            </button>
+            <div class="tdmu-mobile-panel tdmu-mobile-panel--level-3" id="drawerTrainingUndergrad" hidden>
+              <a class="tdmu-mobile-sublink" href="#">Công nghệ thông tin</a>
+              <a class="tdmu-mobile-sublink" href="#">Hệ thống thông tin</a>
+              <a class="tdmu-mobile-sublink" href="#">Kỹ thuật phần mềm</a>
+            </div>
+          </div>
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+              type="button"
+              data-submenu-trigger="drawerTrainingAdvanced"
+              aria-expanded="false"
+              aria-controls="drawerTrainingAdvanced"
+            >
+              Chương trình nâng cao
+            </button>
+            <div class="tdmu-mobile-panel tdmu-mobile-panel--level-3" id="drawerTrainingAdvanced" hidden>
+              <a class="tdmu-mobile-sublink" href="#">Thạc sĩ Hệ thống thông tin</a>
+              <a class="tdmu-mobile-sublink" href="#">Chứng chỉ ứng dụng CNTT</a>
+              <a class="tdmu-mobile-sublink" href="#">Workshop chuyên đề</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -316,21 +568,20 @@
         <button
           class="tdmu-mobile-trigger"
           type="button"
-          data-drawer-trigger="drawerStudents"
+          data-submenu-trigger="drawerTemplates"
           aria-expanded="false"
-          aria-controls="drawerStudents"
+          aria-controls="drawerTemplates"
+          data-nav="section-kit"
         >
-          Sinh viên
+          Mẫu trang
         </button>
-        <div class="tdmu-mobile-panel" id="drawerStudents" hidden>
-          <a class="tdmu-mobile-sublink" href="index.html#student-utilities-slot">Học vụ</a>
-          <a class="tdmu-mobile-sublink" href="index.html#student-utilities-slot">E-learning</a>
-          <a class="tdmu-mobile-sublink" href="index.html#student-utilities-slot">Biểu mẫu</a>
-          <a class="tdmu-mobile-sublink" href="#site-footer">Liên hệ hỗ trợ</a>
+        <div class="tdmu-mobile-panel tdmu-mobile-panel--level-2" id="drawerTemplates" hidden>
+          <a class="tdmu-mobile-sublink" href="pages/section-kit/index.html">Kho section</a>
+          <a class="tdmu-mobile-sublink" href="pages/section-kit/index.html#news-discovery-section">Khám phá tin tức</a>
+          <a class="tdmu-mobile-sublink" href="pages/section-kit/index.html#article-feature-section">Article Feature</a>
+          <a class="tdmu-mobile-sublink" href="pages/section-kit/index.html#related-articles-section">Related Articles</a>
         </div>
       </div>
-
-      <a class="tdmu-mobile-link" href="pages/section-kit/index.html" data-nav="section-kit">Mẫu trang</a>
     </nav>
   </aside>
 </header>

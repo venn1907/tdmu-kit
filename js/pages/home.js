@@ -1,4 +1,4 @@
-import { injectFragment } from "../core/include.js";
+import { injectSections } from "../core/page-loader.js";
 import { heroSlidesData } from "../data/hero-slides.js";
 import { newsData } from "../data/news.js";
 import { eventsData } from "../data/events.js";
@@ -51,15 +51,6 @@ const LANDING_SECTIONS = [
 ];
 
 export async function initHome() {
-  if (document.body.dataset.page !== "home") {
-    return;
-  }
-
-  await Promise.all(
-    LANDING_SECTIONS.map((section) => injectFragment(section.slot, section.file)),
-  );
-
-  LANDING_SECTIONS.forEach((section) => {
-    section.init?.();
-  });
+  if (document.body.dataset.page !== "home") return;
+  await injectSections(LANDING_SECTIONS);
 }

@@ -3,6 +3,7 @@ body[data-page="home"] {
 }
 
 body[data-page="home"] .tdmu-landing-main {
+  --tdmu-slot-spacing: 3.5rem;
   background: linear-gradient(180deg, var(--tdmu-bg) 0%, var(--tdmu-surface-alt) 100%);
   margin-top: var(--header-total-height, 120px);
 }
@@ -10,24 +11,15 @@ body[data-page="home"] .tdmu-landing-main {
 body[data-page="home"] .tdmu-landing-main > [id$="-slot"] {
   position: relative;
   border-top: 1px solid var(--tdmu-border-light);
+  padding-top: var(--tdmu-slot-spacing);
+  padding-bottom: var(--tdmu-slot-spacing);
 }
 
 body[data-page="home"] .tdmu-landing-main > #featured-slider-slot {
   margin-top: 0;
   border-top: none;
-}
-
-body[data-page="home"] .tdmu-landing-main > #tdmu-manifesto-slot,
-body[data-page="home"] .tdmu-landing-main > #media-stream-slot,
-body[data-page="home"] .tdmu-landing-main > #latest-events-slot,
-body[data-page="home"] .tdmu-landing-main > #training-programs-slot,
-body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot,
-body[data-page="home"] .tdmu-landing-main > #tdmu-network-slot,
-body[data-page="home"] .tdmu-landing-main > #team-advisors-slot,
-body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
-  width: 100%;
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 body[data-page="home"] .tdmu-landing-main > #latest-events-slot,
@@ -37,10 +29,6 @@ body[data-page="home"] .tdmu-landing-main > #training-programs-slot {
 
 body[data-page="home"] .tdmu-landing-main > #media-stream-slot {
   background: linear-gradient(180deg, rgba(var(--tdmu-primary-rgb), 0.04), rgba(var(--tdmu-primary-rgb), 0)), var(--tdmu-surface-alt);
-}
-
-body[data-page="home"] .tdmu-landing-main > #training-programs-slot {
-  background: var(--tdmu-surface);
 }
 
 body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot {
@@ -54,13 +42,7 @@ body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
 }
 
 @media (max-width: 767.98px) {
-  body[data-page="home"] .tdmu-landing-main > [id$="-slot"] {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  body[data-page="home"] .tdmu-landing-main > #featured-slider-slot {
-    padding-top: 0;
-    padding-bottom: 0;
+  body[data-page="home"] .tdmu-landing-main {
+    --tdmu-slot-spacing: 2.5rem;
   }
 }
