@@ -1,12 +1,7 @@
 import { injectFragment } from "./core/include.js";
+import { initSectionsFromDom, runPageHook } from "./core/section-registry.js";
 import { initHeaderLayout } from "../layouts/header/header.js";
 import { initFooterLayout } from "../layouts/footer/footer.js";
-
-const PAGE_INITIALIZERS = {
-  home: () => import("./pages/home.js").then(({ initHome }) => initHome()),
-  "section-kit": () =>
-    import("./pages/section-kit.js").then(({ initSectionKit }) => initSectionKit()),
-};
 
 function initScrollToTop() {
   const button = document.createElement("button");
@@ -34,7 +29,8 @@ function initScrollToTop() {
 
 async function initCurrentPage() {
   const page = document.body.dataset.page;
-  await PAGE_INITIALIZERS[page]?.();
+  await initSectionsFromDom();
+  runPageHook(page);
 }
 
 (async function boot() {
