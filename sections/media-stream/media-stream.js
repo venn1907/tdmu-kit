@@ -1,5 +1,8 @@
 import { escapeHtml, formatDate, resolveAppUrl } from "../../js/core/dom.js";
-import { getNewsDetailHref, getNoticeDetailHref } from "../../js/components/article-navigation.js";
+import {
+  getNewsDetailHref,
+  getNoticeDetailHref,
+} from "../../js/components/article-navigation.js";
 
 const NOTICE_TAB_ITEMS = [
   { key: "all", label: "Tổng hợp" },
@@ -17,7 +20,8 @@ function normalizeText(value) {
 
 function detectNoticeBucket(item) {
   const combined = `${normalizeText(item.category)} ${normalizeText(item.title)}`;
-  if (combined.includes("tuyen dung") || combined.includes("viec lam")) return "jobs";
+  if (combined.includes("tuyen dung") || combined.includes("viec lam"))
+    return "jobs";
   if (combined.includes("sinh vien")) return "students";
   if (combined.includes("tuyen sinh")) return "admissions";
   if (combined.includes("thong bao")) return "all";
@@ -44,9 +48,18 @@ function syncNoticePanelHeight() {
   const noticeColumn = document.getElementById("media-notice-column");
   const noticeList = document.getElementById("media-notice-list");
   const noticeHead = noticeColumn?.querySelector(".tdmu-media-column-head");
-  const noticeTabsWrap = noticeColumn?.querySelector(".tdmu-media-notice-tabs-wrap");
+  const noticeTabsWrap = noticeColumn?.querySelector(
+    ".tdmu-media-notice-tabs-wrap",
+  );
 
-  if (!newsColumn || !noticeColumn || !noticeList || !noticeHead || !noticeTabsWrap) return;
+  if (
+    !newsColumn ||
+    !noticeColumn ||
+    !noticeList ||
+    !noticeHead ||
+    !noticeTabsWrap
+  )
+    return;
 
   if (window.innerWidth <= 1199.98) {
     noticeColumn.style.height = "";
@@ -64,7 +77,12 @@ function syncNoticePanelHeight() {
   const listPaddingBottom = parseFloat(listStyles.paddingBottom) || 0;
   const listHeight = Math.max(
     180,
-    newsHeight - headHeight - tabsHeight - panelPaddingBottom - listPaddingTop - listPaddingBottom,
+    newsHeight -
+      headHeight -
+      tabsHeight -
+      panelPaddingBottom -
+      listPaddingTop -
+      listPaddingBottom,
   );
 
   noticeColumn.style.height = `${newsHeight}px`;
@@ -84,7 +102,8 @@ function setupCarouselNav(railElement) {
     return 2;
   };
 
-  const getItems = () => Array.from(railElement.querySelectorAll(".tdmu-media-news-item"));
+  const getItems = () =>
+    Array.from(railElement.querySelectorAll(".tdmu-media-news-item"));
 
   const updateTrack = () => {
     const items = getItems();
@@ -118,7 +137,9 @@ function renderNews(newsItems) {
   const mount = document.getElementById("media-news-list");
   if (!mount) return;
 
-  const items = [...newsItems].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const items = [...newsItems].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
   const [featured, ...rest] = items;
 
   mount.innerHTML = `
@@ -251,7 +272,8 @@ export function initMediaStream(newsItems, noticeItems) {
   ).join("");
 
   const apply = (key) => {
-    const activeTab = NOTICE_TAB_ITEMS.find((tab) => tab.key === key) || NOTICE_TAB_ITEMS[0];
+    const activeTab =
+      NOTICE_TAB_ITEMS.find((tab) => tab.key === key) || NOTICE_TAB_ITEMS[0];
 
     tabs.querySelectorAll("[data-tab]").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.tab === key);

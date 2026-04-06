@@ -53,7 +53,8 @@ export const noticesData = [
   },
   {
     id: "nt-3",
-    title: "Gia hạn thời gian nộp hồ sơ tham gia chương trình thực tập doanh nghiệp",
+    title:
+      "Gia hạn thời gian nộp hồ sơ tham gia chương trình thực tập doanh nghiệp",
     category: "Thông báo sinh viên",
     date: "2026-03-22T14:20:00",
     views: 113,
@@ -79,7 +80,8 @@ export const noticesData = [
   },
   {
     id: "nt-4",
-    title: "Tuyển dụng lập trình viên frontend cho dự án chuyển đổi số tại doanh nghiệp đối tác",
+    title:
+      "Tuyển dụng lập trình viên frontend cho dự án chuyển đổi số tại doanh nghiệp đối tác",
     category: "Tuyển dụng",
     date: "2026-03-18T11:40:00",
     views: 813,
@@ -105,7 +107,8 @@ export const noticesData = [
   },
   {
     id: "nt-5",
-    title: "Tuyển dụng nhân viên content creator phụ trách truyền thông học thuật",
+    title:
+      "Tuyển dụng nhân viên content creator phụ trách truyền thông học thuật",
     category: "Tuyển dụng",
     date: "2026-03-12T10:30:00",
     views: 374,
@@ -131,7 +134,8 @@ export const noticesData = [
   },
   {
     id: "nt-6",
-    title: "Thông báo học bổng khuyến khích học tập dành cho sinh viên có thành tích tốt",
+    title:
+      "Thông báo học bổng khuyến khích học tập dành cho sinh viên có thành tích tốt",
     category: "Thông báo sinh viên",
     date: "2026-03-08T15:00:00",
     views: 176,
@@ -157,7 +161,8 @@ export const noticesData = [
   },
   {
     id: "nt-7",
-    title: "Thông báo tiếp nhận hồ sơ xét tuyển bổ sung chương trình thạc sĩ Hệ thống thông tin",
+    title:
+      "Thông báo tiếp nhận hồ sơ xét tuyển bổ sung chương trình thạc sĩ Hệ thống thông tin",
     category: "Thông báo tuyển sinh",
     date: "2026-03-03T13:45:00",
     views: 126,

@@ -4,7 +4,11 @@ body[data-page="home"] {
 
 body[data-page="home"] .tdmu-landing-main {
   --tdmu-slot-spacing: 3.5rem;
-  background: linear-gradient(180deg, var(--tdmu-bg) 0%, var(--tdmu-surface-alt) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--tdmu-bg) 0%,
+    var(--tdmu-surface-alt) 100%
+  );
   margin-top: var(--header-total-height, 120px);
 }
 
@@ -28,7 +32,13 @@ body[data-page="home"] .tdmu-landing-main > #training-programs-slot {
 }
 
 body[data-page="home"] .tdmu-landing-main > #media-stream-slot {
-  background: linear-gradient(180deg, rgba(var(--tdmu-primary-rgb), 0.04), rgba(var(--tdmu-primary-rgb), 0)), var(--tdmu-surface-alt);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--tdmu-primary-rgb), 0.04),
+      rgba(var(--tdmu-primary-rgb), 0)
+    ),
+    var(--tdmu-surface-alt);
 }
 
 body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot {
@@ -38,7 +48,13 @@ body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot {
 body[data-page="home"] .tdmu-landing-main > #tdmu-network-slot,
 body[data-page="home"] .tdmu-landing-main > #team-advisors-slot,
 body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
-  background: linear-gradient(180deg, rgba(var(--tdmu-accent-rgb), 0.06), rgba(var(--tdmu-accent-rgb), 0)), var(--tdmu-surface-alt);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--tdmu-accent-rgb), 0.06),
+      rgba(var(--tdmu-accent-rgb), 0)
+    ),
+    var(--tdmu-surface-alt);
 }
 
 @media (max-width: 767.98px) {

@@ -48,7 +48,9 @@ function setActiveNav(header) {
 }
 
 function bindLanguageSwitch(header) {
-  const chips = Array.from(header.querySelectorAll(".tdmu-lang-chip[data-lang]"));
+  const chips = Array.from(
+    header.querySelectorAll(".tdmu-lang-chip[data-lang]"),
+  );
   if (!chips.length) return;
 
   chips.forEach((chip) => {
@@ -122,12 +124,18 @@ function bindDesktopPanels(header, state) {
   desktopQuery.addEventListener("change", handleDesktopChange);
   window.addEventListener("resize", () => {
     if (!desktopQuery.matches || !state.activePanel) return;
-    const trigger = header.querySelector(`[data-panel-trigger="${state.activePanel}"]`);
+    const trigger = header.querySelector(
+      `[data-panel-trigger="${state.activePanel}"]`,
+    );
     const panel = getControlledElement(trigger);
     if (!trigger || !panel || panel.hidden || !navBlock) return;
     syncDesktopPanelPosition(panel, trigger, navBlock);
     if (state.activeFlyoutTrigger) {
-      showDesktopFlyout(state, getControlledElement(state.activeFlyoutTrigger), state.activeFlyoutTrigger);
+      showDesktopFlyout(
+        state,
+        getControlledElement(state.activeFlyoutTrigger),
+        state.activeFlyoutTrigger,
+      );
     }
   });
 
@@ -275,14 +283,22 @@ function bindViewportState(header, shell, state) {
   const apply = () => {
     const shellHeight = Math.ceil(shell.getBoundingClientRect().height);
     const headerHeight = Math.ceil(header.getBoundingClientRect().height);
-    const stickyThreshold = state.hasHero ? Math.max(28, shellHeight * 0.3) : 10;
+    const stickyThreshold = state.hasHero
+      ? Math.max(28, shellHeight * 0.3)
+      : 10;
     const isSticky = window.scrollY > stickyThreshold;
     const isOverHero = state.hasHero && !isSticky;
 
     header.classList.toggle("is-sticky", isSticky);
     header.classList.toggle("is-over-hero", isOverHero);
-    document.body.style.setProperty("--header-total-height", `${headerHeight}px`);
-    document.body.style.setProperty("--header-offset", state.hasHero ? "0px" : `${shellHeight + 14}px`);
+    document.body.style.setProperty(
+      "--header-total-height",
+      `${headerHeight}px`,
+    );
+    document.body.style.setProperty(
+      "--header-offset",
+      state.hasHero ? "0px" : `${shellHeight + 14}px`,
+    );
   };
 
   window.addEventListener("scroll", apply, { passive: true });
@@ -300,10 +316,14 @@ function bindViewportState(header, shell, state) {
 
 function syncDesktopPanelPosition(panel, trigger, navBlock) {
   const viewportPadding = 12;
-  const itemRect = trigger.parentElement?.getBoundingClientRect() || trigger.getBoundingClientRect();
+  const itemRect =
+    trigger.parentElement?.getBoundingClientRect() ||
+    trigger.getBoundingClientRect();
   const panelWidth = panel.offsetWidth;
-  const overflowRight = itemRect.left + panelWidth - (window.innerWidth - viewportPadding);
-  const overflowLeft = viewportPadding - (itemRect.left - Math.max(0, overflowRight));
+  const overflowRight =
+    itemRect.left + panelWidth - (window.innerWidth - viewportPadding);
+  const overflowLeft =
+    viewportPadding - (itemRect.left - Math.max(0, overflowRight));
   let offset = 0;
 
   if (overflowRight > 0) {
@@ -317,7 +337,10 @@ function syncDesktopPanelPosition(panel, trigger, navBlock) {
   panel.style.setProperty("--tdmu-panel-left", `${offset}px`);
 
   const panelRect = panel.getBoundingClientRect();
-  const availableHeight = Math.max(220, window.innerHeight - panelRect.top - viewportPadding);
+  const availableHeight = Math.max(
+    220,
+    window.innerHeight - panelRect.top - viewportPadding,
+  );
   panel.style.maxHeight = `${availableHeight}px`;
 }
 
@@ -329,7 +352,9 @@ function closeSiblingSubmenus(trigger, state) {
   Array.from(container.children).forEach((sibling) => {
     if (sibling === branch) return;
 
-    const otherTrigger = sibling.querySelector(":scope > [data-submenu-trigger]");
+    const otherTrigger = sibling.querySelector(
+      ":scope > [data-submenu-trigger]",
+    );
     if (!otherTrigger) return;
 
     const otherPanel = getControlledElement(otherTrigger);
@@ -361,9 +386,12 @@ function resetDescendantSubmenus(root) {
 
 function getControlledElement(trigger) {
   if (!trigger) return null;
-  const id = trigger.getAttribute("aria-controls") || trigger.dataset.submenuTrigger;
+  const id =
+    trigger.getAttribute("aria-controls") || trigger.dataset.submenuTrigger;
   const panel = id ? document.getElementById(id) : null;
-  return panel && document.getElementById("mainHeader")?.contains(panel) ? panel : null;
+  return panel && document.getElementById("mainHeader")?.contains(panel)
+    ? panel
+    : null;
 }
 
 function shouldUseDesktopFlyout(trigger, panel) {
@@ -399,7 +427,8 @@ function showDesktopFlyout(state, panel, trigger) {
   const width = layer.offsetWidth || 360;
   const spaceRight = window.innerWidth - branchRect.right - 16;
   const spaceLeft = branchRect.left - 16;
-  const openLeft = spaceRight < Math.min(width, 300) && spaceLeft >= Math.min(width, 300);
+  const openLeft =
+    spaceRight < Math.min(width, 300) && spaceLeft >= Math.min(width, 300);
   const top = Math.max(12, Math.min(branchRect.top, window.innerHeight - 220));
   const left = openLeft
     ? Math.max(16, branchRect.left - width - 12)
@@ -415,7 +444,12 @@ function showDesktopFlyout(state, panel, trigger) {
 function hideDesktopFlyout(state, trigger = null) {
   const layer = state.desktopFlyout;
   if (!layer) return;
-  if (trigger && state.activeFlyoutTrigger && state.activeFlyoutTrigger !== trigger) return;
+  if (
+    trigger &&
+    state.activeFlyoutTrigger &&
+    state.activeFlyoutTrigger !== trigger
+  )
+    return;
 
   layer.hidden = true;
   layer.innerHTML = "";

@@ -1,4 +1,13 @@
-import { getQueryParam, resolveAppUrl, escapeHtml, formatDate } from "../../js/core/dom.js";
+import {
+  getQueryParam,
+  resolveAppUrl,
+  escapeHtml,
+  formatDate,
+} from "../../js/core/dom.js";
+import {
+  getNewsDetailHref,
+  getNoticeDetailHref,
+} from "../../js/components/article-navigation.js";
 
 const ALL_LABEL = "Tất cả";
 
@@ -19,12 +28,14 @@ function buildListingHref(path, category) {
     return resolveAppUrl(path);
   }
 
-  const value = encodeURIComponent(category);
-  return resolveAppUrl(`${path}?category=${value}`);
+  return resolveAppUrl(`${path}?category=${encodeURIComponent(category)}`);
 }
 
 function buildSidebarMarkup(items, activeCategory, listPath, sidebarLabel) {
-  const categories = [ALL_LABEL, ...new Set(items.map((item) => item.category))];
+  const categories = [
+    ALL_LABEL,
+    ...new Set(items.map((item) => item.category)),
+  ];
 
   const links = categories
     .map((category) => {
@@ -78,20 +89,126 @@ function buildSidebarMarkup(items, activeCategory, listPath, sidebarLabel) {
   `;
 }
 
+function getLatestSameCategoryItems(items, activeItem, limit) {
+  return [...items]
+    .filter(
+      (item) =>
+        item.id !== activeItem.id && item.category === activeItem.category,
+    )
+    .sort((left, right) => new Date(right.date) - new Date(left.date))
+    .slice(0, limit);
+}
+
+function buildLatestNewsMarkup(items) {
+  if (!items.length) return "";
+
+  return `
+    <section class="tdmu-article-related">
+      <div class="tdmu-article-related-head">
+        <div>
+          <p class="tdmu-article-related-kicker">Tin tức cùng danh mục</p>
+        </div>
+        <div class="tdmu-article-related-controls">
+          <button class="tdmu-article-related-nav" type="button" data-news-prev aria-label="Bài trước">
+            <span class="material-symbols-rounded">arrow_back</span>
+          </button>
+          <button class="tdmu-article-related-nav" type="button" data-news-next aria-label="Bài tiếp theo">
+            <span class="material-symbols-rounded">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="tdmu-article-related-viewport">
+        <div class="tdmu-article-related-rail" data-news-rail>
+          ${items
+            .map(
+              (item) => `
+                <article class="tdmu-article-related-card">
+                  <a class="tdmu-article-related-card-media" href="${getNewsDetailHref(item.id)}">
+                    <img
+                      class="tdmu-article-related-card-image"
+                      src="${escapeHtml(resolveAppUrl(item.cover))}"
+                      alt="${escapeHtml(item.title)}"
+                      loading="lazy"
+                      onerror="this.src='${resolveAppUrl("assets/img/bg-landing.jpg")}'"
+                    />
+                  </a>
+                  <div class="tdmu-article-related-card-body">
+                    <p class="tdmu-article-related-card-meta">${escapeHtml(item.category)} · ${escapeHtml(formatDate(item.date))}</p>
+                    <h3 class="tdmu-article-related-card-title clamp-2">
+                      <a href="${getNewsDetailHref(item.id)}">${escapeHtml(item.title)}</a>
+                    </h3>
+                  </div>
+                </article>
+              `,
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function buildLatestNoticeMarkup(items) {
+  if (!items.length) return "";
+
+  return `
+    <section class="tdmu-article-related tdmu-article-related--notice">
+      <div class="tdmu-article-related-head tdmu-article-related-head--stack">
+        <div>
+          <p class="tdmu-article-related-kicker">Thông báo cùng danh mục</p>
+        </div>
+      </div>
+
+      <div class="tdmu-article-related-list">
+        ${items
+          .map(
+            (item) => `
+              <article class="tdmu-article-related-list-item">
+                <a class="tdmu-article-related-list-title" href="${getNoticeDetailHref(item.id)}">${escapeHtml(item.title)}</a>
+                <div class="tdmu-article-related-list-meta">
+                  <span>${escapeHtml(formatDate(item.date))}</span>
+                  <span>·</span>
+                  <span>${escapeHtml(String(item.views || 0))} lượt xem</span>
+                </div>
+              </article>
+            `,
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
 function buildDetailMarkup(item, items, options) {
   const {
     listPath,
     listLabel,
     detailLabel,
     sidebarLabel,
+    kind,
     viewsLabel = "lượt xem",
     showCover = false,
   } = options;
 
   const contentMarkup = item.content || buildFallbackContent(item);
   const hasCover = showCover && item.cover;
-  const sidebarMarkup = buildSidebarMarkup(items, item.category || ALL_LABEL, listPath, sidebarLabel);
+  const sidebarMarkup = buildSidebarMarkup(
+    items,
+    item.category || ALL_LABEL,
+    listPath,
+    sidebarLabel,
+  );
   const listHref = resolveAppUrl(listPath);
+  const latestItems = getLatestSameCategoryItems(
+    items,
+    item,
+    kind === "news" ? 6 : 4,
+  );
+  const extraMarkup =
+    kind === "news"
+      ? buildLatestNewsMarkup(latestItems)
+      : buildLatestNoticeMarkup(latestItems);
 
   return `
     <div class="tdmu-listing-shell tdmu-article-detail-shell">
@@ -129,14 +246,14 @@ function buildDetailMarkup(item, items, options) {
             ${
               hasCover
                 ? `
-              <img
-                class="tdmu-article-feature-cover mb-4"
-                src="${escapeHtml(resolveAppUrl(item.cover))}"
-                alt="${escapeHtml(item.title)}"
-                loading="lazy"
-                onerror="this.src='${resolveAppUrl("assets/img/bg-landing.jpg")}'"
-              />
-            `
+                  <img
+                    class="tdmu-article-feature-cover mb-4"
+                    src="${escapeHtml(resolveAppUrl(item.cover))}"
+                    alt="${escapeHtml(item.title)}"
+                    loading="lazy"
+                    onerror="this.src='${resolveAppUrl("assets/img/bg-landing.jpg")}'"
+                  />
+                `
                 : ""
             }
 
@@ -146,39 +263,15 @@ function buildDetailMarkup(item, items, options) {
               </div>
             </div>
           </article>
+
+          ${extraMarkup}
         </div>
       </div>
     </div>
   `;
 }
 
-function initStaticDetailPage(config) {
-  const {
-    mountId = "article-feature",
-    items,
-    queryKey,
-    listPath,
-    listLabel,
-    detailLabel,
-    sidebarLabel,
-    showCover,
-  } = config;
-
-  const mount = document.getElementById(mountId);
-  if (!mount || !items.length) return;
-
-  const itemMap = new Map(items.map((item) => [item.id, item]));
-  const initialItemId = getQueryParam(queryKey);
-  const activeItem = itemMap.get(initialItemId) || items[0];
-
-  mount.innerHTML = buildDetailMarkup(activeItem, items, {
-    listPath,
-    listLabel,
-    detailLabel,
-    sidebarLabel,
-    showCover,
-  });
-
+function initDetailFilterToggle(mount) {
   const toggle = mount.querySelector(".tdmu-listing-filter-toggle");
   const menu = mount.querySelector(".tdmu-listing-filter-menu");
   if (!toggle || !menu) return;
@@ -197,6 +290,88 @@ function initStaticDetailPage(config) {
   });
 }
 
+function initNewsRelatedCarousel(mount) {
+  const rail = mount.querySelector("[data-news-rail]");
+  const prevButton = mount.querySelector("[data-news-prev]");
+  const nextButton = mount.querySelector("[data-news-next]");
+  if (!rail || !prevButton || !nextButton) return;
+
+  let currentIndex = 0;
+
+  function getCards() {
+    return Array.from(rail.querySelectorAll(".tdmu-article-related-card"));
+  }
+
+  function getVisibleCount() {
+    if (window.innerWidth <= 767.98) return 1;
+    if (window.innerWidth <= 1199.98) return 2;
+    return 4;
+  }
+
+  function update() {
+    const cards = getCards();
+    if (!cards.length) return;
+
+    const visibleCount = getVisibleCount();
+    const maxIndex = Math.max(0, cards.length - visibleCount);
+    currentIndex = Math.min(currentIndex, maxIndex);
+
+    rail.style.transform = `translateX(-${cards[currentIndex].offsetLeft}px)`;
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex >= maxIndex;
+  }
+
+  prevButton.addEventListener("click", () => {
+    currentIndex = Math.max(0, currentIndex - 1);
+    update();
+  });
+
+  nextButton.addEventListener("click", () => {
+    const maxIndex = Math.max(0, getCards().length - getVisibleCount());
+    currentIndex = Math.min(maxIndex, currentIndex + 1);
+    update();
+  });
+
+  window.addEventListener("resize", update);
+  update();
+}
+
+function initStaticDetailPage(config) {
+  const {
+    mountId = "article-feature",
+    items,
+    queryKey,
+    listPath,
+    listLabel,
+    detailLabel,
+    sidebarLabel,
+    kind,
+    showCover,
+  } = config;
+
+  const mount = document.getElementById(mountId);
+  if (!mount || !items.length) return;
+
+  const itemMap = new Map(items.map((item) => [item.id, item]));
+  const initialItemId = getQueryParam(queryKey);
+  const activeItem = itemMap.get(initialItemId) || items[0];
+
+  mount.innerHTML = buildDetailMarkup(activeItem, items, {
+    listPath,
+    listLabel,
+    detailLabel,
+    sidebarLabel,
+    kind,
+    showCover,
+  });
+
+  initDetailFilterToggle(mount);
+
+  if (kind === "news") {
+    initNewsRelatedCarousel(mount);
+  }
+}
+
 export function initNewsDetail(items) {
   initStaticDetailPage({
     items,
@@ -205,6 +380,7 @@ export function initNewsDetail(items) {
     listLabel: "Tin tức",
     detailLabel: "Chi tiết tin tức",
     sidebarLabel: "Danh mục tin tức",
+    kind: "news",
     showCover: false,
   });
 }
@@ -217,6 +393,7 @@ export function initNoticeDetail(items) {
     listLabel: "Thông báo",
     detailLabel: "Chi tiết thông báo",
     sidebarLabel: "Danh mục thông báo",
+    kind: "notice",
     showCover: false,
   });
 }

@@ -7,11 +7,12 @@ import { initFeaturedSlider } from "../../sections/featured-slider/featured-slid
 import { initMediaStream } from "../../sections/media-stream/media-stream.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
 import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
-import { initNewsDetail, initNoticeDetail } from "../../sections/article-feature/article-feature.js";
+import {
+  initNewsDetail,
+  initNoticeDetail,
+} from "../../sections/article-feature/article-feature.js";
 import { initNewsListing } from "../../sections/news-listing/news-listing.js";
 import { initNoticeListing } from "../../sections/notice-listing/notice-listing.js";
-
-const ARTICLE_FEATURE_FILE = "sections/article-feature/article-feature.html";
 
 export const SECTION_REGISTRY = {
   "featured-slider": {
@@ -54,11 +55,11 @@ export const SECTION_REGISTRY = {
     init: () => initNoticeListing(noticesData),
   },
   "news-detail": {
-    file: ARTICLE_FEATURE_FILE,
+    file: "sections/article-feature/article-feature.html",
     init: () => initNewsDetail(newsListingData),
   },
   "notice-detail": {
-    file: ARTICLE_FEATURE_FILE,
+    file: "sections/article-feature/article-feature.html",
     init: () => initNoticeDetail(noticesData),
   },
 };

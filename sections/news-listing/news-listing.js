@@ -1,4 +1,9 @@
-import { escapeHtml, formatDate, resolveAppUrl, getQueryParam } from "../../js/core/dom.js";
+import {
+  escapeHtml,
+  formatDate,
+  resolveAppUrl,
+  getQueryParam,
+} from "../../js/core/dom.js";
 import { getNewsDetailHref } from "../../js/components/article-navigation.js";
 import { createListingController } from "../../js/components/listing-controller.js";
 
@@ -13,7 +18,16 @@ export function initNewsListing(items) {
   const count = document.getElementById("newsListingCount");
   const pagination = document.getElementById("newsListingPagination");
 
-  if (!filterRoot || !filterMenu || !filterToggle || !filterLabel || !grid || !count || !pagination) return;
+  if (
+    !filterRoot ||
+    !filterMenu ||
+    !filterToggle ||
+    !filterLabel ||
+    !grid ||
+    !count ||
+    !pagination
+  )
+    return;
 
   createListingController({
     items,

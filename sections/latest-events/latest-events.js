@@ -65,7 +65,9 @@ export function initLatestEvents(items) {
     const card = rail.querySelector(".tdmu-event-card");
     if (!card) return 0;
 
-    const gap = parseFloat(getComputedStyle(rail).columnGap || getComputedStyle(rail).gap || "0");
+    const gap = parseFloat(
+      getComputedStyle(rail).columnGap || getComputedStyle(rail).gap || "0",
+    );
     return card.getBoundingClientRect().width + gap;
   };
 
@@ -77,8 +79,14 @@ export function initLatestEvents(items) {
 
   const updateControls = () => {
     const isInteractive = items.length > visibleCount;
-    prevButton?.toggleAttribute("disabled", !isInteractive || currentIndex <= 0);
-    nextButton?.toggleAttribute("disabled", !isInteractive || currentIndex >= maxIndex);
+    prevButton?.toggleAttribute(
+      "disabled",
+      !isInteractive || currentIndex <= 0,
+    );
+    nextButton?.toggleAttribute(
+      "disabled",
+      !isInteractive || currentIndex >= maxIndex,
+    );
   };
 
   const moveToNext = () => {

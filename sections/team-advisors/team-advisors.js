@@ -14,7 +14,8 @@ export function initTeamAdvisors() {
   const nextButton = shell.querySelector(".tdmu-team-nav--next");
   const pagination = shell.querySelector(".tdmu-team-pagination");
 
-  if (!rail || !items.length || !prevButton || !nextButton || !pagination) return;
+  if (!rail || !items.length || !prevButton || !nextButton || !pagination)
+    return;
 
   let visibleCount = getVisibleCount();
   let currentIndex = 0;
@@ -42,7 +43,11 @@ export function initTeamAdvisors() {
 
   const update = () => {
     const itemWidth = items[0].getBoundingClientRect().width;
-    const gap = parseFloat(window.getComputedStyle(rail).columnGap || window.getComputedStyle(rail).gap || "0");
+    const gap = parseFloat(
+      window.getComputedStyle(rail).columnGap ||
+        window.getComputedStyle(rail).gap ||
+        "0",
+    );
     rail.style.transform = `translateX(-${currentIndex * (itemWidth + gap)}px)`;
 
     prevButton.disabled = currentIndex === 0;

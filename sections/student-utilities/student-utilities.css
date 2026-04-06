@@ -39,7 +39,11 @@
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--tdmu-primary-light), var(--tdmu-primary));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary-light),
+    var(--tdmu-primary)
+  );
   color: #fff;
   font-size: 34px;
   transition: all var(--transition-base);
@@ -60,15 +64,27 @@
 }
 
 .tdmu-utility-item--certificate .tdmu-utility-icon {
-  background: linear-gradient(135deg, var(--tdmu-primary), var(--tdmu-primary-700));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary),
+    var(--tdmu-primary-700)
+  );
 }
 
 .tdmu-utility-item--form .tdmu-utility-icon {
-  background: linear-gradient(135deg, var(--tdmu-accent-light), var(--tdmu-primary));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-accent-light),
+    var(--tdmu-primary)
+  );
 }
 
 .tdmu-utility-item--media .tdmu-utility-icon {
-  background: linear-gradient(135deg, var(--tdmu-accent), var(--tdmu-accent-dark));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-accent),
+    var(--tdmu-accent-dark)
+  );
 }
 
 .tdmu-utility-item:hover,

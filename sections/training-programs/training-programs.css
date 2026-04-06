@@ -28,7 +28,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-base), filter var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    filter var(--transition-base);
 }
 
 .tdmu-program-body {
@@ -53,14 +55,22 @@
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--tdmu-primary), var(--tdmu-primary-600));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary),
+    var(--tdmu-primary-600)
+  );
   color: #fff;
   box-shadow: 0 4px 14px rgba(var(--tdmu-primary-rgb), 0.24);
   transition: all var(--transition-base);
 }
 
 .tdmu-program-card--master .tdmu-program-icon-wrap {
-  background: linear-gradient(135deg, var(--tdmu-primary), var(--tdmu-primary-700));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary),
+    var(--tdmu-primary-700)
+  );
 }
 
 .tdmu-program-card--short .tdmu-program-icon-wrap {

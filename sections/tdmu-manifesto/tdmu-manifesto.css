@@ -1,5 +1,11 @@
 .tdmu-section--manifesto-band {
-  background: linear-gradient(180deg, rgba(var(--tdmu-primary-rgb), 0.04), rgba(var(--tdmu-primary-rgb), 0)), var(--tdmu-surface-alt);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--tdmu-primary-rgb), 0.04),
+      rgba(var(--tdmu-primary-rgb), 0)
+    ),
+    var(--tdmu-surface-alt);
 }
 
 .tdmu-panel--manifesto {
@@ -164,7 +170,11 @@
   right: 2rem;
   bottom: 1rem;
   padding: 1.3rem 1.5rem;
-  background: linear-gradient(135deg, var(--tdmu-primary), var(--tdmu-primary-600));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary),
+    var(--tdmu-primary-600)
+  );
   border: 0;
   border-left: 0;
   color: #fff;

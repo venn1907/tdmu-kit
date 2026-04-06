@@ -9,7 +9,8 @@ function initScrollToTop() {
   button.className = "tdmu-scroll-top";
   button.id = "scrollTopButton";
   button.title = "Lên đầu trang";
-  button.innerHTML = '<span class="material-symbols-rounded">arrow_upward</span>';
+  button.innerHTML =
+    '<span class="material-symbols-rounded">arrow_upward</span>';
 
   const updateVisibility = () => {
     const visible = window.scrollY > 280;
@@ -42,4 +43,3 @@ async function initCurrentPage() {
   initFooterLayout();
   await initCurrentPage();
 })();
-

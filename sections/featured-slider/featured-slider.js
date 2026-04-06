@@ -4,7 +4,9 @@ export function initFeaturedSlider(slidesData) {
   const mount = document.getElementById("featured-slider");
   if (!mount) return;
 
-  const slides = Array.isArray(slidesData) ? slidesData.filter((item) => item?.image) : [];
+  const slides = Array.isArray(slidesData)
+    ? slidesData.filter((item) => item?.image)
+    : [];
 
   if (!slides.length) return;
 

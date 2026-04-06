@@ -1,7 +1,8 @@
 export const newsListingData = [
   {
     id: "nl-1",
-    title: "Sinh viên Viện Công nghệ số tham dự kỳ thi Olympic Toán học sinh viên toàn quốc năm 2026",
+    title:
+      "Sinh viên Viện Công nghệ số tham dự kỳ thi Olympic Toán học sinh viên toàn quốc năm 2026",
     category: "Tin tổng hợp",
     date: "2026-04-02T09:35:00",
     views: 286,
@@ -51,7 +52,8 @@ export const newsListingData = [
   },
   {
     id: "nl-2",
-    title: "TDMU và Viện Công nghệ số thúc đẩy hợp tác đào tạo, nghiên cứu với các đối tác chiến lược",
+    title:
+      "TDMU và Viện Công nghệ số thúc đẩy hợp tác đào tạo, nghiên cứu với các đối tác chiến lược",
     category: "Hợp tác",
     date: "2026-03-24T06:15:00",
     views: 214,
@@ -97,7 +99,8 @@ export const newsListingData = [
   },
   {
     id: "nl-3",
-    title: "Dự án học thuật của sinh viên Viện Công nghệ số lọt vào vòng chung kết cuộc thi khởi nghiệp quốc gia",
+    title:
+      "Dự án học thuật của sinh viên Viện Công nghệ số lọt vào vòng chung kết cuộc thi khởi nghiệp quốc gia",
     category: "Sinh viên",
     date: "2026-03-21T10:00:00",
     views: 198,
@@ -143,7 +146,8 @@ export const newsListingData = [
   },
   {
     id: "nl-4",
-    title: "Viện Công nghệ số tổ chức hội nghị sơ kết học kỳ I và seminar về ứng dụng AI trong giảng dạy",
+    title:
+      "Viện Công nghệ số tổ chức hội nghị sơ kết học kỳ I và seminar về ứng dụng AI trong giảng dạy",
     category: "Tin đào tạo",
     date: "2026-03-18T08:45:00",
     views: 173,
@@ -189,7 +193,8 @@ export const newsListingData = [
   },
   {
     id: "nl-5",
-    title: "Ngày hội định hướng chuyên ngành giúp tân sinh viên hiểu rõ lộ trình học tập tại Viện Công nghệ số",
+    title:
+      "Ngày hội định hướng chuyên ngành giúp tân sinh viên hiểu rõ lộ trình học tập tại Viện Công nghệ số",
     category: "Tin đào tạo",
     date: "2026-03-12T14:20:00",
     views: 151,
@@ -235,7 +240,8 @@ export const newsListingData = [
   },
   {
     id: "nl-6",
-    title: "Liên chi đoàn Viện Công nghệ số phát động chuỗi hoạt động học thuật và tình nguyện học kỳ mới",
+    title:
+      "Liên chi đoàn Viện Công nghệ số phát động chuỗi hoạt động học thuật và tình nguyện học kỳ mới",
     category: "Công đoàn - Đoàn TN",
     date: "2026-03-08T16:10:00",
     views: 132,
@@ -281,7 +287,8 @@ export const newsListingData = [
   },
   {
     id: "nl-7",
-    title: "Chuyên đề chia sẻ kinh nghiệm xây dựng hồ sơ nghề nghiệp số cho sinh viên năm cuối",
+    title:
+      "Chuyên đề chia sẻ kinh nghiệm xây dựng hồ sơ nghề nghiệp số cho sinh viên năm cuối",
     category: "Sinh viên",
     date: "2026-03-05T09:10:00",
     views: 119,

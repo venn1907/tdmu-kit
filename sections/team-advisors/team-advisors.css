@@ -51,14 +51,20 @@
   width: fit-content;
   padding: 0 1.4rem;
   border: 1px solid var(--tdmu-primary);
-  background: linear-gradient(135deg, var(--tdmu-primary), var(--tdmu-primary-600));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary),
+    var(--tdmu-primary-600)
+  );
   color: #fff;
   font-size: 0.94rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: var(--tdmu-radius-sm);
   box-shadow: 0 4px 14px rgba(var(--tdmu-primary-rgb), 0.18);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .tdmu-team-cta:hover,
@@ -149,7 +155,11 @@
   overflow: hidden;
   border: 1px solid rgba(var(--tdmu-primary-rgb), 0.12);
   border-radius: var(--tdmu-radius);
-  background: linear-gradient(180deg, rgba(var(--tdmu-primary-rgb), 0.08), rgba(var(--tdmu-primary-rgb), 0.02));
+  background: linear-gradient(
+    180deg,
+    rgba(var(--tdmu-primary-rgb), 0.08),
+    rgba(var(--tdmu-primary-rgb), 0.02)
+  );
 }
 
 .tdmu-team-portrait img {
@@ -158,7 +168,9 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform var(--transition-base), filter var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    filter var(--transition-base);
 }
 
 .tdmu-team-nameplate {
@@ -168,7 +180,11 @@
   margin-right: 0.9rem;
   padding: 0.85rem 1rem 0.8rem;
   border: 1px solid rgba(var(--tdmu-accent-rgb), 0.45);
-  background: linear-gradient(135deg, var(--tdmu-primary), var(--tdmu-primary-600));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary),
+    var(--tdmu-primary-600)
+  );
   box-shadow: 0 6px 16px rgba(var(--tdmu-primary-rgb), 0.18);
   z-index: 1;
   text-align: center;
@@ -228,7 +244,10 @@
   border-radius: 999px;
   background: transparent;
   cursor: pointer;
-  transition: width 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .tdmu-team-dot:hover,

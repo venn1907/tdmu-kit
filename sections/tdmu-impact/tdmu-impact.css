@@ -1,5 +1,9 @@
 .tdmu-section--impact-bg {
-  background: linear-gradient(135deg, var(--tdmu-primary-600), var(--tdmu-primary));
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary-600),
+    var(--tdmu-primary)
+  );
   position: relative;
   overflow: hidden;
 }
@@ -12,8 +16,20 @@
   width: 200px;
   height: 100%;
   background:
-    linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.06) 40%, rgba(255, 255, 255, 0.06) 42%, transparent 42%),
-    linear-gradient(-45deg, transparent 40%, rgba(255, 255, 255, 0.06) 40%, rgba(255, 255, 255, 0.06) 42%, transparent 42%);
+    linear-gradient(
+      45deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.06) 40%,
+      rgba(255, 255, 255, 0.06) 42%,
+      transparent 42%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.06) 40%,
+      rgba(255, 255, 255, 0.06) 42%,
+      transparent 42%
+    );
   background-size: 20px 20px;
   opacity: 0.5;
   pointer-events: none;
@@ -88,7 +104,11 @@
   inset: 0 auto auto 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--tdmu-accent), rgba(var(--tdmu-accent-rgb), 0.45));
+  background: linear-gradient(
+    90deg,
+    var(--tdmu-accent),
+    rgba(var(--tdmu-accent-rgb), 0.45)
+  );
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-base);

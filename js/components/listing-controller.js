@@ -18,7 +18,9 @@ export function createListingController(config) {
   } = config;
 
   const categories = [allLabel, ...new Set(items.map(getCategory))];
-  let activeCategory = categories.includes(initialCategory) ? initialCategory : allLabel;
+  let activeCategory = categories.includes(initialCategory)
+    ? initialCategory
+    : allLabel;
   let currentPage = 1;
 
   function renderButtons(className) {
@@ -71,11 +73,15 @@ export function createListingController(config) {
       <nav aria-label="${escapeHtml(paginationLabel)}">
         <ul class="pagination pagination-dark justify-content-center mb-0">
           <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
-            <a class="page-link" href="#" data-prev="1">&lt;</a>
+            <a class="page-link" href="#" data-prev="1" aria-label="Trang trước">
+              <span class="material-symbols-rounded">chevron_left</span>
+            </a>
           </li>
           ${pages}
           <li class="page-item ${currentPage === totalPages ? "disabled" : ""}">
-            <a class="page-link" href="#" data-next="1">&gt;</a>
+            <a class="page-link" href="#" data-next="1" aria-label="Trang sau">
+              <span class="material-symbols-rounded">chevron_right</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -87,7 +93,8 @@ export function createListingController(config) {
 
         if (link.dataset.page) currentPage = Number(link.dataset.page);
         if (link.dataset.prev) currentPage = Math.max(1, currentPage - 1);
-        if (link.dataset.next) currentPage = Math.min(totalPages, currentPage + 1);
+        if (link.dataset.next)
+          currentPage = Math.min(totalPages, currentPage + 1);
 
         render();
       });

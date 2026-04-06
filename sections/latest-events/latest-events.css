@@ -62,7 +62,11 @@
 .tdmu-event-card {
   display: grid;
   grid-template-rows: auto 1fr;
-  flex: 0 0 calc((100% - (var(--tdmu-events-visible) - 1) * 1rem) / var(--tdmu-events-visible));
+  flex: 0 0
+    calc(
+      (100% - (var(--tdmu-events-visible) - 1) * 1rem) /
+        var(--tdmu-events-visible)
+    );
   border: 1px solid var(--tdmu-border-light);
   background: var(--tdmu-surface);
   border-radius: var(--tdmu-radius);
@@ -99,7 +103,11 @@
   gap: 0.1rem;
   min-width: 56px;
   padding: 0.45rem 0.5rem;
-  background: linear-gradient(180deg, var(--tdmu-primary), var(--tdmu-primary-700));
+  background: linear-gradient(
+    180deg,
+    var(--tdmu-primary),
+    var(--tdmu-primary-700)
+  );
   color: #fff;
 }
 

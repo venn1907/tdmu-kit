@@ -13,7 +13,16 @@ export function initNoticeListing(items) {
   const count = document.getElementById("noticeListingCount");
   const pagination = document.getElementById("noticeListingPagination");
 
-  if (!filterRoot || !filterMenu || !filterToggle || !filterLabel || !list || !count || !pagination) return;
+  if (
+    !filterRoot ||
+    !filterMenu ||
+    !filterToggle ||
+    !filterLabel ||
+    !list ||
+    !count ||
+    !pagination
+  )
+    return;
 
   createListingController({
     items,
