@@ -1,6 +1,8 @@
 import { heroSlidesData } from "../data/hero-slides.js";
 import { newsData } from "../data/news.js";
+import { newsListingData } from "../data/news-listing.js";
 import { eventsData } from "../data/events.js";
+import { noticesData } from "../data/notices.js";
 import { emitArticleSelection } from "../components/article-navigation.js";
 import { getQueryParam } from "./dom.js";
 import { injectFragment } from "./include.js";
@@ -8,9 +10,10 @@ import { initFeaturedSlider } from "../../sections/featured-slider/featured-slid
 import { initMediaStream } from "../../sections/media-stream/media-stream.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
 import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
-import { initNewsDiscovery } from "../../sections/news-discovery/news-discovery.js";
 import { initArticleFeature } from "../../sections/article-feature/article-feature.js";
 import { initRelatedArticles } from "../../sections/related-articles/related-articles.js";
+import { initNewsListing } from "../../sections/news-listing/news-listing.js";
+import { initNoticeListing } from "../../sections/notice-listing/notice-listing.js";
 
 export const SECTION_REGISTRY = {
   "featured-slider": {
@@ -44,10 +47,6 @@ export const SECTION_REGISTRY = {
   "student-utilities": {
     file: "sections/student-utilities/student-utilities.html",
   },
-  "news-discovery": {
-    file: "sections/news-discovery/news-discovery.html",
-    init: () => initNewsDiscovery(newsData),
-  },
   "article-feature": {
     file: "sections/article-feature/article-feature.html",
     init: () => initArticleFeature(newsData),
@@ -55,6 +54,14 @@ export const SECTION_REGISTRY = {
   "related-articles": {
     file: "sections/related-articles/related-articles.html",
     init: () => initRelatedArticles(newsData),
+  },
+  "news-listing": {
+    file: "sections/news-listing/news-listing.html",
+    init: () => initNewsListing(newsListingData),
+  },
+  "notice-listing": {
+    file: "sections/notice-listing/notice-listing.html",
+    init: () => initNoticeListing(noticesData),
   },
 };
 

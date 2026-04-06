@@ -1,5 +1,4 @@
 import { escapeHtml, formatDate, resolveAppUrl } from "../../js/core/dom.js";
-import { getArticleTemplateHref, bindArticleSelectionLinks } from "../../js/components/article-navigation.js";
 
 const NOTICE_TAB_ITEMS = [
   { key: "all", label: "Tổng hợp" },
@@ -7,6 +6,9 @@ const NOTICE_TAB_ITEMS = [
   { key: "students", label: "Sinh viên" },
   { key: "jobs", label: "Tuyển dụng" },
 ];
+
+const NEWS_LISTING_URL = resolveAppUrl("pages/news/index.html");
+const NOTICE_LISTING_URL = resolveAppUrl("pages/notices/index.html");
 
 function normalizeText(value) {
   return String(value || "")
@@ -126,7 +128,7 @@ function renderNews(newsData) {
       featured
         ? `
       <article class="tdmu-media-news-feature">
-        <a class="tdmu-media-news-feature-media" href="${getArticleTemplateHref(featured.id)}" data-article-id="${escapeHtml(featured.id)}">
+        <a class="tdmu-media-news-feature-media" href="${NEWS_LISTING_URL}">
           <img
             class="tdmu-media-news-feature-image"
             src="${escapeHtml(resolveAppUrl(featured.cover))}"
@@ -138,7 +140,7 @@ function renderNews(newsData) {
         <div class="tdmu-media-news-feature-body">
           <p class="tdmu-media-news-meta">${escapeHtml(featured.category)} - ${escapeHtml(formatDate(featured.date))}</p>
           <h3 class="tdmu-media-news-feature-title">
-            <a href="${getArticleTemplateHref(featured.id)}" data-article-id="${escapeHtml(featured.id)}">${escapeHtml(featured.title)}</a>
+            <a href="${NEWS_LISTING_URL}">${escapeHtml(featured.title)}</a>
           </h3>
           <p class="tdmu-media-news-feature-excerpt">${escapeHtml(featured.excerpt)}</p>
         </div>
@@ -167,7 +169,7 @@ function renderNews(newsData) {
               .map(
                 (item) => `
               <article class="tdmu-media-news-item">
-                <a class="tdmu-media-news-item-media" href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}">
+                <a class="tdmu-media-news-item-media" href="${NEWS_LISTING_URL}">
                   <img
                     class="tdmu-media-news-item-image"
                     src="${escapeHtml(resolveAppUrl(item.cover))}"
@@ -179,7 +181,7 @@ function renderNews(newsData) {
                 <div class="tdmu-media-news-item-body">
                   <p class="tdmu-media-news-meta">${escapeHtml(formatDate(item.date))}</p>
                   <h3 class="tdmu-media-news-item-title">
-                    <a href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}">${escapeHtml(item.title)}</a>
+                    <a href="${NEWS_LISTING_URL}">${escapeHtml(item.title)}</a>
                   </h3>
                   <p class="tdmu-media-news-item-excerpt">${escapeHtml(item.excerpt)}</p>
                 </div>
@@ -194,8 +196,6 @@ function renderNews(newsData) {
         : ""
     }
   `;
-
-  bindArticleSelectionLinks(mount);
 
   if (rest.length) {
     setupCarouselNav(mount.querySelector(".tdmu-media-news-rail"));
@@ -216,13 +216,12 @@ function renderNotices(items) {
           <span class="tdmu-media-notice-item-time">${escapeHtml(formatDate(item.date))}</span>
           <span class="tdmu-media-notice-item-category">${escapeHtml(item.category || "Thông báo")}</span>
         </div>
-        <a class="tdmu-media-notice-item-title" href="${getArticleTemplateHref(item.id)}" data-article-id="${escapeHtml(item.id)}">${escapeHtml(item.title)}</a>
+        <a class="tdmu-media-notice-item-title" href="${NOTICE_LISTING_URL}">${escapeHtml(item.title)}</a>
       </article>
     `,
     )
     .join("");
 
-  bindArticleSelectionLinks(mount);
   requestAnimationFrame(syncNoticePanelHeight);
 }
 

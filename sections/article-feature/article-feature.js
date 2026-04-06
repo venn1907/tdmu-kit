@@ -14,7 +14,7 @@ export function initArticleFeature(newsData) {
           <nav class="tdmu-article-feature-breadcrumb mb-3">
             <ol class="breadcrumb mb-0">
               <li class="breadcrumb-item"><a href="${resolveAppUrl("index.html")}">Trang chủ</a></li>
-              <li class="breadcrumb-item"><a href="#news-discovery-section">Tin tức</a></li>
+              <li class="breadcrumb-item"><a href="${resolveAppUrl("pages/news/index.html")}">Tin tức</a></li>
               <li class="breadcrumb-item active">Chi tiết</li>
             </ol>
           </nav>
@@ -58,8 +58,7 @@ export function initArticleFeature(newsData) {
             </blockquote>
 
             <p class="mb-0">
-              Khi triển khai thực tế, chỉ cần thay đoạn nội dung này bằng bài viết chính thức, giữ nguyên cấu trúc heading,
-              đoạn văn và media nếu cần.
+              Khi triển khai thực tế, chỉ cần thay đoạn nội dung này bằng bài viết chính thức, giữ nguyên cấu trúc heading, đoạn văn và media nếu cần.
             </p>
           </div>
         </div>

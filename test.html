@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Test Section - Viện Công nghệ số</title>
+    <title>Trang chủ - Viện Công nghệ số</title>
 
     <link rel="icon" type="image/png" href="assets/img/icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,45 +20,20 @@
     <link rel="stylesheet" href="assets/css/material-kit.min.css?v=3.1.0" />
     <link rel="stylesheet" href="css/core.css" />
     <link rel="stylesheet" href="css/header-footer.css" />
-
-    <!--
-      Import CSS của section cần test tại đây.
-      Ví dụ:
-      <link rel="stylesheet" href="sections/featured-slider/featured-slider.css" />
-    -->
-    <link rel="stylesheet" href="sections/featured-slider/featured-slider.css" />
+    <link rel="stylesheet" href="sections/tdmu-manifesto/tdmu-manifesto.css" />
   </head>
 
-  <body data-page="test">
+  <body data-page="home">
     <header id="site-header"></header>
 
-    <main id="main-content" class="tdmu-section-test-main">
-      <!-- Chỉ giữ đúng 1 slot section để test -->
-      <div id="section-test-slot" data-section="featured-slider"></div>
+    <main id="main-content" class="bg-gray-100 tdmu-landing-main">
+      <div id="tdmu-manifesto-slot" data-section="tdmu-manifesto"></div>
     </main>
 
     <footer id="site-footer"></footer>
 
     <script src="assets/js/core/bootstrap.bundle.min.js"></script>
     <script src="assets/js/material-kit.min.js"></script>
-    <script type="module">
-      import { injectFragment } from "./js/core/include.js";
-      import { initSectionsFromDom } from "./js/core/section-registry.js";
-      import { initHeaderLayout } from "./layouts/header/header.js";
-      import { initFooterLayout } from "./layouts/footer/footer.js";
-
-      /*
-        Đổi data-section của #section-test-slot để test section khác.
-        Ví dụ:
-        <div id="section-test-slot" data-section="media-stream"></div>
-      */
-
-      await injectFragment("#site-header", "layouts/header/header.html");
-      await injectFragment("#site-footer", "layouts/footer/footer.html");
-      await initSectionsFromDom();
-
-      initHeaderLayout();
-      initFooterLayout();
-    </script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
