@@ -1,4 +1,5 @@
 import { escapeHtml, formatDate, resolveAppUrl } from "../../js/core/dom.js";
+import { getNewsDetailHref, getNoticeDetailHref } from "../../js/components/article-navigation.js";
 
 const NOTICE_TAB_ITEMS = [
   { key: "all", label: "Tổng hợp" },
@@ -6,9 +7,6 @@ const NOTICE_TAB_ITEMS = [
   { key: "students", label: "Sinh viên" },
   { key: "jobs", label: "Tuyển dụng" },
 ];
-
-const NEWS_LISTING_URL = resolveAppUrl("pages/news/index.html");
-const NOTICE_LISTING_URL = resolveAppUrl("pages/notices/index.html");
 
 function normalizeText(value) {
   return String(value || "")
@@ -26,10 +24,10 @@ function detectNoticeBucket(item) {
   return null;
 }
 
-function buildNoticeIndex(newsData) {
+function buildNoticeIndex(noticeItems) {
   const buckets = { all: [], admissions: [], students: [], jobs: [] };
 
-  [...newsData]
+  [...noticeItems]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .forEach((item) => {
       const bucket = detectNoticeBucket(item);
@@ -116,11 +114,11 @@ function setupCarouselNav(railElement) {
   updateTrack();
 }
 
-function renderNews(newsData) {
+function renderNews(newsItems) {
   const mount = document.getElementById("media-news-list");
   if (!mount) return;
 
-  const items = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const items = [...newsItems].sort((a, b) => new Date(b.date) - new Date(a.date));
   const [featured, ...rest] = items;
 
   mount.innerHTML = `
@@ -128,7 +126,7 @@ function renderNews(newsData) {
       featured
         ? `
       <article class="tdmu-media-news-feature">
-        <a class="tdmu-media-news-feature-media" href="${NEWS_LISTING_URL}">
+        <a class="tdmu-media-news-feature-media" href="${getNewsDetailHref(featured.id)}">
           <img
             class="tdmu-media-news-feature-image"
             src="${escapeHtml(resolveAppUrl(featured.cover))}"
@@ -140,7 +138,7 @@ function renderNews(newsData) {
         <div class="tdmu-media-news-feature-body">
           <p class="tdmu-media-news-meta">${escapeHtml(featured.category)} - ${escapeHtml(formatDate(featured.date))}</p>
           <h3 class="tdmu-media-news-feature-title">
-            <a href="${NEWS_LISTING_URL}">${escapeHtml(featured.title)}</a>
+            <a href="${getNewsDetailHref(featured.id)}">${escapeHtml(featured.title)}</a>
           </h3>
           <p class="tdmu-media-news-feature-excerpt">${escapeHtml(featured.excerpt)}</p>
         </div>
@@ -169,7 +167,7 @@ function renderNews(newsData) {
               .map(
                 (item) => `
               <article class="tdmu-media-news-item">
-                <a class="tdmu-media-news-item-media" href="${NEWS_LISTING_URL}">
+                <a class="tdmu-media-news-item-media" href="${getNewsDetailHref(item.id)}">
                   <img
                     class="tdmu-media-news-item-image"
                     src="${escapeHtml(resolveAppUrl(item.cover))}"
@@ -181,7 +179,7 @@ function renderNews(newsData) {
                 <div class="tdmu-media-news-item-body">
                   <p class="tdmu-media-news-meta">${escapeHtml(formatDate(item.date))}</p>
                   <h3 class="tdmu-media-news-item-title">
-                    <a href="${NEWS_LISTING_URL}">${escapeHtml(item.title)}</a>
+                    <a href="${getNewsDetailHref(item.id)}">${escapeHtml(item.title)}</a>
                   </h3>
                   <p class="tdmu-media-news-item-excerpt">${escapeHtml(item.excerpt)}</p>
                 </div>
@@ -216,7 +214,7 @@ function renderNotices(items) {
           <span class="tdmu-media-notice-item-time">${escapeHtml(formatDate(item.date))}</span>
           <span class="tdmu-media-notice-item-category">${escapeHtml(item.category || "Thông báo")}</span>
         </div>
-        <a class="tdmu-media-notice-item-title" href="${NOTICE_LISTING_URL}">${escapeHtml(item.title)}</a>
+        <a class="tdmu-media-notice-item-title" href="${getNoticeDetailHref(item.id)}">${escapeHtml(item.title)}</a>
       </article>
     `,
     )
@@ -225,16 +223,16 @@ function renderNotices(items) {
   requestAnimationFrame(syncNoticePanelHeight);
 }
 
-export function initMediaStream(newsData) {
+export function initMediaStream(newsItems, noticeItems) {
   const tabs = document.getElementById("media-notice-tabs");
   const filterButton = document.getElementById("media-notice-filter-button");
   const filterLabel = document.getElementById("media-notice-filter-label");
   const filterMenu = document.getElementById("media-notice-filter-menu");
   if (!tabs || !filterButton || !filterLabel || !filterMenu) return;
 
-  renderNews(newsData);
+  renderNews(newsItems);
 
-  const noticeIndex = buildNoticeIndex(newsData);
+  const noticeIndex = buildNoticeIndex(noticeItems);
 
   tabs.innerHTML = NOTICE_TAB_ITEMS.map(
     (tab, indexPosition) => `

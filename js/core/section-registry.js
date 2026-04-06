@@ -1,19 +1,17 @@
 import { heroSlidesData } from "../data/hero-slides.js";
-import { newsData } from "../data/news.js";
 import { newsListingData } from "../data/news-listing.js";
 import { eventsData } from "../data/events.js";
 import { noticesData } from "../data/notices.js";
-import { emitArticleSelection } from "../components/article-navigation.js";
-import { getQueryParam } from "./dom.js";
 import { injectFragment } from "./include.js";
 import { initFeaturedSlider } from "../../sections/featured-slider/featured-slider.js";
 import { initMediaStream } from "../../sections/media-stream/media-stream.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
 import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
-import { initArticleFeature } from "../../sections/article-feature/article-feature.js";
-import { initRelatedArticles } from "../../sections/related-articles/related-articles.js";
+import { initNewsDetail, initNoticeDetail } from "../../sections/article-feature/article-feature.js";
 import { initNewsListing } from "../../sections/news-listing/news-listing.js";
 import { initNoticeListing } from "../../sections/notice-listing/notice-listing.js";
+
+const ARTICLE_FEATURE_FILE = "sections/article-feature/article-feature.html";
 
 export const SECTION_REGISTRY = {
   "featured-slider": {
@@ -25,7 +23,7 @@ export const SECTION_REGISTRY = {
   },
   "media-stream": {
     file: "sections/media-stream/media-stream.html",
-    init: () => initMediaStream(newsData),
+    init: () => initMediaStream(newsListingData, noticesData),
   },
   "latest-events": {
     file: "sections/latest-events/latest-events.html",
@@ -47,14 +45,6 @@ export const SECTION_REGISTRY = {
   "student-utilities": {
     file: "sections/student-utilities/student-utilities.html",
   },
-  "article-feature": {
-    file: "sections/article-feature/article-feature.html",
-    init: () => initArticleFeature(newsData),
-  },
-  "related-articles": {
-    file: "sections/related-articles/related-articles.html",
-    init: () => initRelatedArticles(newsData),
-  },
   "news-listing": {
     file: "sections/news-listing/news-listing.html",
     init: () => initNewsListing(newsListingData),
@@ -62,6 +52,14 @@ export const SECTION_REGISTRY = {
   "notice-listing": {
     file: "sections/notice-listing/notice-listing.html",
     init: () => initNoticeListing(noticesData),
+  },
+  "news-detail": {
+    file: ARTICLE_FEATURE_FILE,
+    init: () => initNewsDetail(newsListingData),
+  },
+  "notice-detail": {
+    file: ARTICLE_FEATURE_FILE,
+    init: () => initNoticeDetail(noticesData),
   },
 };
 
@@ -80,11 +78,4 @@ export async function initSectionsFromDom(root = document) {
   );
 }
 
-export function runPageHook(page) {
-  if (page !== "section-kit") return;
-
-  const initialArticleId = getQueryParam("article");
-  if (initialArticleId) {
-    emitArticleSelection(initialArticleId);
-  }
-}
+export function runPageHook() {}
