@@ -1,5 +1,5 @@
 import { injectFragment } from "./core/include.js";
-import { initSectionsFromDom, runPageHook } from "./core/section-registry.js";
+import { initSectionsFromDom } from "./core/section-registry.js";
 import { initHeaderLayout } from "../layouts/header/header.js";
 import { initFooterLayout } from "../layouts/footer/footer.js";
 
@@ -29,9 +29,7 @@ function initScrollToTop() {
 }
 
 async function initCurrentPage() {
-  const page = document.body.dataset.page;
   await initSectionsFromDom();
-  runPageHook(page);
 }
 
 (async function boot() {

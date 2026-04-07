@@ -198,7 +198,10 @@ function renderNews(newsItems) {
                   />
                 </a>
                 <div class="tdmu-media-news-item-body">
-                  <p class="tdmu-media-news-meta">${escapeHtml(formatDate(item.date))}</p>
+                  <p class="tdmu-media-news-meta">
+                    <span class="tdmu-media-news-item-category">${escapeHtml(item.category)}</span>
+                    <span>${escapeHtml(formatDate(item.date))}</span>
+                  </p>
                   <h3 class="tdmu-media-news-item-title">
                     <a href="${getNewsDetailHref(item.id)}">${escapeHtml(item.title)}</a>
                   </h3>

@@ -78,5 +78,3 @@ export async function initSectionsFromDom(root = document) {
     }),
   );
 }
-
-export function runPageHook() {}
