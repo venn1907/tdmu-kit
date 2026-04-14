@@ -17,6 +17,8 @@ export function initHeaderLayout() {
     drawerOpen: false,
     hasHero: Boolean(heroRoot),
     desktopFlyout: ensureDesktopFlyoutLayer(header),
+    lastScrollY: window.scrollY,
+    utilityVisible: true,
   };
 
   setActiveNav(header);
@@ -281,16 +283,30 @@ function bindDocumentClose(header, state) {
 
 function bindViewportState(header, shell, state) {
   const apply = () => {
+    const currentScrollY = window.scrollY;
     const shellHeight = Math.ceil(shell.getBoundingClientRect().height);
     const headerHeight = Math.ceil(header.getBoundingClientRect().height);
     const stickyThreshold = state.hasHero
       ? Math.max(28, shellHeight * 0.3)
       : 10;
-    const isSticky = window.scrollY > stickyThreshold;
+    const isSticky = currentScrollY > stickyThreshold;
     const isOverHero = state.hasHero && !isSticky;
+    const scrollDelta = currentScrollY - state.lastScrollY;
+    const isAtTop = currentScrollY <= stickyThreshold;
+    const isScrollingUp = scrollDelta < -4;
+    const isScrollingDown = scrollDelta > 4;
+
+    if (isAtTop || !isSticky) {
+      state.utilityVisible = true;
+    } else if (isScrollingUp) {
+      state.utilityVisible = true;
+    } else if (isScrollingDown) {
+      state.utilityVisible = false;
+    }
 
     header.classList.toggle("is-sticky", isSticky);
     header.classList.toggle("is-over-hero", isOverHero);
+    header.classList.toggle("is-utility-visible", state.utilityVisible);
     document.body.style.setProperty(
       "--header-total-height",
       `${headerHeight}px`,
@@ -299,6 +315,8 @@ function bindViewportState(header, shell, state) {
       "--header-offset",
       state.hasHero ? "0px" : `${shellHeight + 14}px`,
     );
+
+    state.lastScrollY = currentScrollY;
   };
 
   window.addEventListener("scroll", apply, { passive: true });

@@ -583,7 +583,7 @@
   background: rgba(255, 255, 255, 0.97);
 }
 
-.tdmu-system-header.is-sticky .tdmu-header-utility {
+.tdmu-system-header.is-sticky:not(.is-utility-visible) .tdmu-header-utility {
   max-height: 0;
   border-bottom-width: 0;
   border-bottom-color: transparent;
