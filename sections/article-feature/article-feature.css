@@ -2,6 +2,13 @@
   padding-top: 3rem;
 }
 
+.tdmu-article-detail-shell .tdmu-article-detail-sidebar {
+  position: sticky;
+  top: calc(var(--header-total-height, 120px) + 1rem);
+  max-height: calc(100vh - var(--header-total-height, 120px) - 1.5rem);
+  overflow-y: auto;
+}
+
 .tdmu-article-feature-panel {
   border: 1px solid var(--tdmu-border);
   background: var(--tdmu-surface);
@@ -294,6 +301,13 @@
 }
 
 @media (max-width: 767.98px) {
+  .tdmu-article-detail-shell .tdmu-article-detail-sidebar {
+    position: static;
+    top: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+
   .tdmu-article-related-head {
     display: grid;
   }
