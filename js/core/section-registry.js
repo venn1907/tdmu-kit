@@ -7,6 +7,8 @@ import { initFeaturedSlider } from "../../sections/featured-slider/featured-slid
 import { initMediaStream } from "../../sections/media-stream/media-stream.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
 import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
+import { initUnitProfile } from "../../sections/unit-profile/unit-profile.js";
+import { initFaqSection } from "../../sections/faq/faq.js";
 import {
   initNewsDetail,
   initNoticeDetail,
@@ -21,6 +23,10 @@ export const SECTION_REGISTRY = {
   },
   "tdmu-manifesto": {
     file: "sections/tdmu-manifesto/tdmu-manifesto.html",
+  },
+  "unit-profile": {
+    file: "sections/unit-profile/unit-profile.html",
+    init: () => initUnitProfile(),
   },
   "media-stream": {
     file: "sections/media-stream/media-stream.html",
@@ -45,6 +51,10 @@ export const SECTION_REGISTRY = {
   },
   "student-utilities": {
     file: "sections/student-utilities/student-utilities.html",
+  },
+  faq: {
+    file: "sections/faq/faq.html",
+    init: () => initFaqSection(),
   },
   "news-listing": {
     file: "sections/news-listing/news-listing.html",
