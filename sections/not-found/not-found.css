@@ -1,0 +1,125 @@
+.tdmu-not-found-section {
+  position: relative;
+  padding: clamp(1.5rem, 2.6vw, 2.5rem) 0;
+}
+
+.tdmu-not-found-shell {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  padding: clamp(1.2rem, 2.4vw, 2rem) clamp(1rem, 2.4vw, 1.6rem);
+  background:
+    radial-gradient(
+      circle at 50% 28%,
+      rgba(var(--tdmu-accent-rgb), 0.14),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 78%,
+      rgba(var(--tdmu-primary-rgb), 0.08),
+      transparent 34%
+    );
+  overflow: hidden;
+}
+
+.tdmu-not-found-copy,
+.tdmu-not-found-visual {
+  position: relative;
+  z-index: 1;
+}
+
+.tdmu-not-found-copy {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.tdmu-not-found-kicker {
+  margin: 0;
+  color: var(--tdmu-text-secondary);
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.tdmu-not-found-title {
+  margin: 0;
+  color: var(--tdmu-primary);
+  font-size: clamp(3.8rem, 8.5vw, 5.8rem);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.tdmu-not-found-visual {
+  position: relative;
+  width: min(100%, 560px);
+  min-height: clamp(200px, 25vw, 320px);
+  display: grid;
+  place-items: center;
+}
+
+.tdmu-not-found-seed-art {
+  position: relative;
+  width: min(100%, 500px);
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 0.98;
+  filter:
+    saturate(1.06)
+    contrast(1.03)
+    drop-shadow(0 22px 42px rgba(var(--tdmu-accent-rgb), 0.2));
+}
+
+.tdmu-not-found-glow {
+  position: absolute;
+  width: clamp(120px, 16vw, 190px);
+  height: clamp(120px, 16vw, 190px);
+  border-radius: 50%;
+  filter: blur(34px);
+  opacity: 0.52;
+}
+
+.tdmu-not-found-glow--top {
+  left: 18%;
+  top: 6%;
+  background: rgba(var(--tdmu-accent-rgb), 0.22);
+}
+
+.tdmu-not-found-glow--bottom {
+  right: 14%;
+  bottom: 10%;
+  background: rgba(var(--tdmu-primary-rgb), 0.18);
+}
+
+@media (max-width: 1199.98px) {
+  .tdmu-not-found-visual {
+    width: min(100%, 500px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tdmu-not-found-section {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .tdmu-not-found-shell {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .tdmu-not-found-visual {
+    min-height: 180px;
+  }
+
+  .tdmu-not-found-seed-art {
+    width: min(100%, 360px);
+  }
+
+  .tdmu-not-found-kicker {
+    font-size: 0.94rem;
+  }
+}

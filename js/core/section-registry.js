@@ -56,6 +56,9 @@ export const SECTION_REGISTRY = {
     file: "sections/faq/faq.html",
     init: () => initFaqSection(),
   },
+  "not-found": {
+    file: "sections/not-found/not-found.html",
+  },
   "news-listing": {
     file: "sections/news-listing/news-listing.html",
     init: () => initNewsListing(newsListingData),

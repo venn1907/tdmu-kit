@@ -618,10 +618,11 @@
 
 .tdmu-footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  align-items: start;
 }
 
 .tdmu-footer-logo {
@@ -637,7 +638,14 @@
   line-height: 1.7;
 }
 
-.tdmu-footer-column h3 {
+.tdmu-footer-connect {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  justify-self: start;
+}
+
+.tdmu-footer-connect h3 {
   margin: 0 0 1.2rem;
   color: #fff;
   font-size: 0.85rem;
@@ -646,20 +654,41 @@
   text-transform: uppercase;
 }
 
-.tdmu-footer-column p,
-.tdmu-footer-column a {
-  display: block;
-  margin: 0 0 0.65rem;
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  transition: color var(--transition-base);
+.tdmu-footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
-.tdmu-footer-column a:hover,
-.tdmu-footer-column a:focus-visible {
+.tdmu-footer-social {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition:
+    transform var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.tdmu-footer-social svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.tdmu-footer-social:hover,
+.tdmu-footer-social:focus-visible {
   color: #fff;
+  border-color: rgba(var(--tdmu-accent-rgb), 0.7);
+  background: rgba(var(--tdmu-accent-rgb), 0.16);
+  transform: translateY(-2px);
 }
 
 .tdmu-footer-bottom {
@@ -815,7 +844,7 @@
     position: fixed;
     top: 8px;
     right: 8px;
-    bottom: 8px;
+    bottom: 72px;
     z-index: 1201;
     width: min(360px, calc(100vw - 16px));
     padding: 1.2rem;
@@ -869,60 +898,36 @@
     border-color: var(--tdmu-border);
   }
 
-  .tdmu-mobile-quick-actions {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.65rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .tdmu-mobile-quick-link {
+  .tdmu-mobile-utility-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 0.45rem 0.75rem;
-    background: var(--tdmu-surface-alt);
-    border: 1px solid var(--tdmu-border-light);
+    width: 100%;
+    min-height: 46px;
+    margin-bottom: 1.5rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--tdmu-primary);
     border-radius: var(--tdmu-radius-sm);
-    color: var(--tdmu-primary);
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all var(--transition-base);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .tdmu-mobile-quick-link::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(var(--tdmu-accent-rgb), 0.12),
-      transparent
-    );
-    opacity: 0;
-    transition: opacity var(--transition-base);
-  }
-
-  .tdmu-mobile-quick-link:hover,
-  .tdmu-mobile-quick-link:focus-visible {
     background: linear-gradient(
       135deg,
       var(--tdmu-primary),
       var(--tdmu-primary-600)
     );
-    border-color: var(--tdmu-primary);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(var(--tdmu-primary-rgb), 0.22);
-    transform: translateY(-2px);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(var(--tdmu-primary-rgb), 0.18);
+    transition:
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
   }
 
-  .tdmu-mobile-quick-link:hover::before,
-  .tdmu-mobile-quick-link:focus-visible::before {
-    opacity: 1;
+  .tdmu-mobile-utility-link:hover,
+  .tdmu-mobile-utility-link:focus-visible {
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(var(--tdmu-primary-rgb), 0.24);
+    transform: translateY(-2px);
   }
 
   .tdmu-mobile-nav {
@@ -1149,6 +1154,7 @@
 
   .tdmu-mobile-drawer {
     width: min(340px, calc(100vw - 16px));
+    bottom: 64px;
     padding: 1rem;
   }
 
@@ -1249,6 +1255,7 @@
 
   .tdmu-mobile-drawer {
     width: min(300px, calc(100vw - 16px));
+    bottom: 56px;
     padding: 0.9rem;
   }
 
