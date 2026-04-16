@@ -55,13 +55,17 @@ function bindLanguageSwitch(header) {
   );
   if (!chips.length) return;
 
+  const syncLanguage = (activeLang) => {
+    chips.forEach((chip) => {
+      const isActive = chip.dataset.lang === activeLang;
+      chip.classList.toggle("is-active", isActive);
+      chip.setAttribute("aria-pressed", String(isActive));
+    });
+  };
+
   chips.forEach((chip) => {
     chip.addEventListener("click", () => {
-      chips.forEach((otherChip) => {
-        const isActive = otherChip === chip;
-        otherChip.classList.toggle("is-active", isActive);
-        otherChip.setAttribute("aria-pressed", String(isActive));
-      });
+      syncLanguage(chip.dataset.lang);
     });
   });
 }

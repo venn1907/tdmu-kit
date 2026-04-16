@@ -1,4 +1,4 @@
-function getVisibleCount() {
+﻿function getVisibleCount() {
   if (window.innerWidth <= 767.98) return 1;
   if (window.innerWidth <= 1199.98) return 2;
   return 3;
@@ -14,8 +14,9 @@ export function initTeamAdvisors() {
   const nextButton = shell.querySelector(".tdmu-team-nav--next");
   const pagination = shell.querySelector(".tdmu-team-pagination");
 
-  if (!rail || !items.length || !prevButton || !nextButton || !pagination)
+  if (!rail || !items.length || !prevButton || !nextButton || !pagination) {
     return;
+  }
 
   let visibleCount = getVisibleCount();
   let currentIndex = 0;
@@ -24,12 +25,18 @@ export function initTeamAdvisors() {
   const getMaxIndex = () => Math.max(0, items.length - visibleCount);
   const getTotalPages = () => Math.max(1, getMaxIndex() + 1);
 
+  const getTranslateOffset = () => {
+    const firstOffset = items[0]?.offsetLeft || 0;
+    const activeOffset = items[currentIndex]?.offsetLeft || 0;
+    return Math.round(activeOffset - firstOffset);
+  };
+
   const renderPagination = () => {
     const totalPages = getTotalPages();
     pagination.innerHTML = Array.from(
       { length: totalPages },
       (_, index) =>
-        `<button class="tdmu-team-dot${index === currentIndex ? " is-active" : ""}" type="button" data-page="${index}" aria-label="Đi đến nhóm ${index + 1}"></button>`,
+        `<button class="tdmu-team-dot${index === currentIndex ? " is-active" : ""}" type="button" data-page="${index}" aria-label="Di den nhom ${index + 1}"></button>`,
     ).join("");
 
     pagination.querySelectorAll(".tdmu-team-dot").forEach((dot) => {
@@ -42,14 +49,7 @@ export function initTeamAdvisors() {
   };
 
   const update = () => {
-    const itemWidth = items[0].getBoundingClientRect().width;
-    const gap = parseFloat(
-      window.getComputedStyle(rail).columnGap ||
-        window.getComputedStyle(rail).gap ||
-        "0",
-    );
-    rail.style.transform = `translateX(-${currentIndex * (itemWidth + gap)}px)`;
-
+    rail.style.transform = `translateX(-${getTranslateOffset()}px)`;
     prevButton.disabled = currentIndex === 0;
     nextButton.disabled = currentIndex >= getMaxIndex();
     renderPagination();

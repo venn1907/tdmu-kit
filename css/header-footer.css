@@ -84,7 +84,7 @@
   width: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr);
   gap: 0;
   align-items: stretch;
   box-shadow:
@@ -96,7 +96,7 @@
 .tdmu-brand-block,
 .tdmu-nav-block {
   position: relative;
-  min-height: 72px;
+  height: 72px;
   border-radius: 0;
   box-shadow: inset 0 -1px 0 var(--tdmu-border-light);
 }
@@ -105,7 +105,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 1.5rem 0 1rem;
+  min-width: 0;
+  max-width: clamp(180px, 23vw, 370px);
+  padding: 4px 6px;
   text-decoration: none;
   color: var(--tdmu-text);
   background: var(--tdmu-surface);
@@ -115,20 +117,23 @@
 
 .tdmu-brand-mark {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: auto;
-  max-width: 100%;
-  min-height: 72px;
-  padding-right: 0.25rem;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
 }
 
 .tdmu-brand-logo {
-  width: 240px;
+  width: auto;
   max-width: 100%;
-  height: auto;
+  height: calc(100% - 8px);
+  max-height: calc(100% - 8px);
   display: block;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .tdmu-nav-block {
@@ -158,13 +163,13 @@
   display: inline-flex;
   align-items: center;
   min-height: 72px;
-  padding: 0 0.95rem;
+  padding: 0 1.05rem;
   border: 0;
   border-radius: 0;
   background: transparent;
   color: var(--tdmu-text-secondary);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1.04rem;
+  font-weight: 700;
   text-decoration: none;
   transition: all var(--transition-base);
   cursor: pointer;
@@ -371,10 +376,11 @@
 }
 
 .tdmu-menu-node {
-  display: grid;
+  display: flex;
+  align-items: center;
   width: 100%;
-  gap: 0.2rem;
-  padding: 0.78rem 0.9rem;
+  gap: 0;
+  padding: 0.92rem 1rem;
   border: 1px solid var(--tdmu-border-light);
   border-radius: var(--tdmu-radius-sm);
   background: var(--tdmu-surface);
@@ -385,17 +391,19 @@
   text-align: left;
 }
 
+.tdmu-menu-node strong {
+  color: var(--tdmu-text);
+  font-size: 1rem;
+  font-weight: 700;
+  transition: color var(--transition-base);
+}
+
 .tdmu-menu-node-copy {
-  display: grid;
-  gap: 0.14rem;
   min-width: 0;
 }
 
-.tdmu-menu-node strong {
-  color: var(--tdmu-text);
-  font-size: 0.92rem;
-  font-weight: 700;
-  transition: color var(--transition-base);
+.tdmu-menu-node-copy > span {
+  display: none;
 }
 
 .tdmu-menu-node span {
@@ -475,7 +483,7 @@
   z-index: 15;
   width: 100%;
   margin: 0;
-  padding: 0 14px 0 280px;
+  padding: 0 14px 0 clamp(280px, 23vw, 370px);
   border-radius: 0;
 }
 
@@ -567,6 +575,10 @@
 
 .tdmu-mobile-backdrop,
 .tdmu-mobile-drawer {
+  display: none;
+}
+
+.tdmu-mobile-drawer-footer {
   display: none;
 }
 
@@ -732,43 +744,47 @@
   .tdmu-system-header.is-sticky .tdmu-header-shell,
   .tdmu-system-header.is-over-hero .tdmu-header-shell {
     width: 100%;
-    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr);
     gap: 0;
+    box-shadow:
+      inset 0 -1px 0 var(--tdmu-border-light),
+      inset 0 -2px 0 rgba(var(--tdmu-accent-rgb), 0.12);
   }
 
   .tdmu-brand-block,
   .tdmu-nav-block,
   .tdmu-system-header.is-sticky .tdmu-brand-block,
   .tdmu-system-header.is-sticky .tdmu-nav-block {
-    min-height: 64px;
+    height: 68px;
+  }
+
+  .tdmu-brand-block,
+  .tdmu-system-header.is-sticky .tdmu-brand-block {
+    max-width: min(52vw, 360px);
   }
 
   .tdmu-brand-mark,
   .tdmu-system-header.is-sticky .tdmu-brand-mark {
-    min-height: 64px;
-    padding-right: 0.2rem;
-  }
-
-  .tdmu-brand-logo,
-  .tdmu-system-header.is-sticky .tdmu-brand-logo {
-    width: 168px;
+    height: 100%;
   }
 
   .tdmu-nav-link,
   .tdmu-nav-trigger {
-    padding: 0 0.8rem;
-    font-size: 0.9rem;
+    padding: 0 0.95rem;
+    font-size: 1rem;
   }
 
   .tdmu-desktop-nav,
-  .tdmu-header-cta {
+  .tdmu-header-cta,
+  .tdmu-header-tools .tdmu-lang-switch,
+  .tdmu-header-tools .tdmu-tool-button {
     display: none;
   }
 
   .tdmu-nav-block {
     justify-content: flex-end;
-    min-width: 120px;
-    padding: 0.55rem;
+    min-width: auto;
+    padding: 0.55rem 0.65rem;
   }
 
   .tdmu-mobile-toggle,
@@ -914,6 +930,23 @@
     gap: 0.65rem;
   }
 
+  .tdmu-mobile-drawer-footer {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--tdmu-border-light);
+  }
+
+  .tdmu-lang-switch--drawer {
+    width: fit-content;
+  }
+
+  .tdmu-mobile-search-form {
+    display: grid;
+    gap: 0.45rem;
+  }
+
   .tdmu-mobile-group {
     display: grid;
     gap: 0.45rem;
@@ -1037,31 +1070,26 @@
 
   .tdmu-header-shell,
   .tdmu-system-header.is-sticky .tdmu-header-shell {
-    grid-template-columns: 140px minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr);
   }
 
   .tdmu-brand-block,
   .tdmu-system-header.is-sticky .tdmu-brand-block {
-    padding: 0 0.8rem 0 0.6rem;
-    min-height: 56px;
+    max-width: min(50vw, 300px);
+    padding: 4px 6px;
+    height: 62px;
   }
 
   .tdmu-brand-mark,
   .tdmu-system-header.is-sticky .tdmu-brand-mark {
-    min-height: 56px;
-    padding-right: 0.1rem;
-  }
-
-  .tdmu-brand-logo,
-  .tdmu-system-header.is-sticky .tdmu-brand-logo {
-    width: 110px;
+    height: 100%;
   }
 
   .tdmu-nav-block,
   .tdmu-system-header.is-sticky .tdmu-nav-block {
-    padding: 0.4rem 0.35rem;
+    padding: 0.4rem 0.45rem;
     gap: 0.25rem;
-    min-height: 56px;
+    height: 62px;
   }
 
   .tdmu-header-tools {
@@ -1091,16 +1119,16 @@
 
   .tdmu-tool-button,
   .tdmu-mobile-toggle {
-    width: 36px;
-    height: 36px;
-    min-height: 36px;
+    width: 42px;
+    height: 42px;
+    min-height: 42px;
     box-sizing: border-box;
     border-radius: var(--tdmu-radius-sm);
   }
 
   .tdmu-tool-button .material-symbols-rounded,
   .tdmu-mobile-toggle .material-symbols-rounded {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .tdmu-search-panel {
@@ -1120,7 +1148,7 @@
   }
 
   .tdmu-mobile-drawer {
-    width: min(320px, calc(100vw - 16px));
+    width: min(340px, calc(100vw - 16px));
     padding: 1rem;
   }
 
@@ -1150,24 +1178,19 @@
 @media (max-width: 575.98px) {
   .tdmu-header-shell,
   .tdmu-system-header.is-sticky .tdmu-header-shell {
-    grid-template-columns: 100px minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr);
   }
 
   .tdmu-brand-block,
   .tdmu-system-header.is-sticky .tdmu-brand-block {
-    padding: 0 0.6rem 0 0.4rem;
-    min-height: 48px;
+    max-width: min(54vw, 240px);
+    padding: 4px 5px;
+    height: 56px;
   }
 
   .tdmu-brand-mark,
   .tdmu-system-header.is-sticky .tdmu-brand-mark {
-    min-height: 48px;
-    padding-right: 0.05rem;
-  }
-
-  .tdmu-brand-logo,
-  .tdmu-system-header.is-sticky .tdmu-brand-logo {
-    width: 88px;
+    height: 100%;
   }
 
   .tdmu-nav-block,
@@ -1192,15 +1215,15 @@
 
   .tdmu-tool-button,
   .tdmu-mobile-toggle {
-    width: 32px;
-    height: 32px;
-    min-height: 32px;
+    width: 38px;
+    height: 38px;
+    min-height: 38px;
     box-sizing: border-box;
   }
 
   .tdmu-tool-button .material-symbols-rounded,
   .tdmu-mobile-toggle .material-symbols-rounded {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .tdmu-header-utility-inner {
@@ -1225,7 +1248,7 @@
   }
 
   .tdmu-mobile-drawer {
-    width: min(280px, calc(100vw - 16px));
+    width: min(300px, calc(100vw - 16px));
     padding: 0.9rem;
   }
 
