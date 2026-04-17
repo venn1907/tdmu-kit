@@ -44,9 +44,10 @@
   gap: 1.2rem;
 }
 
-.tdmu-utility-links a {
+.tdmu-utility-links a,
+.tdmu-utility-links button {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -54,9 +55,14 @@
   transition: color var(--transition-base);
   position: relative;
   padding-bottom: 0.2rem;
+  padding-inline: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
-.tdmu-utility-links a::after {
+.tdmu-utility-links a::after,
+.tdmu-utility-links button::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -70,12 +76,16 @@
 }
 
 .tdmu-utility-links a:hover,
-.tdmu-utility-links a:focus-visible {
+.tdmu-utility-links a:focus-visible,
+.tdmu-utility-links button:hover,
+.tdmu-utility-links button:focus-visible {
   color: #fff;
 }
 
 .tdmu-utility-links a:hover::after,
-.tdmu-utility-links a:focus-visible::after {
+.tdmu-utility-links a:focus-visible::after,
+.tdmu-utility-links button:hover::after,
+.tdmu-utility-links button:focus-visible::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -168,7 +178,7 @@
   border-radius: 0;
   background: transparent;
   color: var(--tdmu-text-secondary);
-  font-size: 1.04rem;
+  font-size: 1.08rem;
   font-weight: 700;
   text-decoration: none;
   transition: all var(--transition-base);
@@ -393,7 +403,7 @@
 
 .tdmu-menu-node strong {
   color: var(--tdmu-text);
-  font-size: 1rem;
+  font-size: 1.04rem;
   font-weight: 700;
   transition: color var(--transition-base);
 }
@@ -408,7 +418,7 @@
 
 .tdmu-menu-node span {
   color: var(--tdmu-text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   line-height: 1.5;
   transition: color var(--transition-base);
 }
@@ -505,7 +515,7 @@
   display: block;
   margin-bottom: 0.45rem;
   color: var(--tdmu-text-secondary);
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -560,7 +570,7 @@
     var(--tdmu-primary-600)
   );
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   transition: all var(--transition-base);
   cursor: pointer;
@@ -634,7 +644,7 @@
   margin: 1.25rem 0 0;
   max-width: 40ch;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -648,7 +658,7 @@
 .tdmu-footer-connect h3 {
   margin: 0 0 1.2rem;
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -698,7 +708,7 @@
 .tdmu-footer-bottom p {
   margin: 0;
   color: rgba(255, 255, 255, 0.65);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .tdmu-scroll-top {
@@ -763,8 +773,9 @@
     white-space: nowrap;
   }
 
-  .tdmu-utility-links a {
-    font-size: 0.7rem;
+  .tdmu-utility-links a,
+  .tdmu-utility-links button {
+    font-size: 0.74rem;
     letter-spacing: 0.05em;
     transition: color var(--transition-base);
   }
@@ -800,7 +811,7 @@
   .tdmu-nav-link,
   .tdmu-nav-trigger {
     padding: 0 0.95rem;
-    font-size: 1rem;
+    font-size: 1.04rem;
   }
 
   .tdmu-desktop-nav,
@@ -914,7 +925,7 @@
       var(--tdmu-primary-600)
     );
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(var(--tdmu-primary-rgb), 0.18);
@@ -969,7 +980,7 @@
     border-radius: var(--tdmu-radius-sm);
     background: var(--tdmu-surface);
     color: var(--tdmu-text);
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     transition: all var(--transition-base);
@@ -1018,7 +1029,7 @@
     background: rgba(var(--tdmu-primary-rgb), 0.03);
     border: 1px solid rgba(var(--tdmu-primary-rgb), 0.08);
     border-radius: var(--tdmu-radius-sm);
-    font-size: 0.88rem;
+    font-size: 0.93rem;
     transition: all var(--transition-base);
     position: relative;
     cursor: pointer;
@@ -1068,8 +1079,9 @@
     gap: 0.8rem;
   }
 
-  .tdmu-utility-links a {
-    font-size: 0.65rem;
+  .tdmu-utility-links a,
+  .tdmu-utility-links button {
+    font-size: 0.69rem;
     letter-spacing: 0.04em;
   }
 
@@ -1161,7 +1173,7 @@
   .tdmu-mobile-link,
   .tdmu-mobile-trigger {
     padding: 0.75rem 0.85rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .tdmu-footer-grid {
@@ -1241,8 +1253,9 @@
     gap: 0.6rem;
   }
 
-  .tdmu-utility-links a {
-    font-size: 0.58rem;
+  .tdmu-utility-links a,
+  .tdmu-utility-links button {
+    font-size: 0.62rem;
   }
 
   .tdmu-search-panel {
@@ -1270,7 +1283,7 @@
   .tdmu-mobile-link,
   .tdmu-mobile-trigger {
     padding: 0.65rem 0.75rem;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     min-height: 44px;
   }
 
@@ -1296,6 +1309,6 @@
   }
 
   .tdmu-footer-bottom p {
-    font-size: 0.8rem;
+    font-size: 0.84rem;
   }
 }

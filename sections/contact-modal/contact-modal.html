@@ -1,0 +1,54 @@
+<div class="tdmu-contact-modal-root" id="contactModalRoot" hidden>
+  <div class="tdmu-contact-modal-backdrop" data-contact-close></div>
+
+  <section
+    class="tdmu-contact-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="tdmuContactTitle"
+  >
+    <button
+      class="tdmu-contact-modal-close"
+      type="button"
+      data-contact-close
+      aria-label="Đóng liên hệ"
+    >
+      <span class="material-symbols-rounded">close</span>
+    </button>
+
+    <div class="tdmu-contact-modal-head">
+      <p class="tdmu-contact-modal-kicker">Liên hệ</p>
+      <h2 class="tdmu-contact-modal-title" id="tdmuContactTitle">
+        Để lại thông tin
+      </h2>
+      <p class="tdmu-contact-modal-copy">
+        Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
+      </p>
+    </div>
+
+    <form class="tdmu-contact-form" id="tdmuContactForm">
+      <div class="tdmu-contact-field">
+        <label for="contactFullName">Họ và tên</label>
+        <input id="contactFullName" name="fullName" type="text" required />
+      </div>
+
+      <div class="tdmu-contact-field">
+        <label for="contactEmail">Email</label>
+        <input id="contactEmail" name="email" type="email" required />
+      </div>
+
+      <div class="tdmu-contact-field">
+        <label for="contactMessage">Nội dung</label>
+        <textarea id="contactMessage" name="message" rows="4" required></textarea>
+      </div>
+
+      <div class="tdmu-contact-actions">
+        <button class="tdmu-contact-submit" type="submit">Gửi thông tin</button>
+      </div>
+
+      <p class="tdmu-contact-feedback" id="tdmuContactFeedback" hidden>
+        Thông tin của bạn đã được ghi nhận.
+      </p>
+    </form>
+  </section>
+</div>

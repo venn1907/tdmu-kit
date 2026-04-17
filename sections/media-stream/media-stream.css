@@ -105,7 +105,7 @@
 .tdmu-media-news-meta {
   margin: 0;
   color: var(--tdmu-primary-light);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -139,7 +139,7 @@
 .tdmu-media-news-feature-excerpt {
   margin: 0;
   color: var(--tdmu-text-secondary);
-  font-size: 0.96rem;
+  font-size: 1rem;
   line-height: 1.58;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -163,7 +163,7 @@
 .tdmu-media-news-carousel-title {
   margin: 0;
   color: var(--tdmu-text);
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -253,7 +253,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.45rem;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
 }
 
 .tdmu-media-news-item-category {
@@ -263,14 +263,14 @@
   border: 1px solid rgba(var(--tdmu-primary-rgb), 0.16);
   background: rgba(var(--tdmu-accent-rgb), 0.08);
   color: var(--tdmu-primary);
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .tdmu-media-news-item-title {
-  font-size: 0.98rem;
+  font-size: 1.03rem;
   line-height: 1.42;
   font-weight: 700;
 }
@@ -286,7 +286,7 @@
 .tdmu-media-news-item-excerpt {
   margin: 0;
   color: var(--tdmu-text-secondary);
-  font-size: 0.88rem;
+  font-size: 0.93rem;
   line-height: 1.52;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -334,7 +334,7 @@
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.92);
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -372,7 +372,7 @@
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   border-radius: var(--tdmu-radius-sm);
@@ -412,7 +412,7 @@
   border: 0;
   background: var(--tdmu-surface);
   color: var(--tdmu-text);
-  font-size: 0.88rem;
+  font-size: 0.93rem;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
@@ -474,7 +474,7 @@
   align-items: center;
   min-height: 20px;
   padding: 0.14rem 0.42rem;
-  font-size: 0.62rem;
+  font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -491,7 +491,7 @@
 .tdmu-media-notice-item-title {
   color: #fff;
   text-decoration: none;
-  font-size: 0.96rem;
+  font-size: 1rem;
   line-height: 1.45;
   font-weight: 700;
   transition: color var(--transition-base);

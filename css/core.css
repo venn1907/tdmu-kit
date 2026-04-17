@@ -45,6 +45,7 @@ html {
 
 body {
   font-family: var(--tdmu-font-sans);
+  font-size: 1.02rem;
   line-height: 1.6;
   color: var(--tdmu-text);
   padding-top: var(--header-offset, 148px);
@@ -103,7 +104,7 @@ h6 {
 
 p {
   margin-bottom: 1.25rem;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 a {

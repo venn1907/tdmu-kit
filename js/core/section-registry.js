@@ -56,6 +56,9 @@ export const SECTION_REGISTRY = {
     file: "sections/faq/faq.html",
     init: () => initFaqSection(),
   },
+  "tdmu-map": {
+    file: "sections/tdmu-map/tdmu-map.html",
+  },
   "not-found": {
     file: "sections/not-found/not-found.html",
   },
