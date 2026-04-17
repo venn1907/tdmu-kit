@@ -17,8 +17,9 @@
 
 .tdmu-slide {
   min-width: 100%;
-  height: 540px;
+  height: 560px;
   margin: 0;
+  background: #fff;
 }
 
 .tdmu-slide-media {
@@ -26,6 +27,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .tdmu-slider-controls {
