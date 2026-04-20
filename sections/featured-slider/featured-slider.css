@@ -17,17 +17,19 @@
 
 .tdmu-slide {
   min-width: 100%;
-  height: 560px;
+  height: clamp(220px, 54vw, 540px);
   margin: 0;
   background: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tdmu-slide-media {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
 }
 
 .tdmu-slider-controls {
@@ -107,10 +109,6 @@
 }
 
 @media (max-width: 1024px) {
-  .tdmu-slide {
-    height: 460px;
-  }
-
   .tdmu-slider-controls {
     right: 2rem;
   }
@@ -121,10 +119,6 @@
 }
 
 @media (max-width: 767.98px) {
-  .tdmu-slide {
-    height: 360px;
-  }
-
   .tdmu-slider-controls {
     right: 1rem;
     bottom: 1rem;
