@@ -1,43 +1,310 @@
-<section
-  id="media-stream-section"
-  class="tdmu-section tdmu-section--media-stream"
->
+<section id="media-stream-section" class="tdmu-section tdmu-section--media-stream">
   <div class="container">
     <div class="tdmu-media-stream-shell">
       <div class="tdmu-media-stream-layout">
         <section id="media-news-column" class="tdmu-media-news">
           <div class="tdmu-media-column-head">
-            <h3 class="tdmu-media-column-title tdmu-media-column-title--news">
-              Tin tức
-            </h3>
+            <h3 class="tdmu-media-column-title tdmu-media-column-title--news">Tin tức</h3>
           </div>
-          <div id="media-news-list" class="tdmu-media-news-list"></div>
+
+          <div id="media-news-list" class="tdmu-media-news-list">
+            <article class="tdmu-media-news-feature">
+              <a class="tdmu-media-news-feature-media" href="pages/news-detail/index.html">
+                <img
+                  class="tdmu-media-news-feature-image"
+                  src="assets/img/banner.jpg"
+                  alt="Sinh viên Viện Công nghệ số tham dự kỳ thi Olympic Toán học sinh viên toàn quốc năm 2026"
+                  loading="lazy"
+                />
+              </a>
+              <div class="tdmu-media-news-feature-body">
+                <p class="tdmu-media-news-meta">Tin tổng hợp - 02/04/2026</p>
+                <h3 class="tdmu-media-news-feature-title">
+                  <a href="pages/news-detail/index.html">
+                    Sinh viên Viện Công nghệ số tham dự kỳ thi Olympic Toán học sinh viên toàn quốc năm 2026
+                  </a>
+                </h3>
+                <p class="tdmu-media-news-feature-excerpt">
+                  Đội tuyển sinh viên của viện tham gia kỳ thi với sự chuẩn bị bài bản, hướng đến nâng cao năng lực học thuật và mở rộng môi trường cọ xát chuyên môn.
+                </p>
+              </div>
+            </article>
+
+            <div class="tdmu-media-news-carousel">
+              <div class="tdmu-media-news-carousel-head">
+                <p class="tdmu-media-news-carousel-title">Tin liên quan</p>
+                <div class="tdmu-media-news-controls">
+                  <button id="media-news-prev" class="tdmu-media-news-nav" type="button" aria-label="Xem bài trước">
+                    <span class="material-symbols-rounded">arrow_back</span>
+                  </button>
+                  <button id="media-news-next" class="tdmu-media-news-nav" type="button" aria-label="Xem bài tiếp theo">
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="tdmu-media-news-viewport">
+                <div class="tdmu-media-news-rail">
+                  <article class="tdmu-media-news-item">
+                    <a class="tdmu-media-news-item-media" href="pages/news-detail/index.html">
+                      <img
+                        class="tdmu-media-news-item-image"
+                        src="assets/img/bg3.jpg"
+                        alt="TDMU và Viện Công nghệ số thúc đẩy hợp tác đào tạo, nghiên cứu với các đối tác chiến lược"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-media-news-item-body">
+                      <p class="tdmu-media-news-meta">
+                        <span class="tdmu-media-news-item-category">Hợp tác</span>
+                        <span>24/03/2026</span>
+                      </p>
+                      <h3 class="tdmu-media-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          TDMU và Viện Công nghệ số thúc đẩy hợp tác đào tạo, nghiên cứu với các đối tác chiến lược
+                        </a>
+                      </h3>
+                      <p class="tdmu-media-news-item-excerpt">
+                        Nhiều nội dung hợp tác về đào tạo, chuyển giao công nghệ và kết nối doanh nghiệp được thảo luận để phục vụ định hướng phát triển bền vững của đơn vị.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-media-news-item">
+                    <a class="tdmu-media-news-item-media" href="pages/news-detail/index.html">
+                      <img
+                        class="tdmu-media-news-item-image"
+                        src="assets/img/bg5.jpg"
+                        alt="Dự án học thuật của sinh viên Viện Công nghệ số lọt vào vòng chung kết cuộc thi khởi nghiệp quốc gia"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-media-news-item-body">
+                      <p class="tdmu-media-news-meta">
+                        <span class="tdmu-media-news-item-category">Sinh viên</span>
+                        <span>21/03/2026</span>
+                      </p>
+                      <h3 class="tdmu-media-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          Dự án học thuật của sinh viên Viện Công nghệ số lọt vào vòng chung kết cuộc thi khởi nghiệp quốc gia
+                        </a>
+                      </h3>
+                      <p class="tdmu-media-news-item-excerpt">
+                        Nhóm sinh viên gây ấn tượng với giải pháp ứng dụng dữ liệu và tự động hóa, cho thấy sự gắn kết tốt giữa đào tạo thực hành và nhu cầu thực tiễn.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-media-news-item">
+                    <a class="tdmu-media-news-item-media" href="pages/news-detail/index.html">
+                      <img
+                        class="tdmu-media-news-item-image"
+                        src="assets/img/bg10.jpg"
+                        alt="Viện Công nghệ số tổ chức hội nghị sơ kết học kỳ I và seminar về ứng dụng AI trong giảng dạy"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-media-news-item-body">
+                      <p class="tdmu-media-news-meta">
+                        <span class="tdmu-media-news-item-category">Tin đào tạo</span>
+                        <span>18/03/2026</span>
+                      </p>
+                      <h3 class="tdmu-media-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          Viện Công nghệ số tổ chức hội nghị sơ kết học kỳ I và seminar về ứng dụng AI trong giảng dạy
+                        </a>
+                      </h3>
+                      <p class="tdmu-media-news-item-excerpt">
+                        Chuỗi hoạt động tập trung vào việc cập nhật phương pháp giảng dạy, nâng chất lượng học phần và chia sẻ kinh nghiệm triển khai công cụ AI trong lớp học.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-media-news-item">
+                    <a class="tdmu-media-news-item-media" href="pages/news-detail/index.html">
+                      <img
+                        class="tdmu-media-news-item-image"
+                        src="assets/img/bg2.jpg"
+                        alt="Ngày hội định hướng chuyên ngành giúp tân sinh viên hiểu rõ lộ trình học tập tại Viện Công nghệ số"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-media-news-item-body">
+                      <p class="tdmu-media-news-meta">
+                        <span class="tdmu-media-news-item-category">Tin đào tạo</span>
+                        <span>12/03/2026</span>
+                      </p>
+                      <h3 class="tdmu-media-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          Ngày hội định hướng chuyên ngành giúp tân sinh viên hiểu rõ lộ trình học tập tại Viện Công nghệ số
+                        </a>
+                      </h3>
+                      <p class="tdmu-media-news-item-excerpt">
+                        Sự kiện cung cấp thông tin về chương trình đào tạo, chuẩn đầu ra, cơ hội nghề nghiệp và các nhóm hỗ trợ học tập cho sinh viên năm nhất.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-media-news-item">
+                    <a class="tdmu-media-news-item-media" href="pages/news-detail/index.html">
+                      <img
+                        class="tdmu-media-news-item-image"
+                        src="assets/img/city-profile.jpg"
+                        alt="Liên chi đoàn Viện Công nghệ số phát động chuỗi hoạt động học thuật và tình nguyện học kỳ mới"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-media-news-item-body">
+                      <p class="tdmu-media-news-meta">
+                        <span class="tdmu-media-news-item-category">Công đoàn - Đoàn TN</span>
+                        <span>08/03/2026</span>
+                      </p>
+                      <h3 class="tdmu-media-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          Liên chi đoàn Viện Công nghệ số phát động chuỗi hoạt động học thuật và tình nguyện học kỳ mới
+                        </a>
+                      </h3>
+                      <p class="tdmu-media-news-item-excerpt">
+                        Các hoạt động được thiết kế để tăng tính kết nối, thúc đẩy tinh thần phục vụ cộng đồng và khuyến khích sinh viên tham gia môi trường học tập năng động.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-media-news-item">
+                    <a class="tdmu-media-news-item-media" href="pages/news-detail/index.html">
+                      <img
+                        class="tdmu-media-news-item-image"
+                        src="assets/img/bg-landing.jpg"
+                        alt="Chuyên đề chia sẻ kinh nghiệm xây dựng hồ sơ nghề nghiệp số cho sinh viên năm cuối"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-media-news-item-body">
+                      <p class="tdmu-media-news-meta">
+                        <span class="tdmu-media-news-item-category">Sinh viên</span>
+                        <span>05/03/2026</span>
+                      </p>
+                      <h3 class="tdmu-media-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          Chuyên đề chia sẻ kinh nghiệm xây dựng hồ sơ nghề nghiệp số cho sinh viên năm cuối
+                        </a>
+                      </h3>
+                      <p class="tdmu-media-news-item-excerpt">
+                        Chuyên đề giúp sinh viên năm cuối chuẩn bị CV, portfolio và định hướng cách thể hiện năng lực cá nhân trên các nền tảng nghề nghiệp số.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <aside id="media-notice-column" class="tdmu-media-notice">
           <div class="tdmu-media-column-head tdmu-media-column-head--notice">
-            <h3 class="tdmu-media-column-title tdmu-media-column-title--notice">
-              Thông báo nhanh
-            </h3>
+            <h3 class="tdmu-media-column-title tdmu-media-column-title--notice">Thông báo nhanh</h3>
           </div>
+
           <div class="tdmu-media-notice-tabs-wrap">
-            <div id="media-notice-tabs" class="tdmu-media-notice-tabs"></div>
+            <div id="media-notice-tabs" class="tdmu-media-notice-tabs">
+              <button class="tdmu-media-notice-tab is-active" type="button" data-tab="all">Tổng hợp</button>
+              <button class="tdmu-media-notice-tab" type="button" data-tab="admissions">Tuyển sinh</button>
+              <button class="tdmu-media-notice-tab" type="button" data-tab="students">Sinh viên</button>
+              <button class="tdmu-media-notice-tab" type="button" data-tab="jobs">Tuyển dụng</button>
+            </div>
+
             <div class="tdmu-media-notice-filter-wrap">
-              <button
-                id="media-notice-filter-button"
-                class="tdmu-media-notice-filter"
-                type="button"
-              >
+              <button id="media-notice-filter-button" class="tdmu-media-notice-filter" type="button">
                 <span id="media-notice-filter-label">Tổng hợp</span>
               </button>
-              <div
-                id="media-notice-filter-menu"
-                class="tdmu-media-notice-filter-menu"
-                hidden
-              ></div>
+              <div id="media-notice-filter-menu" class="tdmu-media-notice-filter-menu" hidden>
+                <button class="tdmu-media-notice-filter-option is-active" type="button" data-filter-option="all">
+                  Tổng hợp
+                </button>
+                <button class="tdmu-media-notice-filter-option" type="button" data-filter-option="admissions">
+                  Tuyển sinh
+                </button>
+                <button class="tdmu-media-notice-filter-option" type="button" data-filter-option="students">
+                  Sinh viên
+                </button>
+                <button class="tdmu-media-notice-filter-option" type="button" data-filter-option="jobs">
+                  Tuyển dụng
+                </button>
+              </div>
             </div>
           </div>
-          <div id="media-notice-list" class="tdmu-media-notice-list"></div>
+
+          <div id="media-notice-list" class="tdmu-media-notice-list">
+            <article class="tdmu-media-notice-item" data-notice-bucket="all admissions">
+              <div class="tdmu-media-notice-item-meta">
+                <span class="tdmu-media-notice-item-time">28/03/2026</span>
+                <span class="tdmu-media-notice-item-category">Thông báo tuyển sinh</span>
+              </div>
+              <a class="tdmu-media-notice-item-title" href="pages/notice-detail/index.html">
+                Thông báo tuyển sinh chương trình đào tạo ngắn hạn năm 2026
+              </a>
+            </article>
+
+            <article class="tdmu-media-notice-item" data-notice-bucket="all students">
+              <div class="tdmu-media-notice-item-meta">
+                <span class="tdmu-media-notice-item-time">24/03/2026</span>
+                <span class="tdmu-media-notice-item-category">Thông báo sinh viên</span>
+              </div>
+              <a class="tdmu-media-notice-item-title" href="pages/notice-detail/index.html">
+                Thông báo lịch đăng ký học phần dành cho sinh viên khóa 2024
+              </a>
+            </article>
+
+            <article class="tdmu-media-notice-item" data-notice-bucket="all students">
+              <div class="tdmu-media-notice-item-meta">
+                <span class="tdmu-media-notice-item-time">22/03/2026</span>
+                <span class="tdmu-media-notice-item-category">Thông báo sinh viên</span>
+              </div>
+              <a class="tdmu-media-notice-item-title" href="pages/notice-detail/index.html">
+                Gia hạn thời gian nộp hồ sơ tham gia chương trình thực tập doanh nghiệp
+              </a>
+            </article>
+
+            <article class="tdmu-media-notice-item" data-notice-bucket="all jobs">
+              <div class="tdmu-media-notice-item-meta">
+                <span class="tdmu-media-notice-item-time">18/03/2026</span>
+                <span class="tdmu-media-notice-item-category">Tuyển dụng</span>
+              </div>
+              <a class="tdmu-media-notice-item-title" href="pages/notice-detail/index.html">
+                Tuyển dụng lập trình viên frontend cho dự án chuyển đổi số tại doanh nghiệp đối tác
+              </a>
+            </article>
+
+            <article class="tdmu-media-notice-item" data-notice-bucket="all jobs">
+              <div class="tdmu-media-notice-item-meta">
+                <span class="tdmu-media-notice-item-time">12/03/2026</span>
+                <span class="tdmu-media-notice-item-category">Tuyển dụng</span>
+              </div>
+              <a class="tdmu-media-notice-item-title" href="pages/notice-detail/index.html">
+                Tuyển dụng nhân viên content creator phụ trách truyền thông học thuật
+              </a>
+            </article>
+
+            <article class="tdmu-media-notice-item" data-notice-bucket="all students">
+              <div class="tdmu-media-notice-item-meta">
+                <span class="tdmu-media-notice-item-time">08/03/2026</span>
+                <span class="tdmu-media-notice-item-category">Thông báo sinh viên</span>
+              </div>
+              <a class="tdmu-media-notice-item-title" href="pages/notice-detail/index.html">
+                Thông báo học bổng khuyến khích học tập dành cho sinh viên có thành tích tốt
+              </a>
+            </article>
+
+            <article class="tdmu-media-notice-item" data-notice-bucket="all admissions">
+              <div class="tdmu-media-notice-item-meta">
+                <span class="tdmu-media-notice-item-time">03/03/2026</span>
+                <span class="tdmu-media-notice-item-category">Thông báo tuyển sinh</span>
+              </div>
+              <a class="tdmu-media-notice-item-title" href="pages/notice-detail/index.html">
+                Thông báo tiếp nhận hồ sơ xét tuyển bổ sung chương trình thạc sĩ Hệ thống thông tin
+              </a>
+            </article>
+          </div>
         </aside>
       </div>
     </div>

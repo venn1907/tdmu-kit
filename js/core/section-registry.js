@@ -1,40 +1,31 @@
-import { heroSlidesData } from "../data/hero-slides.js";
-import { newsListingData } from "../data/news-listing.js";
-import { eventsData } from "../data/events.js";
-import { noticesData } from "../data/notices.js";
 import { injectFragment } from "./include.js";
 import { initFeaturedSlider } from "../../sections/featured-slider/featured-slider.js";
 import { initMediaStream } from "../../sections/media-stream/media-stream.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
 import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
-import { initUnitProfile } from "../../sections/unit-profile/unit-profile.js";
 import { initFaqSection } from "../../sections/faq/faq.js";
-import {
-  initNewsDetail,
-  initNoticeDetail,
-} from "../../sections/article-feature/article-feature.js";
+import { initArticleFeature } from "../../sections/article-feature/article-feature.js";
 import { initNewsListing } from "../../sections/news-listing/news-listing.js";
 import { initNoticeListing } from "../../sections/notice-listing/notice-listing.js";
 
 export const SECTION_REGISTRY = {
   "featured-slider": {
     file: "sections/featured-slider/featured-slider.html",
-    init: () => initFeaturedSlider(heroSlidesData),
+    init: () => initFeaturedSlider(),
   },
   "tdmu-manifesto": {
     file: "sections/tdmu-manifesto/tdmu-manifesto.html",
   },
   "unit-profile": {
     file: "sections/unit-profile/unit-profile.html",
-    init: () => initUnitProfile(),
   },
   "media-stream": {
     file: "sections/media-stream/media-stream.html",
-    init: () => initMediaStream(newsListingData, noticesData),
+    init: () => initMediaStream(),
   },
   "latest-events": {
     file: "sections/latest-events/latest-events.html",
-    init: () => initLatestEvents(eventsData),
+    init: () => initLatestEvents(),
   },
   "training-programs": {
     file: "sections/training-programs/training-programs.html",
@@ -64,19 +55,19 @@ export const SECTION_REGISTRY = {
   },
   "news-listing": {
     file: "sections/news-listing/news-listing.html",
-    init: () => initNewsListing(newsListingData),
+    init: () => initNewsListing(),
   },
   "notice-listing": {
     file: "sections/notice-listing/notice-listing.html",
-    init: () => initNoticeListing(noticesData),
+    init: () => initNoticeListing(),
   },
   "news-detail": {
-    file: "sections/article-feature/article-feature.html",
-    init: () => initNewsDetail(newsListingData),
+    file: "sections/article-feature/news-detail.html",
+    init: () => initArticleFeature(),
   },
   "notice-detail": {
-    file: "sections/article-feature/article-feature.html",
-    init: () => initNoticeDetail(noticesData),
+    file: "sections/article-feature/notice-detail.html",
+    init: () => initArticleFeature(),
   },
 };
 

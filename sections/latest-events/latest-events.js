@@ -1,13 +1,5 @@
-import { escapeHtml, resolveAppUrl } from "../../js/core/dom.js";
-
 const BREAKPOINT_TABLET = 1200;
 const BREAKPOINT_MOBILE = 768;
-
-function parseEventDate(datetime) {
-  const [day = "", time = ""] = String(datetime).split(" ");
-  const [year = "", month = "", date = ""] = day.split("-");
-  return { year, month, date, time };
-}
 
 function getVisibleCount() {
   if (window.innerWidth < BREAKPOINT_MOBILE) return 1;
@@ -15,51 +7,18 @@ function getVisibleCount() {
   return 4;
 }
 
-function renderEventCard(event) {
-  const { year, month, date, time } = parseEventDate(event.datetime);
-  const href = escapeHtml(event.url || "#");
-
-  return `
-    <a class="tdmu-event-card" href="${href}">
-      <div class="tdmu-event-card-media">
-        <img
-          class="tdmu-event-card-thumb"
-          src="${escapeHtml(resolveAppUrl(event.cover || "assets/img/bg-landing.jpg"))}"
-          alt="${escapeHtml(event.title)}"
-          loading="lazy"
-          onerror="this.src='${resolveAppUrl("assets/img/bg-landing.jpg")}'"
-        />
-        <div class="tdmu-event-card-date">
-          <span class="tdmu-event-card-month">${escapeHtml(month)}/${escapeHtml(year)}</span>
-          <strong class="tdmu-event-card-day">${escapeHtml(date)}</strong>
-          <span class="tdmu-event-card-time">${escapeHtml(time)}</span>
-        </div>
-      </div>
-      <div class="tdmu-event-card-body">
-        <h3 class="tdmu-event-card-title">${escapeHtml(event.title)}</h3>
-        <p class="tdmu-event-card-meta mb-0">${escapeHtml(event.location)}</p>
-      </div>
-    </a>
-  `;
-}
-
-function buildRail(items) {
-  if (!items.length) return "";
-  return items.map(renderEventCard).join("");
-}
-
-export function initLatestEvents(items) {
+export function initLatestEvents() {
   const shell = document.getElementById("events-carousel");
-  if (!shell || !items.length) return;
-
   const rail = document.getElementById("events-list");
-  const prevButton = shell.querySelector("[data-events-prev]");
-  const nextButton = shell.querySelector("[data-events-next]");
-  if (!rail) return;
+  const prevButton = shell?.querySelector("[data-events-prev]");
+  const nextButton = shell?.querySelector("[data-events-next]");
+  if (!shell || !rail || !prevButton || !nextButton) return;
 
   let visibleCount = getVisibleCount();
   let currentIndex = 0;
-  let maxIndex = Math.max(0, items.length - visibleCount);
+
+  const getItems = () => Array.from(rail.querySelectorAll(".tdmu-event-card"));
+  const getMaxIndex = () => Math.max(0, getItems().length - visibleCount);
 
   const getStepWidth = () => {
     const card = rail.querySelector(".tdmu-event-card");
@@ -73,44 +32,22 @@ export function initLatestEvents(items) {
 
   const applyPosition = (withTransition = true) => {
     rail.classList.toggle("is-no-transition", !withTransition);
-    const stepWidth = getStepWidth();
-    rail.style.transform = `translateX(-${currentIndex * stepWidth}px)`;
+    rail.style.transform = `translateX(-${currentIndex * getStepWidth()}px)`;
   };
 
   const updateControls = () => {
-    const isInteractive = items.length > visibleCount;
-    prevButton?.toggleAttribute(
+    const isInteractive = getItems().length > visibleCount;
+    prevButton.toggleAttribute("disabled", !isInteractive || currentIndex <= 0);
+    nextButton.toggleAttribute(
       "disabled",
-      !isInteractive || currentIndex <= 0,
-    );
-    nextButton?.toggleAttribute(
-      "disabled",
-      !isInteractive || currentIndex >= maxIndex,
+      !isInteractive || currentIndex >= getMaxIndex(),
     );
   };
 
-  const moveToNext = () => {
-    if (currentIndex >= maxIndex) return;
-
-    currentIndex += 1;
-    applyPosition(true);
-    updateControls();
-  };
-
-  const moveToPrev = () => {
-    if (currentIndex <= 0) return;
-
-    currentIndex -= 1;
-    applyPosition(true);
-    updateControls();
-  };
-
-  const render = () => {
+  const syncLayout = () => {
     visibleCount = getVisibleCount();
-    maxIndex = Math.max(0, items.length - visibleCount);
+    currentIndex = Math.min(currentIndex, getMaxIndex());
     shell.style.setProperty("--tdmu-events-visible", String(visibleCount));
-    rail.innerHTML = buildRail(items);
-    currentIndex = 0;
     applyPosition(false);
 
     requestAnimationFrame(() => {
@@ -120,12 +57,16 @@ export function initLatestEvents(items) {
     updateControls();
   };
 
-  prevButton?.addEventListener("click", () => {
-    moveToPrev();
+  prevButton.addEventListener("click", () => {
+    currentIndex = Math.max(0, currentIndex - 1);
+    applyPosition(true);
+    updateControls();
   });
 
-  nextButton?.addEventListener("click", () => {
-    moveToNext();
+  nextButton.addEventListener("click", () => {
+    currentIndex = Math.min(getMaxIndex(), currentIndex + 1);
+    applyPosition(true);
+    updateControls();
   });
 
   let lastVisibleCount = visibleCount;
@@ -133,12 +74,10 @@ export function initLatestEvents(items) {
     const nextVisibleCount = getVisibleCount();
     if (nextVisibleCount !== lastVisibleCount) {
       lastVisibleCount = nextVisibleCount;
-      render();
-      return;
     }
 
-    applyPosition(false);
+    syncLayout();
   });
 
-  render();
+  syncLayout();
 }
