@@ -2,6 +2,7 @@ import { injectFragment } from "./include.js";
 import { initFeaturedSlider } from "../../sections/featured-slider/featured-slider.js";
 import { initMediaStream } from "../../sections/media-stream/media-stream.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
+import { initResearchShowcase } from "../../sections/research-showcase/research-showcase.js";
 import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
 import { initFaqSection } from "../../sections/faq/faq.js";
 import { initArticleFeature } from "../../sections/article-feature/article-feature.js";
@@ -26,6 +27,10 @@ export const SECTION_REGISTRY = {
   "latest-events": {
     file: "sections/latest-events/latest-events.html",
     init: () => initLatestEvents(),
+  },
+  "research-showcase": {
+    file: "sections/research-showcase/research-showcase.html",
+    init: () => initResearchShowcase(),
   },
   "training-programs": {
     file: "sections/training-programs/training-programs.html",
