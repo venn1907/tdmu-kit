@@ -871,19 +871,9 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 0.8rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--tdmu-border-light);
+    margin-bottom: 1rem;
   }
 
-  .tdmu-mobile-eyebrow {
-    margin: 0 0 0.16rem;
-    color: var(--tdmu-text-secondary);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
 
   .tdmu-mobile-title {
     margin: 0;
@@ -1276,9 +1266,6 @@
     font-size: 1.1rem;
   }
 
-  .tdmu-mobile-eyebrow {
-    font-size: 0.6rem;
-  }
 
   .tdmu-mobile-link,
   .tdmu-mobile-trigger {
