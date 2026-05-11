@@ -692,10 +692,11 @@
   line-height: 1;
 }
 
-.tdmu-footer-social svg {
+.tdmu-footer-social img {
   width: 22px;
   height: 22px;
   display: block;
+  color: white;
 }
 
 .tdmu-footer-social:hover,
