@@ -265,29 +265,30 @@
   }
 
   .tdmu-unit-profile-stage {
-    min-height: 320px;
-    padding: 0.9rem 0 1.1rem 0.9rem;
+    min-height: auto;
+    padding: 0.9rem 0.75rem 1.1rem;
   }
 
   .tdmu-unit-profile-stage::before {
-    inset: 0.6rem 0 0.7rem 0.45rem;
+    inset: 0.55rem 0.25rem 0.7rem;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 94% 100%, 0 100%);
   }
 
   .tdmu-unit-profile-stage::after {
-    width: 92px;
-    height: 92px;
+    width: 72px;
+    height: 72px;
   }
 
   .tdmu-unit-profile-photo--main {
-    margin-left: 0.85rem;
-    margin-right: -0.75rem;
+    margin: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 96% 100%, 0 100%);
   }
 
   .tdmu-unit-profile-cutout {
-    left: 0;
-    bottom: 1.9rem;
-    width: 34%;
-    height: 72px;
+    left: 0.3rem;
+    bottom: 1.5rem;
+    width: 26%;
+    height: 52px;
   }
 
   .tdmu-unit-profile-badge {
@@ -302,12 +303,15 @@
   }
 
   .tdmu-unit-profile-stage {
-    min-height: 260px;
-    padding: 0.75rem 0 0.95rem 0.6rem;
+    padding: 0.65rem 0.45rem 0.9rem;
+  }
+
+  .tdmu-unit-profile-stage::before {
+    inset: 0.35rem 0 0.7rem;
   }
 
   .tdmu-unit-profile-cutout {
-    height: 56px;
+    display: none;
   }
 
   .tdmu-unit-profile-badge {

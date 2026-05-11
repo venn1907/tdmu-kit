@@ -43,12 +43,6 @@
   font-weight: 700;
 }
 
-.tdmu-map-description {
-  color: var(--tdmu-text-secondary);
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-
 .tdmu-map-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
