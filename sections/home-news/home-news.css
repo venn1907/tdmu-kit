@@ -1,0 +1,231 @@
+.tdmu-panel--home-news {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.tdmu-panel--home-news::before {
+  display: none;
+}
+
+.tdmu-panel--home-news .tdmu-section-head {
+  justify-items: center;
+  text-align: center;
+}
+
+.tdmu-home-news-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+  gap: 1.5rem;
+}
+
+.tdmu-home-news-feature,
+.tdmu-home-news-item {
+  min-width: 0;
+  border: 1px solid rgba(var(--tdmu-primary-rgb), 0.14);
+  background: var(--tdmu-surface);
+}
+
+.tdmu-home-news-feature {
+  display: grid;
+  align-content: start;
+}
+
+.tdmu-home-news-feature-media,
+.tdmu-home-news-item-media {
+  display: block;
+  overflow: hidden;
+  background: var(--tdmu-surface-alt);
+}
+
+.tdmu-home-news-feature-media {
+  aspect-ratio: 1.45 / 1;
+}
+
+.tdmu-home-news-feature-media img,
+.tdmu-home-news-item-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.tdmu-home-news-feature:hover img,
+.tdmu-home-news-item:hover img {
+  transform: scale(1.03);
+}
+
+.tdmu-home-news-feature-body {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.tdmu-home-news-meta {
+  margin: 0;
+  color: var(--tdmu-primary-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tdmu-home-news-feature-title,
+.tdmu-home-news-item-title {
+  margin: 0;
+}
+
+.tdmu-home-news-feature-title {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.28;
+}
+
+.tdmu-home-news-feature-title a,
+.tdmu-home-news-item-title a {
+  color: var(--tdmu-text);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.tdmu-home-news-feature-title a:hover,
+.tdmu-home-news-item-title a:hover {
+  color: var(--tdmu-primary);
+}
+
+.tdmu-home-news-excerpt {
+  margin: 0;
+  color: var(--tdmu-text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.tdmu-home-news-list {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+  min-height: 0;
+}
+
+.tdmu-home-news-item {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 0.85rem;
+  min-height: 0;
+  padding: 0.55rem;
+}
+
+.tdmu-home-news-item-media {
+  height: 100%;
+}
+
+.tdmu-home-news-item-body {
+  display: grid;
+  align-content: center;
+  gap: 0.45rem;
+  padding-right: 0.35rem;
+}
+
+.tdmu-home-news-item-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.38;
+}
+
+.tdmu-home-news-item-excerpt {
+  margin: 0;
+  color: var(--tdmu-text-secondary);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .tdmu-home-news-feature {
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .tdmu-home-news-feature-media {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .tdmu-home-news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tdmu-home-news-feature,
+  .tdmu-home-news-item {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 1rem;
+    padding: 0.6rem;
+    margin-bottom: 0;
+  }
+
+  .tdmu-home-news-feature-media,
+  .tdmu-home-news-item-media {
+    aspect-ratio: 1.5 / 1;
+    height: auto;
+  }
+
+  .tdmu-home-news-feature-body {
+    align-content: center;
+    padding: 0 0.35rem 0 0;
+  }
+
+  .tdmu-home-news-feature-title {
+    font-size: 1.08rem;
+    line-height: 1.45;
+  }
+
+  .tdmu-home-news-excerpt {
+    display: none;
+  }
+
+  .tdmu-home-news-item-excerpt {
+    font-size: 0.82rem;
+  }
+
+  .tdmu-home-news-list {
+    grid-template-rows: none;
+    gap: 1rem;
+  }
+
+  .tdmu-home-news-item {
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-home-news-grid {
+    gap: 0.85rem;
+  }
+
+  .tdmu-home-news-feature,
+  .tdmu-home-news-item {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .tdmu-home-news-meta {
+    font-size: 0.68rem;
+  }
+
+  .tdmu-home-news-feature-title,
+  .tdmu-home-news-item-title {
+    font-size: 0.92rem;
+    line-height: 1.42;
+  }
+
+  .tdmu-home-news-item-excerpt {
+    display: none;
+  }
+}

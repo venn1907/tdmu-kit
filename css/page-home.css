@@ -31,14 +31,12 @@ body[data-page="home"] .tdmu-landing-main > #training-programs-slot {
   background: var(--tdmu-surface);
 }
 
-body[data-page="home"] .tdmu-landing-main > #media-stream-slot {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(var(--tdmu-primary-rgb), 0.04),
-      rgba(var(--tdmu-primary-rgb), 0)
-    ),
-    var(--tdmu-surface-alt);
+body[data-page="home"] .tdmu-landing-main > #quick-notices-slot {
+  background: linear-gradient(
+    135deg,
+    var(--tdmu-primary-600),
+    var(--tdmu-primary)
+  );
 }
 
 body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot {

@@ -1,7 +1,7 @@
 import { injectFragment } from "./include.js";
 import { initFeaturedSlider } from "../../sections/featured-slider/featured-slider.js";
 import { initGallery } from "../../sections/gallery/gallery.js";
-import { initMediaStream } from "../../sections/media-stream/media-stream.js";
+import { initQuickNotices } from "../../sections/quick-notices/quick-notices.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
 import { initResearchShowcase } from "../../sections/research-showcase/research-showcase.js";
 import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
@@ -22,9 +22,12 @@ export const SECTION_REGISTRY = {
   "unit-profile": {
     file: "sections/unit-profile/unit-profile.html",
   },
-  "media-stream": {
-    file: "sections/media-stream/media-stream.html",
-    init: () => initMediaStream(),
+  "home-news": {
+    file: "sections/home-news/home-news.html",
+  },
+  "quick-notices": {
+    file: "sections/quick-notices/quick-notices.html",
+    init: () => initQuickNotices(),
   },
   "latest-events": {
     file: "sections/latest-events/latest-events.html",

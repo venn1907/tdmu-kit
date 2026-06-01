@@ -199,15 +199,25 @@
 }
 
 @media (max-width: 575.98px) {
+  .tdmu-media-library-head {
+    margin-bottom: 1rem;
+  }
+
   .tdmu-media-library {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    grid-auto-rows: 220px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 150px;
+    grid-auto-rows: 110px;
+    gap: 0.5rem;
   }
 
   .tdmu-media-tile--feature {
-    grid-column: auto;
+    grid-column: span 2;
     grid-row: auto;
+  }
+
+  .tdmu-media-play {
+    width: 38px;
+    height: 38px;
   }
 
   .tdmu-media-viewer {
