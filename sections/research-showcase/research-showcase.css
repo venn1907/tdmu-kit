@@ -22,6 +22,10 @@
   overflow: visible;
 }
 
+.tdmu-research-feed {
+  display: none;
+}
+
 .tdmu-research-stage {
   display: grid;
   grid-template-columns: minmax(0, 0.74fr) minmax(0, 1fr) minmax(0, 0.74fr);
@@ -229,41 +233,81 @@
 
 @media (max-width: 1199.98px) {
   .tdmu-research-stage {
-    grid-template-columns: minmax(0, 0.66fr) minmax(0, 1fr) minmax(0, 0.66fr);
-    gap: 0.85rem;
-  }
-
-  .tdmu-research-card--side {
-    grid-template-rows: 11.5rem 1fr;
-    min-height: 28rem;
-  }
-
-  .tdmu-research-card--main {
-    --tdmu-research-main-media-height: 16.5rem;
-    grid-template-rows: var(--tdmu-research-main-media-height) 1fr;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .tdmu-research-stage {
-    grid-template-columns: 1fr;
-  }
-
-  .tdmu-research-card--side {
     display: none;
   }
 
-  .tdmu-research-card--main {
-    --tdmu-research-main-media-height: 18rem;
-    grid-template-rows: var(--tdmu-research-main-media-height) 1fr;
+  .tdmu-research-feed {
+    display: grid;
+    gap: 1rem;
   }
 
-  .tdmu-research-showcase.is-sliding-next .tdmu-research-stage {
-    transform: translateX(-1.5rem);
+  .tdmu-research-feed-item {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
+    border: 1px solid rgba(var(--tdmu-primary-rgb), 0.14);
+    border-left: 4px solid var(--tdmu-primary);
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(18, 33, 79, 0.06);
   }
 
-  .tdmu-research-showcase.is-sliding-prev .tdmu-research-stage {
-    transform: translateX(1.5rem);
+  .tdmu-research-feed-item:nth-child(even) {
+    grid-template-columns: minmax(0, 0.62fr) minmax(220px, 0.38fr);
+    border-right: 4px solid var(--tdmu-accent);
+    border-left-width: 1px;
+  }
+
+  .tdmu-research-feed-item:nth-child(even) .tdmu-research-feed-media {
+    order: 2;
+  }
+
+  .tdmu-research-feed-media {
+    display: block;
+    min-height: 165px;
+    overflow: hidden;
+  }
+
+  .tdmu-research-feed-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+  }
+
+  .tdmu-research-feed-item:hover img {
+    transform: scale(1.03);
+  }
+
+  .tdmu-research-feed-body {
+    display: grid;
+    align-content: center;
+    gap: 0.55rem;
+    padding: 1.25rem;
+  }
+
+  .tdmu-research-feed-label {
+    margin: 0;
+    color: var(--tdmu-primary-light);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .tdmu-research-feed-title {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.45;
+  }
+
+  .tdmu-research-feed-title a {
+    color: var(--tdmu-text);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .tdmu-research-feed-title a:hover {
+    color: var(--tdmu-primary);
   }
 }
 
@@ -276,33 +320,35 @@
     margin-bottom: 1rem;
   }
 
-  .tdmu-research-card--main {
-    --tdmu-research-main-media-height: 14.5rem;
-    grid-template-rows: var(--tdmu-research-main-media-height) 1fr;
+  .tdmu-research-feed-item {
+    grid-template-columns: 1fr;
+    border-left-width: 3px;
   }
 
-  .tdmu-research-card--main .tdmu-research-card-body {
-    padding: 0.85rem 0.8rem 1rem;
+  .tdmu-research-feed-item:nth-child(even) {
+    grid-template-columns: 1fr;
+    border-right-width: 3px;
+    border-left-width: 1px;
   }
 
-  .tdmu-research-card-title--main {
-    font-size: 1.28rem;
+  .tdmu-research-feed-item:nth-child(even) .tdmu-research-feed-media {
+    order: initial;
   }
 
-  .tdmu-research-nav {
-    width: 2.7rem;
-    height: 2.7rem;
-    opacity: 1;
-    pointer-events: auto;
+  .tdmu-research-feed-media {
+    min-height: 168px;
   }
 
-  .tdmu-research-nav--prev {
-    left: 0;
-    transform: translate(-42%, -50%) scale(1);
+  .tdmu-research-feed-body {
+    padding: 0.85rem 0.9rem 1rem;
   }
 
-  .tdmu-research-nav--next {
-    right: 0;
-    transform: translate(42%, -50%) scale(1);
+  .tdmu-research-feed-label {
+    font-size: 0.68rem;
+  }
+
+  .tdmu-research-feed-title {
+    font-size: 0.92rem;
+    line-height: 1.42;
   }
 }

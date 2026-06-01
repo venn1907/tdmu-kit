@@ -168,25 +168,86 @@
 }
 
 @media (max-width: 1199.98px) {
-  .tdmu-events-carousel {
-    --tdmu-events-visible: 2;
+  .tdmu-events-controls {
+    display: none;
+  }
+
+  .tdmu-events-viewport {
+    overflow: visible;
+  }
+
+  .tdmu-events-rail {
+    display: grid;
+    gap: 0.85rem;
+    position: relative;
+    padding-left: 1.25rem;
+    transform: none !important;
+  }
+
+  .tdmu-events-rail::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.28rem;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      var(--tdmu-accent),
+      rgba(var(--tdmu-primary-rgb), 0.24)
+    );
+  }
+
+  .tdmu-event-card {
+    position: relative;
+    grid-template-columns: minmax(210px, 0.36fr) minmax(0, 0.64fr);
+    grid-template-rows: none;
+    border-left: 3px solid var(--tdmu-primary);
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .tdmu-event-card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -1.38rem;
+    width: 0.72rem;
+    height: 0.72rem;
+    border: 2px solid var(--tdmu-surface);
+    border-radius: 50%;
+    background: var(--tdmu-accent);
+    box-shadow: 0 0 0 2px rgba(var(--tdmu-primary-rgb), 0.24);
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+
+  .tdmu-event-card-thumb {
+    height: 100%;
+    min-height: 160px;
   }
 }
 
 @media (max-width: 767.98px) {
-  .tdmu-events-carousel {
-    --tdmu-events-visible: 1;
+  .tdmu-events-rail {
+    gap: 0.75rem;
+    padding-left: 1rem;
   }
 
-  .tdmu-events-nav {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    min-height: 36px;
+  .tdmu-events-rail::before {
+    left: 0.2rem;
+  }
+
+  .tdmu-event-card {
+    grid-template-columns: 132px minmax(0, 1fr);
+  }
+
+  .tdmu-event-card::before {
+    left: -1.16rem;
   }
 
   .tdmu-event-card-thumb {
-    height: 200px;
+    min-height: 142px;
   }
 
   .tdmu-event-card-body {
