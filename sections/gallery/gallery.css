@@ -1,0 +1,229 @@
+.tdmu-section--gallery-band {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--tdmu-primary-rgb), 0.04),
+      rgba(var(--tdmu-primary-rgb), 0)
+    ),
+    var(--tdmu-surface-alt);
+}
+
+.tdmu-panel--gallery {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.tdmu-panel--gallery::before {
+  display: none;
+}
+
+.tdmu-media-library-head {
+  max-width: 1170px;
+  margin: 0 auto 1.5rem;
+  text-align: left;
+}
+
+.tdmu-media-library {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.05fr) repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 250px);
+  gap: 1rem;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.tdmu-media-tile {
+  position: relative;
+  display: block;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: var(--tdmu-primary);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 14px 32px rgba(18, 33, 79, 0.08);
+}
+
+.tdmu-media-tile--feature {
+  grid-row: span 2;
+}
+
+.tdmu-media-tile:nth-child(n + 6) {
+  display: none;
+}
+
+.tdmu-media-tile--more::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(var(--tdmu-primary-rgb), 0.58);
+}
+
+.tdmu-media-tile img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.tdmu-media-tile:hover img,
+.tdmu-media-tile:focus-visible img {
+  transform: scale(1.04);
+}
+
+.tdmu-media-tile--more strong {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.tdmu-media-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--tdmu-primary);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 26px rgba(18, 33, 79, 0.18);
+}
+
+.tdmu-media-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+  display: grid;
+  place-items: center;
+  padding: 4.5rem 5rem;
+  background: rgba(7, 17, 38, 0.92);
+}
+
+.tdmu-media-viewer[hidden] {
+  display: none;
+}
+
+.tdmu-media-viewer-frame {
+  width: min(1100px, 100%);
+  max-height: calc(100vh - 9rem);
+  display: grid;
+  place-items: center;
+}
+
+.tdmu-media-viewer-frame img,
+.tdmu-media-viewer-frame iframe {
+  max-width: 100%;
+  width: 100%;
+  border: 0;
+  background: #000;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+.tdmu-media-viewer-frame img {
+  width: auto;
+  max-height: calc(100vh - 9rem);
+  object-fit: contain;
+}
+
+.tdmu-media-viewer-frame iframe {
+  aspect-ratio: 16 / 9;
+}
+
+.tdmu-media-viewer-close,
+.tdmu-media-viewer-nav {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+}
+
+.tdmu-media-viewer-close {
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 46px;
+  height: 46px;
+}
+
+.tdmu-media-viewer-nav {
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translateY(-50%);
+}
+
+.tdmu-media-viewer-nav--prev {
+  left: 1.5rem;
+}
+
+.tdmu-media-viewer-nav--next {
+  right: 1.5rem;
+}
+
+.tdmu-media-viewer-close:hover,
+.tdmu-media-viewer-nav:hover,
+.tdmu-media-viewer-close:focus-visible,
+.tdmu-media-viewer-nav:focus-visible {
+  background: var(--tdmu-primary);
+}
+
+@media (max-width: 991.98px) {
+  .tdmu-media-library {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: 210px;
+  }
+
+  .tdmu-media-tile--feature {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tdmu-media-library {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 220px;
+  }
+
+  .tdmu-media-tile--feature {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .tdmu-media-viewer {
+    padding: 4rem 1rem;
+  }
+
+  .tdmu-media-viewer-nav {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tdmu-media-viewer-nav--prev {
+    left: 0.75rem;
+  }
+
+  .tdmu-media-viewer-nav--next {
+    right: 0.75rem;
+  }
+}

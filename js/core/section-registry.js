@@ -1,5 +1,6 @@
 import { injectFragment } from "./include.js";
 import { initFeaturedSlider } from "../../sections/featured-slider/featured-slider.js";
+import { initGallery } from "../../sections/gallery/gallery.js";
 import { initMediaStream } from "../../sections/media-stream/media-stream.js";
 import { initLatestEvents } from "../../sections/latest-events/latest-events.js";
 import { initResearchShowcase } from "../../sections/research-showcase/research-showcase.js";
@@ -14,8 +15,9 @@ export const SECTION_REGISTRY = {
     file: "sections/featured-slider/featured-slider.html",
     init: () => initFeaturedSlider(),
   },
-  "tdmu-manifesto": {
-    file: "sections/tdmu-manifesto/tdmu-manifesto.html",
+  gallery: {
+    file: "sections/gallery/gallery.html",
+    init: () => initGallery(),
   },
   "unit-profile": {
     file: "sections/unit-profile/unit-profile.html",
