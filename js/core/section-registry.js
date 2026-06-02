@@ -7,17 +7,19 @@ import { initResearchShowcase } from "../../sections/research-showcase/research-
 import { initTeamAdvisors } from "../../sections/team-advisors/team-advisors.js";
 import { initFaqSection } from "../../sections/faq/faq.js";
 import { initArticleFeature } from "../../sections/article-feature/article-feature.js";
-import { initNewsListing } from "../../sections/news-listing/news-listing.js";
-import { initNoticeListing } from "../../sections/notice-listing/notice-listing.js";
+import {
+  initNewsListing,
+  initNoticeListing,
+} from "../../sections/listing/listing.js";
 
 export const SECTION_REGISTRY = {
   "featured-slider": {
     file: "sections/featured-slider/featured-slider.html",
-    init: () => initFeaturedSlider(),
+    init: initFeaturedSlider,
   },
   gallery: {
     file: "sections/gallery/gallery.html",
-    init: () => initGallery(),
+    init: initGallery,
   },
   "unit-profile": {
     file: "sections/unit-profile/unit-profile.html",
@@ -27,15 +29,15 @@ export const SECTION_REGISTRY = {
   },
   "quick-notices": {
     file: "sections/quick-notices/quick-notices.html",
-    init: () => initQuickNotices(),
+    init: initQuickNotices,
   },
   "latest-events": {
     file: "sections/latest-events/latest-events.html",
-    init: () => initLatestEvents(),
+    init: initLatestEvents,
   },
   "research-showcase": {
     file: "sections/research-showcase/research-showcase.html",
-    init: () => initResearchShowcase(),
+    init: initResearchShowcase,
   },
   "training-programs": {
     file: "sections/training-programs/training-programs.html",
@@ -48,14 +50,14 @@ export const SECTION_REGISTRY = {
   },
   "team-advisors": {
     file: "sections/team-advisors/team-advisors.html",
-    init: () => initTeamAdvisors(),
+    init: initTeamAdvisors,
   },
   "student-utilities": {
     file: "sections/student-utilities/student-utilities.html",
   },
   faq: {
     file: "sections/faq/faq.html",
-    init: () => initFaqSection(),
+    init: initFaqSection,
   },
   "tdmu-map": {
     file: "sections/tdmu-map/tdmu-map.html",
@@ -65,19 +67,19 @@ export const SECTION_REGISTRY = {
   },
   "news-listing": {
     file: "sections/news-listing/news-listing.html",
-    init: () => initNewsListing(),
+    init: initNewsListing,
   },
   "notice-listing": {
     file: "sections/notice-listing/notice-listing.html",
-    init: () => initNoticeListing(),
+    init: initNoticeListing,
   },
   "news-detail": {
     file: "sections/article-feature/news-detail.html",
-    init: () => initArticleFeature(),
+    init: initArticleFeature,
   },
   "notice-detail": {
     file: "sections/article-feature/notice-detail.html",
-    init: () => initArticleFeature(),
+    init: initArticleFeature,
   },
 };
 

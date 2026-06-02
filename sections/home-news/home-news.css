@@ -144,6 +144,27 @@
   overflow: hidden;
 }
 
+.tdmu-home-news-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.4rem;
+}
+
+.tdmu-home-news-more {
+  padding: 0.7rem 1rem;
+  background: var(--tdmu-primary);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--transition-base);
+}
+
+.tdmu-home-news-more:hover {
+  background: var(--tdmu-primary-600);
+  color: #fff;
+}
+
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .tdmu-home-news-feature {
     grid-template-rows: minmax(0, 1fr) auto;

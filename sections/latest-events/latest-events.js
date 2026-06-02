@@ -69,15 +69,7 @@ export function initLatestEvents() {
     updateControls();
   });
 
-  let lastVisibleCount = visibleCount;
-  window.addEventListener("resize", () => {
-    const nextVisibleCount = getVisibleCount();
-    if (nextVisibleCount !== lastVisibleCount) {
-      lastVisibleCount = nextVisibleCount;
-    }
-
-    syncLayout();
-  });
+  window.addEventListener("resize", syncLayout);
 
   syncLayout();
 }

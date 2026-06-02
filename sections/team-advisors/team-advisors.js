@@ -12,9 +12,9 @@ export function initTeamAdvisors() {
   const items = Array.from(shell.querySelectorAll(".tdmu-team-profile"));
   const prevButton = shell.querySelector(".tdmu-team-nav--prev");
   const nextButton = shell.querySelector(".tdmu-team-nav--next");
-  const pagination = shell.querySelector(".tdmu-team-pagination");
+  const dots = Array.from(shell.querySelectorAll(".tdmu-team-dot"));
 
-  if (!rail || !items.length || !prevButton || !nextButton || !pagination) {
+  if (!rail || !items.length || !prevButton || !nextButton || !dots.length) {
     return;
   }
 
@@ -31,20 +31,11 @@ export function initTeamAdvisors() {
     return Math.round(activeOffset - firstOffset);
   };
 
-  const renderPagination = () => {
+  const updatePagination = () => {
     const totalPages = getTotalPages();
-    pagination.innerHTML = Array.from(
-      { length: totalPages },
-      (_, index) =>
-        `<button class="tdmu-team-dot${index === currentIndex ? " is-active" : ""}" type="button" data-page="${index}" aria-label="Di den nhom ${index + 1}"></button>`,
-    ).join("");
-
-    pagination.querySelectorAll(".tdmu-team-dot").forEach((dot) => {
-      dot.addEventListener("click", () => {
-        currentIndex = Number(dot.dataset.page || 0);
-        update();
-        restartAuto();
-      });
+    dots.forEach((dot, index) => {
+      dot.hidden = index >= totalPages;
+      dot.classList.toggle("is-active", index === currentIndex);
     });
   };
 
@@ -52,7 +43,7 @@ export function initTeamAdvisors() {
     rail.style.transform = `translateX(-${getTranslateOffset()}px)`;
     prevButton.disabled = currentIndex === 0;
     nextButton.disabled = currentIndex >= getMaxIndex();
-    renderPagination();
+    updatePagination();
   };
 
   const syncLayout = () => {
@@ -77,20 +68,24 @@ export function initTeamAdvisors() {
     }, 3000);
   };
 
-  const restartAuto = () => {
-    startAuto();
-  };
-
   prevButton.addEventListener("click", () => {
     currentIndex = Math.max(0, currentIndex - 1);
     update();
-    restartAuto();
+    startAuto();
   });
 
   nextButton.addEventListener("click", () => {
     currentIndex = Math.min(getMaxIndex(), currentIndex + 1);
     update();
-    restartAuto();
+    startAuto();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      currentIndex = Number(dot.dataset.page || 0);
+      update();
+      startAuto();
+    });
   });
 
   window.addEventListener("resize", syncLayout);

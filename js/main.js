@@ -50,10 +50,6 @@ function initScrollToTop() {
   updateVisibility();
 }
 
-async function initCurrentPage() {
-  await initSectionsFromDom();
-}
-
 (async function boot() {
   await injectFragment("#site-header", "layouts/header/header.html");
   await injectFragment("#site-footer", "layouts/footer/footer.html");
@@ -71,5 +67,5 @@ async function initCurrentPage() {
   initScrollToTop();
   initFooterLayout();
   initContactModal();
-  await initCurrentPage();
+  await initSectionsFromDom();
 })();

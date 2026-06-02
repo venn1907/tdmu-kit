@@ -1,109 +1,57 @@
-import { resolveAppUrl } from "../../js/core/dom.js";
-
 function getWrappedIndex(index, length) {
   return (index + length) % length;
 }
 
-function readItems(root) {
-  return Array.from(root.querySelectorAll(".tdmu-research-source-item")).map(
-    (item) => ({
-      title: item.dataset.title || "",
-      date: item.dataset.date || "",
-      image: item.dataset.image || "",
-      href: item.dataset.href || "#",
-      label: item.dataset.label || "",
-    }),
-  );
+function getCardPosition(index, activeIndex, length) {
+  let position = index - activeIndex;
+  const half = length / 2;
+
+  if (position > half) position -= length;
+  if (position < -half) position += length;
+
+  return position;
 }
 
-function updateSideCard(card, item) {
-  const image = card.querySelector("img");
-  const label = card.querySelector(".tdmu-research-card-label");
-  const title = card.querySelector(".tdmu-research-card-title");
-  if (!image || !label || !title) return;
+function renderCards(cards, activeIndex) {
+  cards.forEach((card, index) => {
+    const position = getCardPosition(index, activeIndex, cards.length);
+    const distance = Math.abs(position);
+    const direction = position < 0 ? 1 : -1;
+    const moveX = position * 220;
+    const scale = Math.max(0.68, 1 - distance * 0.14);
+    const opacity = distance > 2 ? 0 : Math.max(0.32, 1 - distance * 0.25);
+    const blur = Math.min(distance * 1.5, 3);
 
-  image.src = resolveAppUrl(item.image);
-  image.alt = item.title;
-  label.textContent = item.label;
-  title.textContent = item.title;
-}
-
-function updateMainCard(card, item) {
-  const image = card.querySelector("img");
-  const metaText = card.querySelector(".tdmu-research-meta span:last-child");
-  const title = card.querySelector(".tdmu-research-card-title--main");
-  const link = card.querySelector(".tdmu-research-link");
-  if (!image || !metaText || !title || !link) return;
-
-  image.src = resolveAppUrl(item.image);
-  image.alt = item.title;
-  metaText.textContent = item.date;
-  title.textContent = item.title;
-  link.href = item.href;
-}
-
-function renderCards(root, items, activeIndex) {
-  const leftCard = root.querySelector(".tdmu-research-card--left");
-  const mainCard = root.querySelector(".tdmu-research-card--main");
-  const rightCard = root.querySelector(".tdmu-research-card--right");
-
-  if (!leftCard || !mainCard || !rightCard) return;
-
-  updateSideCard(leftCard, items[getWrappedIndex(activeIndex - 1, items.length)]);
-  updateMainCard(mainCard, items[activeIndex]);
-  updateSideCard(rightCard, items[getWrappedIndex(activeIndex + 1, items.length)]);
+    card.style.transform =
+      position === 0
+        ? "translateX(0) scale(1)"
+        : `translateX(${moveX}px) scale(${scale}) perspective(900px) rotateY(${direction * 14}deg)`;
+    card.style.zIndex = String(10 - distance);
+    card.style.opacity = String(opacity);
+    card.style.filter = position === 0 ? "none" : `blur(${blur}px)`;
+    card.classList.toggle("is-active", position === 0);
+  });
 }
 
 export function initResearchShowcase() {
   const root = document.getElementById("research-showcase");
   if (!root) return;
 
-  const stage = root.querySelector(".tdmu-research-stage");
-  const prevButtons = Array.from(root.querySelectorAll("[data-research-prev]"));
-  const nextButtons = Array.from(root.querySelectorAll("[data-research-next]"));
-  const items = readItems(root);
+  const cards = Array.from(root.querySelectorAll(".tdmu-research-card"));
+  const prevButton = root.querySelector("[data-research-prev]");
+  const nextButton = root.querySelector("[data-research-next]");
 
-  if (!stage || items.length < 3 || !prevButtons.length || !nextButtons.length) {
-    return;
-  }
+  if (!cards.length || !prevButton || !nextButton) return;
 
   let activeIndex = 0;
-  let isAnimating = false;
-  let pendingDirection = "";
 
-  const finishMove = () => {
-    if (!pendingDirection) return;
-
-    activeIndex =
-      pendingDirection === "next"
-        ? getWrappedIndex(activeIndex + 1, items.length)
-        : getWrappedIndex(activeIndex - 1, items.length);
-
-    renderCards(root, items, activeIndex);
-    root.classList.remove("is-sliding-next", "is-sliding-prev");
-    pendingDirection = "";
-    isAnimating = false;
+  const move = (step) => {
+    activeIndex = getWrappedIndex(activeIndex + step, cards.length);
+    renderCards(cards, activeIndex);
   };
 
-  const move = (direction) => {
-    if (isAnimating) return;
+  prevButton.addEventListener("click", () => move(-1));
+  nextButton.addEventListener("click", () => move(1));
 
-    isAnimating = true;
-    pendingDirection = direction;
-    root.classList.add(
-      direction === "next" ? "is-sliding-next" : "is-sliding-prev",
-    );
-
-    window.setTimeout(finishMove, 340);
-  };
-
-  prevButtons.forEach((button) => {
-    button.addEventListener("click", () => move("prev"));
-  });
-
-  nextButtons.forEach((button) => {
-    button.addEventListener("click", () => move("next"));
-  });
-
-  renderCards(root, items, activeIndex);
+  renderCards(cards, activeIndex);
 }

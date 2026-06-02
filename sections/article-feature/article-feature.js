@@ -6,13 +6,11 @@ function initDetailFilterToggle(root) {
   toggle.addEventListener("click", () => {
     const isOpen = !menu.hidden;
     menu.hidden = isOpen;
-    toggle.setAttribute("aria-expanded", String(!isOpen));
   });
 
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".tdmu-listing-filter-dropdown")) {
       menu.hidden = true;
-      toggle.setAttribute("aria-expanded", "false");
     }
   });
 }

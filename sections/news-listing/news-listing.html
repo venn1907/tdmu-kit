@@ -7,7 +7,7 @@
       </header>
 
       <div class="tdmu-listing-toolbar">
-        <nav class="tdmu-listing-breadcrumb" aria-label="Breadcrumb">
+        <nav class="tdmu-listing-breadcrumb">
           <a href="../../index.html">Trang chủ</a>
           <span>/</span>
           <span>Tin tức</span>
@@ -16,22 +16,34 @@
       </div>
 
       <div class="tdmu-listing-layout">
-        <aside class="tdmu-listing-sidebar" aria-label="Danh mục tin tức">
+        <aside class="tdmu-listing-sidebar">
           <p class="tdmu-listing-sidebar-title">Danh mục</p>
           <div class="tdmu-listing-filter-dropdown">
             <button
               class="tdmu-listing-filter-toggle"
               id="newsListingFilterToggle"
               type="button"
-              aria-expanded="false"
-              aria-controls="newsListingFilterMenu"
             >
               <span id="newsListingFilterLabel">Tất cả</span>
               <span class="material-symbols-rounded">expand_more</span>
             </button>
-            <div class="tdmu-listing-filter-menu" id="newsListingFilterMenu" hidden></div>
+            <div class="tdmu-listing-filter-menu" id="newsListingFilterMenu" hidden>
+              <button class="tdmu-listing-filter-option is-active" type="button" data-category="Tất cả">Tất cả</button>
+              <button class="tdmu-listing-filter-option" type="button" data-category="Tin tổng hợp">Tin tổng hợp</button>
+              <button class="tdmu-listing-filter-option" type="button" data-category="Hợp tác">Hợp tác</button>
+              <button class="tdmu-listing-filter-option" type="button" data-category="Sinh viên">Sinh viên</button>
+              <button class="tdmu-listing-filter-option" type="button" data-category="Tin đào tạo">Tin đào tạo</button>
+              <button class="tdmu-listing-filter-option" type="button" data-category="Công đoàn - Đoàn TN">Công đoàn - Đoàn TN</button>
+            </div>
           </div>
-          <div class="tdmu-listing-filter-list" id="newsListingFilters"></div>
+          <div class="tdmu-listing-filter-list" id="newsListingFilters">
+            <button class="tdmu-listing-filter is-active" type="button" data-category="Tất cả">Tất cả</button>
+            <button class="tdmu-listing-filter" type="button" data-category="Tin tổng hợp">Tin tổng hợp</button>
+            <button class="tdmu-listing-filter" type="button" data-category="Hợp tác">Hợp tác</button>
+            <button class="tdmu-listing-filter" type="button" data-category="Sinh viên">Sinh viên</button>
+            <button class="tdmu-listing-filter" type="button" data-category="Tin đào tạo">Tin đào tạo</button>
+            <button class="tdmu-listing-filter" type="button" data-category="Công đoàn - Đoàn TN">Công đoàn - Đoàn TN</button>
+          </div>
         </aside>
 
         <div class="tdmu-listing-content">
@@ -128,7 +140,28 @@
             </article>
           </div>
 
-          <div class="tdmu-listing-pagination" id="newsListingPagination"></div>
+          <div class="tdmu-listing-pagination" id="newsListingPagination">
+            <nav>
+              <ul class="pagination pagination-dark justify-content-center mb-0">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" data-prev>
+                    <span class="material-symbols-rounded">chevron_left</span>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#" data-page="1">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" data-page="2">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" data-next>
+                    <span class="material-symbols-rounded">chevron_right</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ export function initFaqSection() {
       const item = button.closest(".tdmu-faq-item");
       if (!item) return;
 
-      const willOpen = button.getAttribute("aria-expanded") !== "true";
+      const willOpen = !item.classList.contains("is-open");
 
       mount.querySelectorAll(".tdmu-faq-item").forEach((otherItem) => {
         if (otherItem === item) return;
@@ -38,12 +38,10 @@ export function initFaqSection() {
 }
 
 function openFaqItem(item) {
-  const button = item.querySelector(".tdmu-faq-question");
   const panel = item.querySelector(".tdmu-faq-answer-wrap");
-  if (!button || !panel) return;
+  if (!panel) return;
 
   item.classList.add("is-open");
-  button.setAttribute("aria-expanded", "true");
 
   panel.style.height = "0px";
   panel.style.opacity = "0";
@@ -63,12 +61,10 @@ function openFaqItem(item) {
 }
 
 function closeFaqItem(item) {
-  const button = item.querySelector(".tdmu-faq-question");
   const panel = item.querySelector(".tdmu-faq-answer-wrap");
-  if (!button || !panel) return;
+  if (!panel) return;
 
   item.classList.remove("is-open");
-  button.setAttribute("aria-expanded", "false");
 
   panel.style.height = `${panel.scrollHeight}px`;
   panel.style.opacity = "1";

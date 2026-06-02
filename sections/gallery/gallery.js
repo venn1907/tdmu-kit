@@ -43,7 +43,6 @@ export function initGallery() {
     media.src = src;
 
     if (type === "video") {
-      media.title = label;
       media.loading = "lazy";
       media.allowFullscreen = true;
       media.allow =

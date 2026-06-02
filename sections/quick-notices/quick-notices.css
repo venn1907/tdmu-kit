@@ -110,6 +110,27 @@
   color: var(--tdmu-accent-light);
 }
 
+.tdmu-quick-notice-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.4rem;
+}
+
+.tdmu-quick-notice-more {
+  padding: 0.7rem 1rem;
+  background: #fff;
+  color: var(--tdmu-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--transition-base);
+}
+
+.tdmu-quick-notice-more:hover {
+  background: var(--tdmu-accent-light);
+  color: var(--tdmu-primary);
+}
+
 @media (max-width: 575.98px) {
   .tdmu-quick-notice-tabs {
     gap: 0.35rem;

@@ -7,7 +7,7 @@
       </header>
 
       <div class="tdmu-listing-toolbar">
-        <nav class="tdmu-listing-breadcrumb" aria-label="Breadcrumb">
+        <nav class="tdmu-listing-breadcrumb">
           <a href="../../index.html">Trang chủ</a>
           <span>/</span>
           <span>Thông báo</span>
@@ -16,22 +16,30 @@
       </div>
 
       <div class="tdmu-listing-layout">
-        <aside class="tdmu-listing-sidebar" aria-label="Danh mục thông báo">
+        <aside class="tdmu-listing-sidebar">
           <p class="tdmu-listing-sidebar-title">Danh mục</p>
           <div class="tdmu-listing-filter-dropdown">
             <button
               class="tdmu-listing-filter-toggle"
               id="noticeListingFilterToggle"
               type="button"
-              aria-expanded="false"
-              aria-controls="noticeListingFilterMenu"
             >
               <span id="noticeListingFilterLabel">Tất cả</span>
               <span class="material-symbols-rounded">expand_more</span>
             </button>
-            <div class="tdmu-listing-filter-menu" id="noticeListingFilterMenu" hidden></div>
+            <div class="tdmu-listing-filter-menu" id="noticeListingFilterMenu" hidden>
+              <button class="tdmu-listing-filter-option is-active" type="button" data-category="Tất cả">Tất cả</button>
+              <button class="tdmu-listing-filter-option" type="button" data-category="Thông báo tuyển sinh">Thông báo tuyển sinh</button>
+              <button class="tdmu-listing-filter-option" type="button" data-category="Thông báo sinh viên">Thông báo sinh viên</button>
+              <button class="tdmu-listing-filter-option" type="button" data-category="Tuyển dụng">Tuyển dụng</button>
+            </div>
           </div>
-          <div class="tdmu-listing-filter-list" id="noticeListingFilters"></div>
+          <div class="tdmu-listing-filter-list" id="noticeListingFilters">
+            <button class="tdmu-listing-filter is-active" type="button" data-category="Tất cả">Tất cả</button>
+            <button class="tdmu-listing-filter" type="button" data-category="Thông báo tuyển sinh">Thông báo tuyển sinh</button>
+            <button class="tdmu-listing-filter" type="button" data-category="Thông báo sinh viên">Thông báo sinh viên</button>
+            <button class="tdmu-listing-filter" type="button" data-category="Tuyển dụng">Tuyển dụng</button>
+          </div>
         </aside>
 
         <div class="tdmu-listing-content">
@@ -100,7 +108,28 @@
             </article>
           </div>
 
-          <div class="tdmu-listing-pagination" id="noticeListingPagination"></div>
+          <div class="tdmu-listing-pagination" id="noticeListingPagination">
+            <nav>
+              <ul class="pagination pagination-dark justify-content-center mb-0">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" data-prev>
+                    <span class="material-symbols-rounded">chevron_left</span>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#" data-page="1">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" data-page="2">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" data-next>
+                    <span class="material-symbols-rounded">chevron_right</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>

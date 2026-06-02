@@ -1,8 +1,8 @@
-body[data-page="home"] {
+body {
   padding-top: 0;
 }
 
-body[data-page="home"] .tdmu-landing-main {
+.tdmu-landing-main {
   --tdmu-slot-spacing: 3.5rem;
   background: linear-gradient(
     180deg,
@@ -12,26 +12,26 @@ body[data-page="home"] .tdmu-landing-main {
   margin-top: var(--header-total-height, 120px);
 }
 
-body[data-page="home"] .tdmu-landing-main > [id$="-slot"] {
+.tdmu-home-slot {
   position: relative;
   border-top: 1px solid var(--tdmu-border-light);
   padding-top: var(--tdmu-slot-spacing);
   padding-bottom: var(--tdmu-slot-spacing);
 }
 
-body[data-page="home"] .tdmu-landing-main > #featured-slider-slot {
+#featured-slider-slot {
   margin-top: 0;
   border-top: none;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-body[data-page="home"] .tdmu-landing-main > #latest-events-slot,
-body[data-page="home"] .tdmu-landing-main > #training-programs-slot {
+#latest-events-slot,
+#training-programs-slot {
   background: var(--tdmu-surface);
 }
 
-body[data-page="home"] .tdmu-landing-main > #quick-notices-slot {
+#quick-notices-slot {
   background: linear-gradient(
     135deg,
     var(--tdmu-primary-600),
@@ -39,13 +39,13 @@ body[data-page="home"] .tdmu-landing-main > #quick-notices-slot {
   );
 }
 
-body[data-page="home"] .tdmu-landing-main > #tdmu-impact-slot {
+#tdmu-impact-slot {
   background: var(--tdmu-surface-alt);
 }
 
-body[data-page="home"] .tdmu-landing-main > #tdmu-network-slot,
-body[data-page="home"] .tdmu-landing-main > #team-advisors-slot,
-body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
+#tdmu-network-slot,
+#team-advisors-slot,
+#student-utilities-slot {
   background:
     linear-gradient(
       180deg,
@@ -56,7 +56,7 @@ body[data-page="home"] .tdmu-landing-main > #student-utilities-slot {
 }
 
 @media (max-width: 767.98px) {
-  body[data-page="home"] .tdmu-landing-main {
+  .tdmu-landing-main {
     --tdmu-slot-spacing: 2.5rem;
   }
 }

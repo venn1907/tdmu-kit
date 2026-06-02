@@ -12,11 +12,9 @@ export function initHeaderLayout() {
   const heroRoot = detectHeroRoot();
   const state = {
     activePanel: null,
-    activeFlyoutTrigger: null,
     searchOpen: false,
     drawerOpen: false,
     hasHero: Boolean(heroRoot),
-    desktopFlyout: ensureDesktopFlyoutLayer(header),
     lastScrollY: window.scrollY,
     utilityVisible: true,
   };
@@ -59,7 +57,6 @@ function bindLanguageSwitch(header) {
     chips.forEach((chip) => {
       const isActive = chip.dataset.lang === activeLang;
       chip.classList.toggle("is-active", isActive);
-      chip.setAttribute("aria-pressed", String(isActive));
     });
   };
 
@@ -89,7 +86,6 @@ function bindDesktopPanels(header, state) {
       }
     });
 
-    hideDesktopFlyout(state);
   };
 
   const openPanel = (name) => {
@@ -123,11 +119,7 @@ function bindDesktopPanels(header, state) {
     });
   });
 
-  const handleDesktopChange = () => {
-    closePanels();
-  };
-
-  desktopQuery.addEventListener("change", handleDesktopChange);
+  desktopQuery.addEventListener("change", closePanels);
   window.addEventListener("resize", () => {
     if (!desktopQuery.matches || !state.activePanel) return;
     const trigger = header.querySelector(
@@ -136,13 +128,6 @@ function bindDesktopPanels(header, state) {
     const panel = getControlledElement(trigger);
     if (!trigger || !panel || panel.hidden || !navBlock) return;
     syncDesktopPanelPosition(panel, trigger, navBlock);
-    if (state.activeFlyoutTrigger) {
-      showDesktopFlyout(
-        state,
-        getControlledElement(state.activeFlyoutTrigger),
-        state.activeFlyoutTrigger,
-      );
-    }
   });
 
   state.closePanels = closePanels;
@@ -161,25 +146,19 @@ function bindMenuTrees(header, state) {
       closeSiblingSubmenus(trigger, state);
       trigger.setAttribute("aria-expanded", String(willOpen));
 
-      if (shouldUseDesktopFlyout(trigger, panel)) {
-        panel.hidden = true;
-        if (willOpen) {
-          showDesktopFlyout(state, panel, trigger);
-        } else {
-          hideDesktopFlyout(state);
-        }
-      } else {
-        panel.hidden = !willOpen;
-        hideDesktopFlyout(state, trigger);
-      }
+      panel.hidden = !willOpen;
 
       if (!willOpen) {
-        resetDescendantSubmenus(panel);
+        resetMenuTree(panel);
       }
 
       const desktopPanel = trigger.closest(".tdmu-menu-panel");
       if (desktopPanel && !desktopPanel.hidden) {
         requestAnimationFrame(() => {
+          if (willOpen) {
+            syncDesktopSubmenuPosition(panel, trigger);
+          }
+
           const navBlock = header.querySelector(".tdmu-nav-block");
           const topTrigger = header.querySelector(
             `[data-panel-trigger="${desktopPanel.id.replace(/^panel/, "").toLowerCase()}"]`,
@@ -200,7 +179,6 @@ function bindSearchPanel(header, state, panel, toggle) {
   const closeSearch = () => {
     state.searchOpen = false;
     header.classList.remove("is-search-open");
-    toggle.setAttribute("aria-expanded", "false");
     panel.hidden = true;
   };
 
@@ -210,7 +188,6 @@ function bindSearchPanel(header, state, panel, toggle) {
 
     state.searchOpen = willOpen;
     header.classList.toggle("is-search-open", willOpen);
-    toggle.setAttribute("aria-expanded", String(willOpen));
     panel.hidden = !willOpen;
 
     if (willOpen) {
@@ -228,7 +205,6 @@ function bindMobileDrawer(header, state, drawer, toggle) {
     state.drawerOpen = false;
     header.classList.remove("is-drawer-open");
     document.body.classList.remove("tdmu-no-scroll");
-    toggle.setAttribute("aria-expanded", "false");
     drawer.hidden = true;
     header.querySelector(".tdmu-mobile-backdrop")?.setAttribute("hidden", "");
     resetMenuTree(drawer);
@@ -241,7 +217,6 @@ function bindMobileDrawer(header, state, drawer, toggle) {
     state.drawerOpen = true;
     header.classList.add("is-drawer-open");
     document.body.classList.add("tdmu-no-scroll");
-    toggle.setAttribute("aria-expanded", "true");
     drawer.hidden = false;
     header.querySelector(".tdmu-mobile-backdrop")?.removeAttribute("hidden");
   };
@@ -364,6 +339,28 @@ function syncDesktopPanelPosition(panel, trigger, navBlock) {
     window.innerHeight - panelRect.top - viewportPadding,
   );
   panel.style.maxHeight = `${availableHeight}px`;
+  syncDesktopSubmenus(panel);
+}
+
+function syncDesktopSubmenus(root) {
+  root.querySelectorAll(".tdmu-submenu-panel").forEach((panel) => {
+    const trigger = panel.previousElementSibling;
+    if (!panel.hidden && trigger) {
+      syncDesktopSubmenuPosition(panel, trigger);
+    }
+  });
+}
+
+function syncDesktopSubmenuPosition(panel, trigger) {
+  if (!desktopQuery.matches) return;
+
+  const viewportPadding = 12;
+  const gap = 9;
+  const triggerRect = trigger.getBoundingClientRect();
+  const panelWidth = panel.offsetWidth;
+  const spaceOnRight = window.innerWidth - triggerRect.right - gap;
+
+  panel.classList.toggle("is-left", spaceOnRight < panelWidth + viewportPadding);
 }
 
 function closeSiblingSubmenus(trigger, state) {
@@ -383,26 +380,20 @@ function closeSiblingSubmenus(trigger, state) {
     otherTrigger.setAttribute("aria-expanded", "false");
     if (otherPanel) {
       otherPanel.hidden = true;
-      resetDescendantSubmenus(otherPanel);
+      resetMenuTree(otherPanel);
     }
   });
 
-  hideDesktopFlyout(state);
 }
 
 function resetMenuTree(root) {
   root.querySelectorAll("[data-submenu-trigger]").forEach((trigger) => {
     const panel = getControlledElement(trigger);
     trigger.setAttribute("aria-expanded", "false");
-    if (panel) panel.hidden = true;
-  });
-}
-
-function resetDescendantSubmenus(root) {
-  root.querySelectorAll("[data-submenu-trigger]").forEach((trigger) => {
-    const panel = getControlledElement(trigger);
-    trigger.setAttribute("aria-expanded", "false");
-    if (panel) panel.hidden = true;
+    if (panel) {
+      panel.hidden = true;
+      panel.classList.remove("is-left");
+    }
   });
 }
 
@@ -414,70 +405,4 @@ function getControlledElement(trigger) {
   return panel && document.getElementById("mainHeader")?.contains(panel)
     ? panel
     : null;
-}
-
-function shouldUseDesktopFlyout(trigger, panel) {
-  return (
-    desktopQuery.matches &&
-    panel.classList.contains("tdmu-submenu-panel") &&
-    panel.parentElement?.parentElement?.classList.contains("tdmu-menu-tree") &&
-    trigger.closest(".tdmu-menu-panel")
-  );
-}
-
-function ensureDesktopFlyoutLayer(header) {
-  const existing = header.querySelector("#desktopSubmenuFlyout");
-  if (existing) return existing;
-
-  const layer = document.createElement("div");
-  layer.id = "desktopSubmenuFlyout";
-  layer.className = "tdmu-desktop-flyout";
-  layer.hidden = true;
-  header.appendChild(layer);
-  return layer;
-}
-
-function showDesktopFlyout(state, panel, trigger) {
-  const layer = state.desktopFlyout;
-  const branchRect = trigger.parentElement?.getBoundingClientRect();
-  if (!layer || !panel || !branchRect) return;
-
-  layer.innerHTML = panel.innerHTML;
-  layer.hidden = false;
-  layer.classList.remove("is-left");
-
-  const width = layer.offsetWidth || 360;
-  const spaceRight = window.innerWidth - branchRect.right - 16;
-  const spaceLeft = branchRect.left - 16;
-  const openLeft =
-    spaceRight < Math.min(width, 300) && spaceLeft >= Math.min(width, 300);
-  const top = Math.max(12, Math.min(branchRect.top, window.innerHeight - 220));
-  const left = openLeft
-    ? Math.max(16, branchRect.left - width - 12)
-    : Math.min(window.innerWidth - width - 16, branchRect.right + 12);
-
-  layer.classList.toggle("is-left", openLeft);
-  layer.style.top = `${top}px`;
-  layer.style.left = `${left}px`;
-  layer.style.maxHeight = `${Math.max(180, window.innerHeight - branchRect.top - 16)}px`;
-  state.activeFlyoutTrigger = trigger;
-}
-
-function hideDesktopFlyout(state, trigger = null) {
-  const layer = state.desktopFlyout;
-  if (!layer) return;
-  if (
-    trigger &&
-    state.activeFlyoutTrigger &&
-    state.activeFlyoutTrigger !== trigger
-  )
-    return;
-
-  layer.hidden = true;
-  layer.innerHTML = "";
-  layer.classList.remove("is-left");
-  layer.style.removeProperty("top");
-  layer.style.removeProperty("left");
-  layer.style.removeProperty("max-height");
-  state.activeFlyoutTrigger = null;
 }
