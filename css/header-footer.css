@@ -1285,3 +1285,7 @@
     font-size: 0.84rem;
   }
 }
+
+body {
+  padding-top: 0;
+}

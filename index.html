@@ -16,61 +16,2585 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0"
     />
-
     <link rel="stylesheet" href="assets/css/material-kit.min.css?v=3.1.0" />
-    <link rel="stylesheet" href="css/core.css" />
+    <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/header-footer.css" />
-    <link rel="stylesheet" href="css/page-home.css" />
-    <link
-      rel="stylesheet"
-      href="sections/featured-slider/featured-slider.css"
-    />
-    <link rel="stylesheet" href="sections/gallery/gallery.css" />
-    <link rel="stylesheet" href="sections/unit-profile/unit-profile.css" />
-    <link rel="stylesheet" href="sections/home-news/home-news.css" />
-    <link rel="stylesheet" href="sections/quick-notices/quick-notices.css" />
-    <link rel="stylesheet" href="sections/latest-events/latest-events.css" />
-    <link
-      rel="stylesheet"
-      href="sections/research-showcase/research-showcase.css"
-    />
-    <link
-      rel="stylesheet"
-      href="sections/training-programs/training-programs.css"
-    />
-    <link rel="stylesheet" href="sections/team-advisors/team-advisors.css" />
-    <link
-      rel="stylesheet"
-      href="sections/student-utilities/student-utilities.css"
-    />
-    <link rel="stylesheet" href="sections/faq/faq.css" />
-    <link rel="stylesheet" href="sections/tdmu-map/tdmu-map.css" />
-    <link rel="stylesheet" href="sections/tdmu-impact/tdmu-impact.css" />
-    <link rel="stylesheet" href="sections/tdmu-network/tdmu-network.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/home-layout.css" />
+    <link rel="stylesheet" href="css/section-hero.css" />
+    <link rel="stylesheet" href="css/section-gallery.css" />
+    <link rel="stylesheet" href="css/section-info.css" />
+    <link rel="stylesheet" href="css/section-news.css" />
+    <link rel="stylesheet" href="css/section-notices.css" />
+    <link rel="stylesheet" href="css/section-events.css" />
+    <link rel="stylesheet" href="css/section-research.css" />
+    <link rel="stylesheet" href="css/section-card-grid.css" />
+    <link rel="stylesheet" href="css/section-impact.css" />
+    <link rel="stylesheet" href="css/section-network.css" />
+    <link rel="stylesheet" href="css/section-team.css" />
+    <link rel="stylesheet" href="css/section-utilities.css" />
+    <link rel="stylesheet" href="css/section-faq.css" />
+    <link rel="stylesheet" href="css/section-media.css" />
   </head>
 
   <body data-page="home">
-    <header id="site-header"></header>
+    <header id="mainHeader" class="tdmu-system-header">
+      <div class="tdmu-header-utility">
+        <div class="tdmu-header-utility-inner">
+          <div class="tdmu-utility-links">
+            <a href="#">Lịch công tác</a>
+            <button type="button" data-contact-open>Liên hệ</button>
+            <a href="#">Cổng sinh viên</a>
+          </div>
+        </div>
+      </div>
 
-    <main id="main-content" class="bg-gray-100 tdmu-landing-main">
-      <div class="tdmu-home-slot" id="featured-slider-slot" data-section="featured-slider"></div>
-      <div class="tdmu-home-slot" id="gallery-slot" data-section="gallery"></div>
-      <div class="tdmu-home-slot" id="unit-profile-slot" data-section="unit-profile"></div>
-      <div class="tdmu-home-slot" id="home-news-slot" data-section="home-news"></div>
-      <div class="tdmu-home-slot" id="quick-notices-slot" data-section="quick-notices"></div>
-      <div class="tdmu-home-slot" id="latest-events-slot" data-section="latest-events"></div>
-      <div class="tdmu-home-slot" id="research-showcase-slot" data-section="research-showcase"></div>
-      <div class="tdmu-home-slot" id="training-programs-slot" data-section="training-programs"></div>
-      <div class="tdmu-home-slot" id="tdmu-impact-slot" data-section="tdmu-impact"></div>
-      <div class="tdmu-home-slot" id="tdmu-network-slot" data-section="tdmu-network"></div>
-      <div class="tdmu-home-slot" id="team-advisors-slot" data-section="team-advisors"></div>
-      <div class="tdmu-home-slot" id="student-utilities-slot" data-section="student-utilities"></div>
-      <div class="tdmu-home-slot" id="faq-slot" data-section="faq"></div>
-      <div class="tdmu-home-slot" id="tdmu-map-slot" data-section="tdmu-map"></div>
+      <div class="tdmu-header-shell">
+        <a class="tdmu-brand-block" href="index.html">
+          <span class="tdmu-brand-mark">
+            <img
+              src="assets/img/logo.png"
+              alt="Logo Viện Công nghệ số - Trường Đại học Thủ Dầu Một"
+              class="tdmu-brand-logo"
+              loading="lazy"
+            />
+          </span>
+        </a>
+
+        <div class="tdmu-nav-block">
+          <nav class="tdmu-desktop-nav">
+            <a class="tdmu-nav-link" href="index.html" data-nav="home"
+              >Trang chủ</a
+            >
+
+            <div class="tdmu-nav-item">
+              <button
+                class="tdmu-nav-trigger"
+                type="button"
+                data-panel-trigger="sections"
+                aria-expanded="false"
+                aria-controls="panelSections"
+              >
+                Sections
+              </button>
+              <div class="tdmu-menu-panel" id="panelSections" hidden>
+                <div class="tdmu-menu-tree">
+                  <div class="tdmu-menu-branch">
+                    <button
+                      class="tdmu-menu-node tdmu-menu-node--branch"
+                      type="button"
+                      data-submenu-trigger="sectionsLanding"
+                      aria-expanded="false"
+                      aria-controls="sectionsLanding"
+                    >
+                      <span class="tdmu-menu-node-copy">
+                        <strong>Landing</strong>
+                      </span>
+                    </button>
+                    <div class="tdmu-submenu-panel" id="sectionsLanding" hidden>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="index.html#featured-slider-slot"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Featured Slider</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="index.html#gallery-slot"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>TDMU Manifesto</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="index.html#student-utilities-slot"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Student Utilities</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="index.html#tdmu-impact-slot"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>TDMU Impact</strong>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="tdmu-menu-branch">
+                    <button
+                      class="tdmu-menu-node tdmu-menu-node--branch"
+                      type="button"
+                      data-submenu-trigger="sectionsContent"
+                      aria-expanded="false"
+                      aria-controls="sectionsContent"
+                    >
+                      <span class="tdmu-menu-node-copy">
+                        <strong>Thông tin và nội dung</strong>
+                      </span>
+                    </button>
+                    <div class="tdmu-submenu-panel" id="sectionsContent" hidden>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="index.html#home-news-slot"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Tin tức</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="index.html#quick-notices-slot"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Thông báo</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="index.html#latest-events-slot"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Latest Events</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="index.html#team-advisors-slot"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Team Advisors</strong>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="tdmu-menu-branch">
+                    <button
+                      class="tdmu-menu-node tdmu-menu-node--branch"
+                      type="button"
+                      data-submenu-trigger="sectionsTemplates"
+                      aria-expanded="false"
+                      aria-controls="sectionsTemplates"
+                    >
+                      <span class="tdmu-menu-node-copy">
+                        <strong>Mẫu trang</strong>
+                      </span>
+                    </button>
+                    <div
+                      class="tdmu-submenu-panel"
+                      id="sectionsTemplates"
+                      hidden
+                    >
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="pages/news/index.html"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>News Listing</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="pages/news-detail/index.html"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Chi tiết tin tức</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="pages/notice-detail/index.html"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Chi tiết thông báo</strong>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tdmu-nav-item">
+              <button
+                class="tdmu-nav-trigger"
+                type="button"
+                data-panel-trigger="units"
+                aria-expanded="false"
+                aria-controls="panelUnits"
+              >
+                Đơn vị
+              </button>
+              <div class="tdmu-menu-panel" id="panelUnits" hidden>
+                <div class="tdmu-menu-tree">
+                  <div class="tdmu-menu-branch">
+                    <button
+                      class="tdmu-menu-node tdmu-menu-node--branch"
+                      type="button"
+                      data-submenu-trigger="unitsAcademic"
+                      aria-expanded="false"
+                      aria-controls="unitsAcademic"
+                    >
+                      <span class="tdmu-menu-node-copy">
+                        <strong>Khối chuyên môn</strong>
+                      </span>
+                    </button>
+                    <div class="tdmu-submenu-panel" id="unitsAcademic" hidden>
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Trung tâm Công nghệ thông tin</strong>
+                        </span>
+                      </a>
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Bộ môn Hệ thống thông tin</strong>
+                        </span>
+                      </a>
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Bộ môn Công nghệ thông tin</strong>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Khối vận hành</strong>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tdmu-nav-item">
+              <button
+                class="tdmu-nav-trigger"
+                type="button"
+                data-panel-trigger="news"
+                aria-expanded="false"
+                aria-controls="panelNews"
+              >
+                Tin tức
+              </button>
+              <div class="tdmu-menu-panel" id="panelNews" hidden>
+                <div class="tdmu-menu-tree">
+                  <a
+                    class="tdmu-menu-node tdmu-menu-node--leaf"
+                    href="pages/news/index.html"
+                  >
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Trang tin tức</strong>
+                    </span>
+                  </a>
+                  <a
+                    class="tdmu-menu-node tdmu-menu-node--leaf"
+                    href="pages/notices/index.html"
+                  >
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Trang thông báo</strong>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tdmu-nav-item">
+              <button
+                class="tdmu-nav-trigger"
+                type="button"
+                data-panel-trigger="training"
+                aria-expanded="false"
+                aria-controls="panelTraining"
+              >
+                Đào tạo
+              </button>
+              <div class="tdmu-menu-panel" id="panelTraining" hidden>
+                <div class="tdmu-menu-tree">
+                  <div class="tdmu-menu-branch">
+                    <button
+                      class="tdmu-menu-node tdmu-menu-node--branch"
+                      type="button"
+                      data-submenu-trigger="trainingUndergrad"
+                      aria-expanded="false"
+                      aria-controls="trainingUndergrad"
+                    >
+                      <span class="tdmu-menu-node-copy">
+                        <strong>Bậc đại học</strong>
+                      </span>
+                    </button>
+                    <div
+                      class="tdmu-submenu-panel"
+                      id="trainingUndergrad"
+                      hidden
+                    >
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Công nghệ thông tin</strong>
+                        </span>
+                      </a>
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Hệ thống thông tin</strong>
+                        </span>
+                      </a>
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Kỹ thuật phần mềm</strong>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="tdmu-menu-branch">
+                    <button
+                      class="tdmu-menu-node tdmu-menu-node--branch"
+                      type="button"
+                      data-submenu-trigger="trainingAdvanced"
+                      aria-expanded="false"
+                      aria-controls="trainingAdvanced"
+                    >
+                      <span class="tdmu-menu-node-copy">
+                        <strong>Chương trình nâng cao</strong>
+                      </span>
+                    </button>
+                    <div
+                      class="tdmu-submenu-panel"
+                      id="trainingAdvanced"
+                      hidden
+                    >
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Thạc sĩ Hệ thống thông tin</strong>
+                        </span>
+                      </a>
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Chứng chỉ ứng dụng CNTT</strong>
+                        </span>
+                      </a>
+                      <a class="tdmu-menu-node tdmu-menu-node--leaf" href="#">
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Workshop chuyên đề</strong>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tdmu-nav-item">
+              <button
+                class="tdmu-nav-trigger"
+                type="button"
+                data-panel-trigger="templates"
+                aria-expanded="false"
+                aria-controls="panelTemplates"
+                data-nav="templates"
+              >
+                Mẫu trang
+              </button>
+              <div class="tdmu-menu-panel" id="panelTemplates" hidden>
+                <div class="tdmu-menu-tree">
+                  <a
+                    class="tdmu-menu-node tdmu-menu-node--leaf"
+                    href="pages/news/index.html"
+                  >
+                    <span class="tdmu-menu-node-copy">
+                      <strong>Trang tin tức</strong>
+                    </span>
+                  </a>
+                  <div class="tdmu-menu-branch">
+                    <button
+                      class="tdmu-menu-node tdmu-menu-node--branch"
+                      type="button"
+                      data-submenu-trigger="templatesNews"
+                      aria-expanded="false"
+                      aria-controls="templatesNews"
+                    >
+                      <span class="tdmu-menu-node-copy">
+                        <strong>Nhóm tin tức</strong>
+                      </span>
+                    </button>
+                    <div class="tdmu-submenu-panel" id="templatesNews" hidden>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="pages/news/index.html"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Trang tin tức</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="pages/news-detail/index.html"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Chi tiết tin tức</strong>
+                        </span>
+                      </a>
+                      <a
+                        class="tdmu-menu-node tdmu-menu-node--leaf"
+                        href="pages/notice-detail/index.html"
+                      >
+                        <span class="tdmu-menu-node-copy">
+                          <strong>Chi tiết thông báo</strong>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <div class="tdmu-header-tools">
+            <div class="tdmu-lang-switch">
+              <button
+                class="tdmu-lang-chip is-active"
+                type="button"
+                data-lang="vi"
+              >
+                <img
+                  src="assets/img/vi.png"
+                  alt="Tiếng Việt"
+                  class="tdmu-lang-flag"
+                  loading="lazy"
+                />
+                <span>VI</span>
+              </button>
+              <button class="tdmu-lang-chip" type="button" data-lang="en">
+                <img
+                  src="assets/img/en.png"
+                  alt="English"
+                  class="tdmu-lang-flag"
+                  loading="lazy"
+                />
+                <span>EN</span>
+              </button>
+            </div>
+
+            <button
+              class="tdmu-tool-button"
+              type="button"
+              data-search-toggle
+              title="Tìm kiếm"
+            >
+              <span class="material-symbols-rounded">search</span>
+            </button>
+
+            <a class="tdmu-header-cta" href="index.html#student-utilities-slot"
+              >Tiện ích</a
+            >
+
+            <button
+              class="tdmu-mobile-toggle"
+              type="button"
+              data-drawer-toggle
+              title="Mở menu"
+            >
+              <span class="material-symbols-rounded">menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tdmu-search-panel" id="headerSearchPanel" hidden>
+        <form class="tdmu-search-form">
+          <label class="tdmu-search-label" for="headerSearchInput"
+            >Tìm kiếm nhanh</label
+          >
+          <div class="tdmu-search-field">
+            <span class="material-symbols-rounded">search</span>
+            <input
+              id="headerSearchInput"
+              type="search"
+              placeholder="Tin tức, thông báo, học vụ..."
+            />
+            <button type="submit">Tìm</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="tdmu-mobile-backdrop" data-drawer-close hidden></div>
+
+      <aside class="tdmu-mobile-drawer" id="mobileDrawer" hidden>
+        <div class="tdmu-mobile-drawer-head">
+          <div>
+            <h2 class="tdmu-mobile-title">Điều hướng</h2>
+          </div>
+          <button
+            class="tdmu-mobile-close"
+            type="button"
+            data-drawer-close
+            title="Đóng menu"
+          >
+            <span class="material-symbols-rounded">close</span>
+          </button>
+        </div>
+
+        <a
+          class="tdmu-mobile-utility-link"
+          href="index.html#student-utilities-slot"
+          >Tiện ích</a
+        >
+
+        <nav class="tdmu-mobile-nav">
+          <a class="tdmu-mobile-link" href="index.html" data-nav="home"
+            >Trang chủ</a
+          >
+
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger"
+              type="button"
+              data-submenu-trigger="drawerSections"
+              aria-expanded="false"
+              aria-controls="drawerSections"
+            >
+              Sections
+            </button>
+            <div
+              class="tdmu-mobile-panel tdmu-mobile-panel--level-2"
+              id="drawerSections"
+              hidden
+            >
+              <div class="tdmu-mobile-group">
+                <button
+                  class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+                  type="button"
+                  data-submenu-trigger="drawerSectionsLanding"
+                  aria-expanded="false"
+                  aria-controls="drawerSectionsLanding"
+                >
+                  Landing
+                </button>
+                <div
+                  class="tdmu-mobile-panel tdmu-mobile-panel--level-3"
+                  id="drawerSectionsLanding"
+                  hidden
+                >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="index.html#featured-slider-slot"
+                    >Featured Slider</a
+                  >
+                  <a class="tdmu-mobile-sublink" href="index.html#gallery-slot"
+                    >Gallery</a
+                  >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="index.html#student-utilities-slot"
+                    >Student Utilities</a
+                  >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="index.html#tdmu-impact-slot"
+                    >TDMU Impact</a
+                  >
+                </div>
+              </div>
+              <div class="tdmu-mobile-group">
+                <button
+                  class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+                  type="button"
+                  data-submenu-trigger="drawerSectionsContent"
+                  aria-expanded="false"
+                  aria-controls="drawerSectionsContent"
+                >
+                  Thông tin và nội dung
+                </button>
+                <div
+                  class="tdmu-mobile-panel tdmu-mobile-panel--level-3"
+                  id="drawerSectionsContent"
+                  hidden
+                >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="index.html#home-news-slot"
+                    >Tin tức</a
+                  >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="index.html#quick-notices-slot"
+                    >Thông báo</a
+                  >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="index.html#latest-events-slot"
+                    >Latest Events</a
+                  >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="index.html#team-advisors-slot"
+                    >Team Advisors</a
+                  >
+                </div>
+              </div>
+              <div class="tdmu-mobile-group">
+                <button
+                  class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+                  type="button"
+                  data-submenu-trigger="drawerSectionsTemplates"
+                  aria-expanded="false"
+                  aria-controls="drawerSectionsTemplates"
+                >
+                  Mẫu trang
+                </button>
+                <div
+                  class="tdmu-mobile-panel tdmu-mobile-panel--level-3"
+                  id="drawerSectionsTemplates"
+                  hidden
+                >
+                  <a class="tdmu-mobile-sublink" href="pages/news/index.html"
+                    >Trang tin tức</a
+                  >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="pages/news-detail/index.html"
+                    >Chi tiết tin tức</a
+                  >
+                  <a
+                    class="tdmu-mobile-sublink"
+                    href="pages/notice-detail/index.html"
+                    >Chi tiết thông báo</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger"
+              type="button"
+              data-submenu-trigger="drawerUnits"
+              aria-expanded="false"
+              aria-controls="drawerUnits"
+            >
+              Đơn vị
+            </button>
+            <div
+              class="tdmu-mobile-panel tdmu-mobile-panel--level-2"
+              id="drawerUnits"
+              hidden
+            >
+              <div class="tdmu-mobile-group">
+                <button
+                  class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+                  type="button"
+                  data-submenu-trigger="drawerUnitsAcademic"
+                  aria-expanded="false"
+                  aria-controls="drawerUnitsAcademic"
+                >
+                  Khối chuyên môn
+                </button>
+                <div
+                  class="tdmu-mobile-panel tdmu-mobile-panel--level-3"
+                  id="drawerUnitsAcademic"
+                  hidden
+                >
+                  <a class="tdmu-mobile-sublink" href="#"
+                    >Trung tâm Công nghệ thông tin</a
+                  >
+                  <a class="tdmu-mobile-sublink" href="#"
+                    >Bộ môn Hệ thống thông tin</a
+                  >
+                  <a class="tdmu-mobile-sublink" href="#"
+                    >Bộ môn Công nghệ thông tin</a
+                  >
+                </div>
+              </div>
+              <a class="tdmu-mobile-sublink" href="#">Khối vận hành</a>
+            </div>
+          </div>
+
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger"
+              type="button"
+              data-submenu-trigger="drawerNews"
+              aria-expanded="false"
+              aria-controls="drawerNews"
+            >
+              Tin tức
+            </button>
+            <div
+              class="tdmu-mobile-panel tdmu-mobile-panel--level-2"
+              id="drawerNews"
+              hidden
+            >
+              <a class="tdmu-mobile-sublink" href="pages/news/index.html"
+                >Trang tin tức</a
+              >
+              <a class="tdmu-mobile-sublink" href="pages/notices/index.html"
+                >Trang thông báo</a
+              >
+            </div>
+          </div>
+
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger"
+              type="button"
+              data-submenu-trigger="drawerTraining"
+              aria-expanded="false"
+              aria-controls="drawerTraining"
+            >
+              Đào tạo
+            </button>
+            <div
+              class="tdmu-mobile-panel tdmu-mobile-panel--level-2"
+              id="drawerTraining"
+              hidden
+            >
+              <div class="tdmu-mobile-group">
+                <button
+                  class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+                  type="button"
+                  data-submenu-trigger="drawerTrainingUndergrad"
+                  aria-expanded="false"
+                  aria-controls="drawerTrainingUndergrad"
+                >
+                  Bậc đại học
+                </button>
+                <div
+                  class="tdmu-mobile-panel tdmu-mobile-panel--level-3"
+                  id="drawerTrainingUndergrad"
+                  hidden
+                >
+                  <a class="tdmu-mobile-sublink" href="#"
+                    >Công nghệ thông tin</a
+                  >
+                  <a class="tdmu-mobile-sublink" href="#">Hệ thống thông tin</a>
+                  <a class="tdmu-mobile-sublink" href="#">Kỹ thuật phần mềm</a>
+                </div>
+              </div>
+              <div class="tdmu-mobile-group">
+                <button
+                  class="tdmu-mobile-trigger tdmu-mobile-trigger--nested"
+                  type="button"
+                  data-submenu-trigger="drawerTrainingAdvanced"
+                  aria-expanded="false"
+                  aria-controls="drawerTrainingAdvanced"
+                >
+                  Chương trình nâng cao
+                </button>
+                <div
+                  class="tdmu-mobile-panel tdmu-mobile-panel--level-3"
+                  id="drawerTrainingAdvanced"
+                  hidden
+                >
+                  <a class="tdmu-mobile-sublink" href="#"
+                    >Thạc sĩ Hệ thống thông tin</a
+                  >
+                  <a class="tdmu-mobile-sublink" href="#"
+                    >Chứng chỉ ứng dụng CNTT</a
+                  >
+                  <a class="tdmu-mobile-sublink" href="#">Workshop chuyên đề</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tdmu-mobile-group">
+            <button
+              class="tdmu-mobile-trigger"
+              type="button"
+              data-submenu-trigger="drawerTemplates"
+              aria-expanded="false"
+              aria-controls="drawerTemplates"
+              data-nav="templates"
+            >
+              Mẫu trang
+            </button>
+            <div
+              class="tdmu-mobile-panel tdmu-mobile-panel--level-2"
+              id="drawerTemplates"
+              hidden
+            >
+              <a class="tdmu-mobile-sublink" href="pages/news/index.html"
+                >Trang tin tức</a
+              >
+              <a class="tdmu-mobile-sublink" href="pages/notices/index.html"
+                >Trang thông báo</a
+              >
+              <a class="tdmu-mobile-sublink" href="pages/news-detail/index.html"
+                >Chi tiết tin tức</a
+              >
+              <a
+                class="tdmu-mobile-sublink"
+                href="pages/notice-detail/index.html"
+                >Chi tiết thông báo</a
+              >
+            </div>
+          </div>
+        </nav>
+
+        <div class="tdmu-mobile-drawer-footer">
+          <div class="tdmu-lang-switch tdmu-lang-switch--drawer">
+            <button
+              class="tdmu-lang-chip is-active"
+              type="button"
+              data-lang="vi"
+            >
+              <img
+                src="assets/img/vi.png"
+                alt="Tiếng Việt"
+                class="tdmu-lang-flag"
+                loading="lazy"
+              />
+              <span>VI</span>
+            </button>
+            <button class="tdmu-lang-chip" type="button" data-lang="en">
+              <img
+                src="assets/img/en.png"
+                alt="English"
+                class="tdmu-lang-flag"
+                loading="lazy"
+              />
+              <span>EN</span>
+            </button>
+          </div>
+
+          <form class="tdmu-mobile-search-form">
+            <label class="tdmu-search-label" for="drawerSearchInput"
+              >Tìm kiếm nhanh</label
+            >
+            <div class="tdmu-search-field">
+              <span class="material-symbols-rounded">search</span>
+              <input
+                id="drawerSearchInput"
+                type="search"
+                placeholder="Tin tức, thông báo, học vụ..."
+              />
+              <button type="submit">Tìm</button>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </header>
+
+    <main id="main" class="bg-gray-100 tdmu-landing-main">
+      <div class="tdmu-home-slot" id="featured-slider-slot">
+        <section class="tdmu-section tdmu-section--hero">
+          <div id="featured-slider" class="tdmu-hero-slider">
+            <div class="tdmu-slider-track" id="featured-slider-track">
+              <figure class="tdmu-slide">
+                <img
+                  class="tdmu-slide-media"
+                  src="assets/img/bg-landing.jpg"
+                  alt="Sinh viên và giảng viên Viện Công nghệ số tại TDMU"
+                  loading="eager"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="tdmu-slide">
+                <img
+                  class="tdmu-slide-media"
+                  src="assets/img/bg3.jpg"
+                  alt="Không gian học thuật và cảnh quan học tập tại TDMU"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="tdmu-slide">
+                <img
+                  class="tdmu-slide-media"
+                  src="assets/img/bg5.jpg"
+                  alt="Hoạt động kết nối học thuật và trải nghiệm sinh viên"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="tdmu-slide">
+                <img
+                  class="tdmu-slide-media"
+                  src="assets/img/bg10.jpg"
+                  alt="Chương trình đào tạo và môi trường học tập số của TDMU"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+
+            <div class="tdmu-slider-controls">
+              <button class="tdmu-slider-control prev" type="button">
+                <span class="material-symbols-rounded">chevron_left</span>
+              </button>
+              <button class="tdmu-slider-control next" type="button">
+                <span class="material-symbols-rounded">chevron_right</span>
+              </button>
+            </div>
+
+            <div class="tdmu-slider-dots">
+              <button
+                class="tdmu-slider-dot is-active"
+                type="button"
+                data-slide="0"
+              ></button>
+              <button
+                class="tdmu-slider-dot"
+                type="button"
+                data-slide="1"
+              ></button>
+              <button
+                class="tdmu-slider-dot"
+                type="button"
+                data-slide="2"
+              ></button>
+              <button
+                class="tdmu-slider-dot"
+                type="button"
+                data-slide="3"
+              ></button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="gallery-slot">
+        <section
+          class="tdmu-section tdmu-section-tight-top tdmu-section--gallery-band"
+        >
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--gallery">
+              <div class="tdmu-section-head tdmu-media-library-head">
+                <h2 class="tdmu-section-title">Thư viện hình ảnh, video</h2>
+              </div>
+
+              <div class="tdmu-media-library" data-media-library>
+                <button
+                  class="tdmu-media-tile tdmu-media-tile--feature"
+                  type="button"
+                  data-media-item
+                  data-type="image"
+                  data-src="assets/img/banner.jpg"
+                  data-title="Hoạt động Viện Công nghệ số"
+                >
+                  <img
+                    src="assets/img/banner.jpg"
+                    alt="Hoạt động Viện Công nghệ số"
+                    loading="lazy"
+                  />
+                </button>
+
+                <button
+                  class="tdmu-media-tile"
+                  type="button"
+                  data-media-item
+                  data-type="video"
+                  data-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  data-title="Video giới thiệu"
+                >
+                  <img
+                    src="assets/img/bg-landing.jpg"
+                    alt="Video giới thiệu"
+                    loading="lazy"
+                  />
+                  <span class="tdmu-media-play material-symbols-rounded"
+                    >play_arrow</span
+                  >
+                </button>
+
+                <button
+                  class="tdmu-media-tile"
+                  type="button"
+                  data-media-item
+                  data-type="image"
+                  data-src="assets/img/bg3.jpg"
+                  data-title="Không gian nghiên cứu"
+                >
+                  <img
+                    src="assets/img/bg3.jpg"
+                    alt="Không gian nghiên cứu"
+                    loading="lazy"
+                  />
+                </button>
+
+                <button
+                  class="tdmu-media-tile"
+                  type="button"
+                  data-media-item
+                  data-type="video"
+                  data-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  data-title="Khoảnh khắc TDMU"
+                >
+                  <img
+                    src="assets/img/city-profile.jpg"
+                    alt="Khoảnh khắc TDMU"
+                    loading="lazy"
+                  />
+                  <span class="tdmu-media-play material-symbols-rounded"
+                    >play_arrow</span
+                  >
+                </button>
+
+                <button
+                  class="tdmu-media-tile tdmu-media-tile--more"
+                  type="button"
+                  data-media-item
+                  data-type="image"
+                  data-src="assets/img/bg10.jpg"
+                  data-title="Không gian học thuật"
+                >
+                  <img
+                    src="assets/img/bg10.jpg"
+                    alt="Không gian học thuật"
+                    loading="lazy"
+                  />
+                  <strong data-media-more-count></strong>
+                </button>
+
+                <button
+                  class="tdmu-media-tile"
+                  type="button"
+                  data-media-item
+                  data-type="image"
+                  data-src="assets/img/bg5.jpg"
+                  data-title="Kết nối học thuật"
+                >
+                  <img
+                    src="assets/img/bg5.jpg"
+                    alt="Kết nối học thuật"
+                    loading="lazy"
+                  />
+                </button>
+
+                <button
+                  class="tdmu-media-tile"
+                  type="button"
+                  data-media-item
+                  data-type="video"
+                  data-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  data-title="Video hoạt động"
+                >
+                  <img
+                    src="assets/img/city-profile.jpg"
+                    alt="Video hoạt động"
+                    loading="lazy"
+                  />
+                  <span class="tdmu-media-play material-symbols-rounded"
+                    >play_arrow</span
+                  >
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <div class="tdmu-media-viewer" data-media-viewer hidden>
+            <button
+              class="tdmu-media-viewer-close"
+              type="button"
+              data-media-close
+            >
+              <span class="material-symbols-rounded">close</span>
+            </button>
+            <button
+              class="tdmu-media-viewer-nav tdmu-media-viewer-nav--prev"
+              type="button"
+              data-media-prev
+            >
+              <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+            <div class="tdmu-media-viewer-frame" data-media-frame></div>
+            <button
+              class="tdmu-media-viewer-nav tdmu-media-viewer-nav--next"
+              type="button"
+              data-media-next
+            >
+              <span class="material-symbols-rounded">chevron_right</span>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="unit-profile-slot">
+        <section class="tdmu-section section-pad-sm tdmu-unit-profile-section">
+          <div class="container">
+            <section class="tdmu-panel tdmu-unit-profile-panel">
+              <div class="tdmu-unit-profile-layout">
+                <div class="tdmu-unit-profile-copy">
+                  <p class="tdmu-unit-profile-kicker">Hồ sơ đơn vị</p>
+                  <p class="tdmu-unit-profile-name">Viện Công nghệ số</p>
+                  <h2 class="tdmu-unit-profile-title">
+                    Không gian đào tạo, nghiên cứu và kết nối số mang dấu ấn
+                    TDMU
+                  </h2>
+                  <p class="tdmu-unit-profile-summary">
+                    Section này phù hợp cho khoa, viện, trung tâm hoặc phòng ban
+                    muốn giới thiệu nhanh về đơn vị ngay trên trang chủ, với
+                    nhịp trình bày gọn và hiện đại.
+                  </p>
+
+                  <div class="tdmu-unit-profile-actions">
+                    <a class="tdmu-unit-profile-cta" href="#">
+                      <span>Xem giới thiệu đơn vị</span>
+                      <span class="material-symbols-rounded"
+                        >arrow_outward</span
+                      >
+                    </a>
+                  </div>
+                </div>
+
+                <div class="tdmu-unit-profile-media">
+                  <div class="tdmu-unit-profile-stage">
+                    <figure
+                      class="tdmu-unit-profile-photo tdmu-unit-profile-photo--main"
+                    >
+                      <img
+                        src="assets/img/banner.jpg"
+                        alt="Hoạt động học thuật của Viện Công nghệ số"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <div class="tdmu-unit-profile-cutout"></div>
+
+                    <div class="tdmu-unit-profile-badge">
+                      <p class="tdmu-unit-profile-badge-label">Định hướng</p>
+                      <strong class="tdmu-unit-profile-badge-value">
+                        Học thuật số gắn với vận hành và thực tiễn
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="home-news-slot">
+        <section class="tdmu-section tdmu-section-tight-top">
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--home-news">
+              <div class="tdmu-section-head">
+                <h2 class="tdmu-section-title">Tin tức</h2>
+              </div>
+
+              <div class="tdmu-home-news-grid">
+                <article class="tdmu-home-news-feature">
+                  <a
+                    class="tdmu-home-news-feature-media"
+                    href="pages/news-detail/index.html"
+                  >
+                    <img
+                      src="assets/img/banner.jpg"
+                      alt="Sinh viên Viện Công nghệ số tham dự kỳ thi Olympic Toán học sinh viên toàn quốc"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="tdmu-home-news-feature-body">
+                    <p class="tdmu-home-news-meta">Tin tổng hợp · 02/04/2026</p>
+                    <h3 class="tdmu-home-news-feature-title">
+                      <a href="pages/news-detail/index.html">
+                        Sinh viên Viện Công nghệ số tham dự kỳ thi Olympic Toán
+                        học sinh viên toàn quốc năm 2026
+                      </a>
+                    </h3>
+                    <p class="tdmu-home-news-excerpt">
+                      Đội tuyển sinh viên chuẩn bị bài bản, hướng đến nâng cao
+                      năng lực học thuật và mở rộng môi trường cọ xát chuyên
+                      môn.
+                    </p>
+                  </div>
+                </article>
+
+                <div class="tdmu-home-news-list">
+                  <article class="tdmu-home-news-item">
+                    <a
+                      class="tdmu-home-news-item-media"
+                      href="pages/news-detail/index.html"
+                    >
+                      <img
+                        src="assets/img/bg3.jpg"
+                        alt="Hợp tác đào tạo và nghiên cứu"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-home-news-item-body">
+                      <p class="tdmu-home-news-meta">Hợp tác · 24/03/2026</p>
+                      <h3 class="tdmu-home-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          TDMU và Viện Công nghệ số thúc đẩy hợp tác đào tạo,
+                          nghiên cứu với các đối tác chiến lược
+                        </a>
+                      </h3>
+                      <p class="tdmu-home-news-item-excerpt">
+                        Mở rộng kết nối đào tạo, nghiên cứu và chuyển giao công
+                        nghệ cùng các đơn vị đối tác.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-home-news-item">
+                    <a
+                      class="tdmu-home-news-item-media"
+                      href="pages/news-detail/index.html"
+                    >
+                      <img
+                        src="assets/img/bg5.jpg"
+                        alt="Dự án học thuật của sinh viên"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-home-news-item-body">
+                      <p class="tdmu-home-news-meta">Sinh viên · 21/03/2026</p>
+                      <h3 class="tdmu-home-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          Dự án học thuật của sinh viên Viện Công nghệ số lọt
+                          vào vòng chung kết cuộc thi khởi nghiệp quốc gia
+                        </a>
+                      </h3>
+                      <p class="tdmu-home-news-item-excerpt">
+                        Nhóm sinh viên phát triển giải pháp ứng dụng dữ liệu và
+                        tự động hóa cho bài toán thực tế.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-home-news-item">
+                    <a
+                      class="tdmu-home-news-item-media"
+                      href="pages/news-detail/index.html"
+                    >
+                      <img
+                        src="assets/img/bg10.jpg"
+                        alt="Seminar ứng dụng AI trong giảng dạy"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-home-news-item-body">
+                      <p class="tdmu-home-news-meta">Đào tạo · 18/03/2026</p>
+                      <h3 class="tdmu-home-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          Viện Công nghệ số tổ chức seminar về ứng dụng AI trong
+                          giảng dạy
+                        </a>
+                      </h3>
+                      <p class="tdmu-home-news-item-excerpt">
+                        Hoạt động chia sẻ kinh nghiệm triển khai công cụ AI
+                        trong lớp học và thiết kế học phần.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-home-news-item">
+                    <a
+                      class="tdmu-home-news-item-media"
+                      href="pages/news-detail/index.html"
+                    >
+                      <img
+                        src="assets/img/bg2.jpg"
+                        alt="Ngày hội định hướng chuyên ngành"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-home-news-item-body">
+                      <p class="tdmu-home-news-meta">Đào tạo · 12/03/2026</p>
+                      <h3 class="tdmu-home-news-item-title">
+                        <a href="pages/news-detail/index.html">
+                          Ngày hội định hướng chuyên ngành giúp tân sinh viên
+                          hiểu rõ lộ trình học tập
+                        </a>
+                      </h3>
+                      <p class="tdmu-home-news-item-excerpt">
+                        Sinh viên được giới thiệu chương trình đào tạo, chuẩn
+                        đầu ra và cơ hội nghề nghiệp.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <div class="tdmu-home-news-footer">
+                <a class="tdmu-home-news-more" href="pages/news/index.html">
+                  Xem tất cả tin tức
+                </a>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="quick-notices-slot">
+        <section
+          class="tdmu-section tdmu-section-tight-top tdmu-section--quick-notices"
+        >
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--quick-notices">
+              <div class="tdmu-section-head">
+                <h2 class="tdmu-section-title">Thông báo nhanh</h2>
+              </div>
+
+              <div class="tdmu-quick-notice-tabs" data-notice-tabs>
+                <button
+                  class="tdmu-quick-notice-tab is-active"
+                  type="button"
+                  data-notice-filter="all"
+                >
+                  Tổng hợp
+                </button>
+                <button
+                  class="tdmu-quick-notice-tab"
+                  type="button"
+                  data-notice-filter="admissions"
+                >
+                  Tuyển sinh
+                </button>
+                <button
+                  class="tdmu-quick-notice-tab"
+                  type="button"
+                  data-notice-filter="students"
+                >
+                  Sinh viên
+                </button>
+                <button
+                  class="tdmu-quick-notice-tab"
+                  type="button"
+                  data-notice-filter="jobs"
+                >
+                  Tuyển dụng
+                </button>
+              </div>
+
+              <div class="tdmu-quick-notice-list">
+                <article
+                  class="tdmu-quick-notice-item"
+                  data-notice-category="admissions"
+                >
+                  <time datetime="2026-03-28">28/03/2026</time>
+                  <a href="pages/notice-detail/index.html"
+                    >Thông báo tuyển sinh chương trình đào tạo ngắn hạn năm
+                    2026</a
+                  >
+                </article>
+                <article
+                  class="tdmu-quick-notice-item"
+                  data-notice-category="students"
+                >
+                  <time datetime="2026-03-24">24/03/2026</time>
+                  <a href="pages/notice-detail/index.html"
+                    >Thông báo lịch đăng ký học phần dành cho sinh viên khóa
+                    2024</a
+                  >
+                </article>
+                <article
+                  class="tdmu-quick-notice-item"
+                  data-notice-category="students"
+                >
+                  <time datetime="2026-03-22">22/03/2026</time>
+                  <a href="pages/notice-detail/index.html"
+                    >Gia hạn thời gian nộp hồ sơ tham gia chương trình thực tập
+                    doanh nghiệp</a
+                  >
+                </article>
+                <article
+                  class="tdmu-quick-notice-item"
+                  data-notice-category="jobs"
+                >
+                  <time datetime="2026-03-18">18/03/2026</time>
+                  <a href="pages/notice-detail/index.html"
+                    >Tuyển dụng lập trình viên frontend cho dự án chuyển đổi số
+                    tại doanh nghiệp đối tác</a
+                  >
+                </article>
+                <article
+                  class="tdmu-quick-notice-item"
+                  data-notice-category="jobs"
+                >
+                  <time datetime="2026-03-12">12/03/2026</time>
+                  <a href="pages/notice-detail/index.html"
+                    >Tuyển dụng nhân viên content creator phụ trách truyền thông
+                    học thuật</a
+                  >
+                </article>
+                <article
+                  class="tdmu-quick-notice-item"
+                  data-notice-category="students"
+                >
+                  <time datetime="2026-03-08">08/03/2026</time>
+                  <a href="pages/notice-detail/index.html"
+                    >Thông báo học bổng khuyến khích học tập dành cho sinh viên
+                    có thành tích tốt</a
+                  >
+                </article>
+              </div>
+
+              <div class="tdmu-quick-notice-footer">
+                <a
+                  class="tdmu-quick-notice-more"
+                  href="pages/notices/index.html"
+                >
+                  Xem tất cả thông báo
+                </a>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="latest-events-slot">
+        <section class="tdmu-section tdmu-section-tight-top">
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--events">
+              <div class="tdmu-section-head">
+                <h2 class="tdmu-section-title">Sự kiện mới nhất</h2>
+              </div>
+              <div id="events-carousel" class="tdmu-events-carousel">
+                <div class="tdmu-events-controls">
+                  <button
+                    class="tdmu-events-nav"
+                    type="button"
+                    data-events-prev
+                  >
+                    <span class="material-symbols-rounded">arrow_back</span>
+                  </button>
+                  <button
+                    class="tdmu-events-nav"
+                    type="button"
+                    data-events-next
+                  >
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  </button>
+                </div>
+
+                <div class="tdmu-events-viewport">
+                  <div id="events-list" class="tdmu-events-rail">
+                    <a class="tdmu-event-card" href="#">
+                      <div class="tdmu-event-card-media">
+                        <img
+                          class="tdmu-event-card-thumb"
+                          src="assets/img/bg5.jpg"
+                          alt="Seminar: Ứng dụng AI trong phân tích dữ liệu doanh nghiệp"
+                          loading="lazy"
+                        />
+                        <div class="tdmu-event-card-date">
+                          <span class="tdmu-event-card-month">03/2026</span>
+                          <strong class="tdmu-event-card-day">18</strong>
+                          <span class="tdmu-event-card-time">08:30</span>
+                        </div>
+                      </div>
+                      <div class="tdmu-event-card-body">
+                        <h3 class="tdmu-event-card-title">
+                          Seminar: Ứng dụng AI trong phân tích dữ liệu doanh
+                          nghiệp
+                        </h3>
+                        <p class="tdmu-event-card-meta mb-0">
+                          Hội trường A2, TDMU
+                        </p>
+                      </div>
+                    </a>
+
+                    <a class="tdmu-event-card" href="#">
+                      <div class="tdmu-event-card-media">
+                        <img
+                          class="tdmu-event-card-thumb"
+                          src="assets/img/banner.jpg"
+                          alt="Ngày hội kết nối doanh nghiệp ngành CNTT"
+                          loading="lazy"
+                        />
+                        <div class="tdmu-event-card-date">
+                          <span class="tdmu-event-card-month">03/2026</span>
+                          <strong class="tdmu-event-card-day">23</strong>
+                          <span class="tdmu-event-card-time">13:30</span>
+                        </div>
+                      </div>
+                      <div class="tdmu-event-card-body">
+                        <h3 class="tdmu-event-card-title">
+                          Ngày hội kết nối doanh nghiệp ngành CNTT
+                        </h3>
+                        <p class="tdmu-event-card-meta mb-0">
+                          Sảnh Trung tâm ITC
+                        </p>
+                      </div>
+                    </a>
+
+                    <a class="tdmu-event-card" href="#">
+                      <div class="tdmu-event-card-media">
+                        <img
+                          class="tdmu-event-card-thumb"
+                          src="assets/img/bg3.jpg"
+                          alt="Workshop thực hành DevOps cho sinh viên năm cuối"
+                          loading="lazy"
+                        />
+                        <div class="tdmu-event-card-date">
+                          <span class="tdmu-event-card-month">03/2026</span>
+                          <strong class="tdmu-event-card-day">29</strong>
+                          <span class="tdmu-event-card-time">09:00</span>
+                        </div>
+                      </div>
+                      <div class="tdmu-event-card-body">
+                        <h3 class="tdmu-event-card-title">
+                          Workshop thực hành DevOps cho sinh viên năm cuối
+                        </h3>
+                        <p class="tdmu-event-card-meta mb-0">
+                          Phòng Lab B4-204
+                        </p>
+                      </div>
+                    </a>
+
+                    <a class="tdmu-event-card" href="#">
+                      <div class="tdmu-event-card-media">
+                        <img
+                          class="tdmu-event-card-thumb"
+                          src="assets/img/bg10.jpg"
+                          alt="Tư vấn tuyển sinh sau đại học ngành Hệ thống thông tin"
+                          loading="lazy"
+                        />
+                        <div class="tdmu-event-card-date">
+                          <span class="tdmu-event-card-month">04/2026</span>
+                          <strong class="tdmu-event-card-day">04</strong>
+                          <span class="tdmu-event-card-time">19:00</span>
+                        </div>
+                      </div>
+                      <div class="tdmu-event-card-body">
+                        <h3 class="tdmu-event-card-title">
+                          Tư vấn tuyển sinh sau đại học ngành Hệ thống thông tin
+                        </h3>
+                        <p class="tdmu-event-card-meta mb-0">
+                          Trực tuyến qua MS Teams
+                        </p>
+                      </div>
+                    </a>
+
+                    <a class="tdmu-event-card" href="#">
+                      <div class="tdmu-event-card-media">
+                        <img
+                          class="tdmu-event-card-thumb"
+                          src="assets/img/bg10.jpg"
+                          alt="Tọa đàm định hướng nghiên cứu ứng dụng cho học viên cao học"
+                          loading="lazy"
+                        />
+                        <div class="tdmu-event-card-date">
+                          <span class="tdmu-event-card-month">04/2026</span>
+                          <strong class="tdmu-event-card-day">10</strong>
+                          <span class="tdmu-event-card-time">08:00</span>
+                        </div>
+                      </div>
+                      <div class="tdmu-event-card-body">
+                        <h3 class="tdmu-event-card-title">
+                          Tọa đàm định hướng nghiên cứu ứng dụng cho học viên
+                          cao học
+                        </h3>
+                        <p class="tdmu-event-card-meta mb-0">Phòng họp B2</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="research-showcase-slot">
+        <section class="tdmu-section tdmu-section--research-showcase">
+          <div class="container">
+            <section class="tdmu-panel tdmu-research-panel">
+              <div class="tdmu-section-head">
+                <h2 class="tdmu-section-title">Nghiên cứu khoa học</h2>
+              </div>
+
+              <div id="research-showcase" class="tdmu-research-showcase">
+                <div class="tdmu-research-stage">
+                  <button
+                    class="tdmu-research-nav tdmu-research-nav--prev"
+                    type="button"
+                    data-research-prev
+                  >
+                    <span class="material-symbols-rounded">chevron_left</span>
+                  </button>
+
+                  <div class="tdmu-research-stack">
+                    <article class="tdmu-research-card">
+                      <div class="tdmu-research-card-media">
+                        <img
+                          src="assets/img/banner.jpg"
+                          alt="Diễn đàn dữ liệu mở và mô hình phòng thí nghiệm số cho giáo dục đại học"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="tdmu-research-card-body">
+                        <p class="tdmu-research-card-label">Đề tài nổi bật</p>
+                        <p class="tdmu-research-card-date">18/04/2026</p>
+                        <h3 class="tdmu-research-card-title">
+                          Diễn đàn dữ liệu mở và mô hình phòng thí nghiệm số cho
+                          giáo dục đại học
+                        </h3>
+                        <a class="tdmu-research-link" href="#">
+                          <span>Xem bài viết</span>
+                          <span class="material-symbols-rounded"
+                            >arrow_outward</span
+                          >
+                        </a>
+                      </div>
+                    </article>
+
+                    <article class="tdmu-research-card">
+                      <div class="tdmu-research-card-media">
+                        <img
+                          src="assets/img/banner.jpg"
+                          alt="Diễn đàn dữ liệu mở và mô hình phòng thí nghiệm số cho giáo dục đại học"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="tdmu-research-card-body">
+                        <p class="tdmu-research-card-label">Đề tài nổi bật</p>
+                        <p class="tdmu-research-card-date">18/04/2026</p>
+                        <h3 class="tdmu-research-card-title">
+                          Diễn đàn dữ liệu mở và mô hình phòng thí nghiệm số cho
+                          giáo dục đại học
+                        </h3>
+                        <a class="tdmu-research-link" href="#">
+                          <span>Xem bài viết</span>
+                          <span class="material-symbols-rounded"
+                            >arrow_outward</span
+                          >
+                        </a>
+                      </div>
+                    </article>
+
+                    <article class="tdmu-research-card">
+                      <div class="tdmu-research-card-media">
+                        <img
+                          src="assets/img/bg5.jpg"
+                          alt="Hội thảo nghiên cứu ứng dụng AI trong phân tích hành vi học tập của sinh viên"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="tdmu-research-card-body">
+                        <p class="tdmu-research-card-label">
+                          Tọa đàm học thuật
+                        </p>
+                        <p class="tdmu-research-card-date">12/04/2026</p>
+                        <h3 class="tdmu-research-card-title">
+                          Hội thảo nghiên cứu ứng dụng AI trong phân tích hành
+                          vi học tập của sinh viên
+                        </h3>
+                        <a class="tdmu-research-link" href="#">
+                          <span>Xem bài viết</span>
+                          <span class="material-symbols-rounded"
+                            >arrow_outward</span
+                          >
+                        </a>
+                      </div>
+                    </article>
+
+                    <article class="tdmu-research-card">
+                      <div class="tdmu-research-card-media">
+                        <img
+                          src="assets/img/bg3.jpg"
+                          alt="Kết nối nhóm nghiên cứu trẻ trong các chủ đề dữ liệu, hệ thống thông tin và chuyển đổi số"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="tdmu-research-card-body">
+                        <p class="tdmu-research-card-label">
+                          Mạng lưới nghiên cứu
+                        </p>
+                        <p class="tdmu-research-card-date">04/04/2026</p>
+                        <h3 class="tdmu-research-card-title">
+                          Kết nối nhóm nghiên cứu trẻ trong các chủ đề dữ liệu,
+                          hệ thống thông tin và chuyển đổi số
+                        </h3>
+                        <a class="tdmu-research-link" href="#">
+                          <span>Xem bài viết</span>
+                          <span class="material-symbols-rounded"
+                            >arrow_outward</span
+                          >
+                        </a>
+                      </div>
+                    </article>
+
+                    <article class="tdmu-research-card">
+                      <div class="tdmu-research-card-media">
+                        <img
+                          src="assets/img/bg10.jpg"
+                          alt="Chuỗi seminar công bố kết quả thử nghiệm và triển khai sản phẩm số trong môi trường đại học"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="tdmu-research-card-body">
+                        <p class="tdmu-research-card-label">Seminar</p>
+                        <p class="tdmu-research-card-date">28/03/2026</p>
+                        <h3 class="tdmu-research-card-title">
+                          Chuỗi seminar công bố kết quả thử nghiệm và triển khai
+                          sản phẩm số trong môi trường đại học
+                        </h3>
+                        <a class="tdmu-research-link" href="#">
+                          <span>Xem bài viết</span>
+                          <span class="material-symbols-rounded"
+                            >arrow_outward</span
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+
+                  <button
+                    class="tdmu-research-nav tdmu-research-nav--next"
+                    type="button"
+                    data-research-next
+                  >
+                    <span class="material-symbols-rounded">chevron_right</span>
+                  </button>
+                </div>
+
+                <div class="tdmu-research-feed">
+                  <article class="tdmu-research-feed-item">
+                    <a class="tdmu-research-feed-media" href="#">
+                      <img
+                        src="assets/img/banner.jpg"
+                        alt="Diễn đàn dữ liệu mở và mô hình phòng thí nghiệm số cho giáo dục đại học"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-research-feed-body">
+                      <p class="tdmu-research-feed-label">
+                        Đề tài nổi bật · 18/04/2026
+                      </p>
+                      <h3 class="tdmu-research-feed-title">
+                        <a href="#"
+                          >Diễn đàn dữ liệu mở và mô hình phòng thí nghiệm số
+                          cho giáo dục đại học</a
+                        >
+                      </h3>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-research-feed-item">
+                    <a class="tdmu-research-feed-media" href="#">
+                      <img
+                        src="assets/img/bg5.jpg"
+                        alt="Hội thảo nghiên cứu ứng dụng AI trong phân tích hành vi học tập của sinh viên"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-research-feed-body">
+                      <p class="tdmu-research-feed-label">
+                        Tọa đàm học thuật · 12/04/2026
+                      </p>
+                      <h3 class="tdmu-research-feed-title">
+                        <a href="#"
+                          >Hội thảo nghiên cứu ứng dụng AI trong phân tích hành
+                          vi học tập của sinh viên</a
+                        >
+                      </h3>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-research-feed-item">
+                    <a class="tdmu-research-feed-media" href="#">
+                      <img
+                        src="assets/img/bg3.jpg"
+                        alt="Kết nối nhóm nghiên cứu trẻ trong các chủ đề dữ liệu, hệ thống thông tin và chuyển đổi số"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-research-feed-body">
+                      <p class="tdmu-research-feed-label">
+                        Mạng lưới nghiên cứu · 04/04/2026
+                      </p>
+                      <h3 class="tdmu-research-feed-title">
+                        <a href="#"
+                          >Kết nối nhóm nghiên cứu trẻ trong các chủ đề dữ liệu,
+                          hệ thống thông tin và chuyển đổi số</a
+                        >
+                      </h3>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-research-feed-item">
+                    <a class="tdmu-research-feed-media" href="#">
+                      <img
+                        src="assets/img/bg10.jpg"
+                        alt="Chuỗi seminar công bố kết quả thử nghiệm và triển khai sản phẩm số trong môi trường đại học"
+                        loading="lazy"
+                      />
+                    </a>
+                    <div class="tdmu-research-feed-body">
+                      <p class="tdmu-research-feed-label">
+                        Seminar · 28/03/2026
+                      </p>
+                      <h3 class="tdmu-research-feed-title">
+                        <a href="#"
+                          >Chuỗi seminar công bố kết quả thử nghiệm và triển
+                          khai sản phẩm số trong môi trường đại học</a
+                        >
+                      </h3>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="training-programs-slot">
+        <section class="tdmu-section tdmu-section-tight-top">
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--programs">
+              <div class="tdmu-section-head">
+                <h2 class="tdmu-section-title">Đào tạo</h2>
+              </div>
+              <div id="program-grid" class="tdmu-program-grid">
+                <a
+                  class="tdmu-program-card tdmu-program-card--undergrad"
+                  href="#"
+                >
+                  <img
+                    class="tdmu-program-media"
+                    src="assets/img/banner.jpg"
+                    alt="Hệ đại học"
+                    loading="lazy"
+                  />
+                  <div class="tdmu-program-body">
+                    <div class="tdmu-program-icon-wrap">
+                      <span class="material-symbols-rounded tdmu-program-icon"
+                        >school</span
+                      >
+                    </div>
+                    <p class="tdmu-program-kicker">Chính quy</p>
+                    <h3 class="tdmu-program-title">Hệ đại học</h3>
+                    <div class="tdmu-program-tags">
+                      <span>CNTT</span>
+                      <span>HTTT</span>
+                      <span>KTPM</span>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="tdmu-program-card tdmu-program-card--master" href="#">
+                  <img
+                    class="tdmu-program-media"
+                    src="assets/img/bg3.jpg"
+                    alt="Hệ thạc sĩ"
+                    loading="lazy"
+                  />
+                  <div class="tdmu-program-body">
+                    <div class="tdmu-program-icon-wrap">
+                      <span class="material-symbols-rounded tdmu-program-icon"
+                        >workspace_premium</span
+                      >
+                    </div>
+                    <p class="tdmu-program-kicker">Nâng cao</p>
+                    <h3 class="tdmu-program-title">Hệ thạc sĩ</h3>
+                    <div class="tdmu-program-tags">
+                      <span>Ứng dụng</span>
+                      <span>Nghiên cứu</span>
+                    </div>
+                  </div>
+                </a>
+
+                <a class="tdmu-program-card tdmu-program-card--short" href="#">
+                  <img
+                    class="tdmu-program-media"
+                    src="assets/img/bg10.jpg"
+                    alt="Đào tạo ngắn hạn"
+                    loading="lazy"
+                  />
+                  <div class="tdmu-program-body">
+                    <div class="tdmu-program-icon-wrap">
+                      <span class="material-symbols-rounded tdmu-program-icon"
+                        >bolt</span
+                      >
+                    </div>
+                    <p class="tdmu-program-kicker">Thực chiến</p>
+                    <h3 class="tdmu-program-title">Đào tạo ngắn hạn</h3>
+                    <div class="tdmu-program-tags">
+                      <span>ITC</span>
+                      <span>Workshop</span>
+                      <span>Doanh nghiệp</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="tdmu-impact-slot">
+        <section
+          class="tdmu-section tdmu-section-tight-top tdmu-section--impact-bg"
+        >
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--impact">
+              <div class="tdmu-impact-head">
+                <p class="tdmu-impact-kicker">Dấu ấn hoạt động</p>
+                <h2 class="tdmu-impact-title">
+                  Nhịp phát triển của Viện Công nghệ số
+                </h2>
+              </div>
+              <div class="tdmu-impact-grid">
+                <article class="tdmu-impact-item">
+                  <strong class="tdmu-impact-value">06+</strong>
+                  <span class="tdmu-impact-label"
+                    >khối nội dung học thuật và vận hành</span
+                  >
+                </article>
+                <article class="tdmu-impact-item">
+                  <strong class="tdmu-impact-value">04</strong>
+                  <span class="tdmu-impact-label"
+                    >nhóm thông báo được phân tầng rõ ràng</span
+                  >
+                </article>
+                <article class="tdmu-impact-item">
+                  <strong class="tdmu-impact-value">03</strong>
+                  <span class="tdmu-impact-label"
+                    >hệ đào tạo trọng tâm trên homepage</span
+                  >
+                </article>
+                <article class="tdmu-impact-item">
+                  <strong class="tdmu-impact-value">05</strong>
+                  <span class="tdmu-impact-label"
+                    >tiện ích học vụ số truy cập nhanh</span
+                  >
+                </article>
+                <article class="tdmu-impact-item">
+                  <strong class="tdmu-impact-value">04</strong>
+                  <span class="tdmu-impact-label"
+                    >sự kiện gần nhất được hiển thị nổi bật</span
+                  >
+                </article>
+                <article class="tdmu-impact-item">
+                  <strong class="tdmu-impact-value">01</strong>
+                  <span class="tdmu-impact-label"
+                    >trục điều hướng thống nhất theo bản sắc TDMU</span
+                  >
+                </article>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="tdmu-network-slot">
+        <section
+          class="tdmu-section tdmu-section-tight-top tdmu-section--network-band"
+        >
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--network">
+              <div class="tdmu-network-copy">
+                <p class="tdmu-network-kicker">Kết nối và mở rộng</p>
+                <h2 class="tdmu-network-title">
+                  Liên kết học thuật, doanh nghiệp và hệ sinh thái số
+                </h2>
+                <p class="tdmu-network-intro">
+                  Homepage không chỉ hiển thị tin tức mà còn kể câu chuyện về
+                  đào tạo, hợp tác và kết nối thực tiễn của Viện Công nghệ số
+                  theo một nhịp cuộn rõ ràng.
+                </p>
+                <div class="tdmu-network-tags">
+                  <span>Đào tạo</span>
+                  <span>Nghiên cứu</span>
+                  <span>Doanh nghiệp</span>
+                  <span>Sinh viên</span>
+                </div>
+              </div>
+
+              <div class="tdmu-network-stories">
+                <article class="tdmu-network-story">
+                  <img
+                    src="assets/img/bg5.jpg"
+                    alt="Seminar học thuật"
+                    loading="lazy"
+                  />
+                  <div class="tdmu-network-story-body">
+                    <p class="tdmu-network-story-kicker">Seminar</p>
+                    <h3 class="tdmu-network-story-title">
+                      Chuỗi chủ đề AI, DevOps và dữ liệu ứng dụng
+                    </h3>
+                  </div>
+                </article>
+                <article class="tdmu-network-story">
+                  <img
+                    src="assets/img/banner.jpg"
+                    alt="Kết nối doanh nghiệp"
+                    loading="lazy"
+                  />
+                  <div class="tdmu-network-story-body">
+                    <p class="tdmu-network-story-kicker">Doanh nghiệp</p>
+                    <h3 class="tdmu-network-story-title">
+                      Ngày hội kết nối doanh nghiệp và cơ hội nghề nghiệp
+                    </h3>
+                  </div>
+                </article>
+                <article class="tdmu-network-story">
+                  <img
+                    src="assets/img/bg3.jpg"
+                    alt="Không gian học tập"
+                    loading="lazy"
+                  />
+                  <div class="tdmu-network-story-body">
+                    <p class="tdmu-network-story-kicker">Đào tạo</p>
+                    <h3 class="tdmu-network-story-title">
+                      Môi trường học tập hướng ứng dụng và vận hành số
+                    </h3>
+                  </div>
+                </article>
+              </div>
+
+              <div class="tdmu-network-partners">
+                <span class="tdmu-network-partner">TDMU</span>
+                <span class="tdmu-network-partner">ITC</span>
+                <span class="tdmu-network-partner">Doanh nghiệp</span>
+                <span class="tdmu-network-partner">Nghiên cứu</span>
+                <span class="tdmu-network-partner">Sinh viên</span>
+                <span class="tdmu-network-partner">Chuyển đổi số</span>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="team-advisors-slot">
+        <section class="tdmu-section tdmu-section-tight-top">
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--team">
+              <div class="tdmu-team-layout">
+                <div class="tdmu-team-intro">
+                  <p class="tdmu-team-kicker">Đội ngũ hỗ trợ</p>
+                  <h2 class="tdmu-section-title">Đội ngũ tư vấn viên</h2>
+                  <p class="tdmu-team-copy">
+                    Đội ngũ phụ trách tuyển sinh, học vụ và định hướng chương
+                    trình luôn sẵn sàng đồng hành cùng học sinh, phụ huynh và
+                    sinh viên trong từng giai đoạn đăng ký, nhập học và học tập.
+                  </p>
+                  <div class="tdmu-team-intro-meta">
+                    <p>Hỗ trợ trực tiếp</p>
+                    <p>Phản hồi nhanh</p>
+                    <p>Tư vấn đúng nhu cầu</p>
+                  </div>
+                  <a class="tdmu-team-cta" href="#"
+                    >Đăng ký gặp đội ngũ tư vấn</a
+                  >
+                </div>
+
+                <div class="tdmu-team-stage" id="team-advisors-carousel">
+                  <div class="tdmu-team-stage-head">
+                    <p class="tdmu-team-stage-label">Danh sách tư vấn viên</p>
+                    <div class="tdmu-team-stage-controls">
+                      <button
+                        class="tdmu-team-nav tdmu-team-nav--prev"
+                        type="button"
+                      >
+                        <span class="material-symbols-rounded">arrow_back</span>
+                      </button>
+                      <button
+                        class="tdmu-team-nav tdmu-team-nav--next"
+                        type="button"
+                      >
+                        <span class="material-symbols-rounded"
+                          >arrow_forward</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="tdmu-team-viewport">
+                    <div class="tdmu-team-rail">
+                      <article class="tdmu-team-profile">
+                        <figure
+                          class="tdmu-team-portrait tdmu-team-portrait--truc"
+                        >
+                          <img
+                            src="assets/img/banner.jpg"
+                            alt="Nguyễn Thị Phương Trúc"
+                            loading="lazy"
+                          />
+                        </figure>
+                        <div class="tdmu-team-nameplate">
+                          <h3 class="tdmu-team-name">Nguyễn Thị Phương Trúc</h3>
+                        </div>
+                        <p class="tdmu-team-role">Chuyên viên tư vấn</p>
+                        <p class="tdmu-team-field">
+                          Tuyển sinh · Học vụ · Hệ đại học
+                        </p>
+                      </article>
+
+                      <article class="tdmu-team-profile">
+                        <figure
+                          class="tdmu-team-portrait tdmu-team-portrait--nga"
+                        >
+                          <img
+                            src="assets/img/banner.jpg"
+                            alt="Vũ Thị Thanh Nga"
+                            loading="lazy"
+                          />
+                        </figure>
+                        <div class="tdmu-team-nameplate">
+                          <h3 class="tdmu-team-name">Vũ Thị Thanh Nga</h3>
+                        </div>
+                        <p class="tdmu-team-role">Chuyên viên tư vấn</p>
+                        <p class="tdmu-team-field">
+                          Ngành học · Lộ trình học tập · Liên thông
+                        </p>
+                      </article>
+
+                      <article class="tdmu-team-profile">
+                        <figure
+                          class="tdmu-team-portrait tdmu-team-portrait--anh"
+                        >
+                          <img
+                            src="assets/img/banner.jpg"
+                            alt="Phan Nguyễn Quỳnh Anh"
+                            loading="lazy"
+                          />
+                        </figure>
+                        <div class="tdmu-team-nameplate">
+                          <h3 class="tdmu-team-name">Phan Nguyễn Quỳnh Anh</h3>
+                        </div>
+                        <p class="tdmu-team-role">Phụ trách ban</p>
+                        <p class="tdmu-team-field">
+                          Điều phối tư vấn · Kết nối phụ huynh · Học sinh
+                        </p>
+                      </article>
+
+                      <article class="tdmu-team-profile">
+                        <figure
+                          class="tdmu-team-portrait tdmu-team-portrait--thu"
+                        >
+                          <img
+                            src="assets/img/banner.jpg"
+                            alt="Khâu Hoàng Kim Thư"
+                            loading="lazy"
+                          />
+                        </figure>
+                        <div class="tdmu-team-nameplate">
+                          <h3 class="tdmu-team-name">Khâu Hoàng Kim Thư</h3>
+                        </div>
+                        <p class="tdmu-team-role">Chuyên viên tư vấn</p>
+                        <p class="tdmu-team-field">
+                          Giải đáp hồ sơ · Dịch vụ sinh viên · Thông tin nhanh
+                        </p>
+                      </article>
+
+                      <article class="tdmu-team-profile">
+                        <figure
+                          class="tdmu-team-portrait tdmu-team-portrait--truc"
+                        >
+                          <img
+                            src="assets/img/banner.jpg"
+                            alt="Lê Thị Minh Châu"
+                            loading="lazy"
+                          />
+                        </figure>
+                        <div class="tdmu-team-nameplate">
+                          <h3 class="tdmu-team-name">Lê Thị Minh Châu</h3>
+                        </div>
+                        <p class="tdmu-team-role">Chuyên viên hỗ trợ</p>
+                        <p class="tdmu-team-field">
+                          Biểu mẫu · Quy trình · Hướng dẫn nhập học
+                        </p>
+                      </article>
+
+                      <article class="tdmu-team-profile">
+                        <figure
+                          class="tdmu-team-portrait tdmu-team-portrait--nga"
+                        >
+                          <img
+                            src="assets/img/banner.jpg"
+                            alt="Trần Bảo Ngọc"
+                            loading="lazy"
+                          />
+                        </figure>
+                        <div class="tdmu-team-nameplate">
+                          <h3 class="tdmu-team-name">Trần Bảo Ngọc</h3>
+                        </div>
+                        <p class="tdmu-team-role">Chuyên viên hỗ trợ</p>
+                        <p class="tdmu-team-field">
+                          Tư vấn phụ huynh · Lộ trình ngành học · Hỗ trợ nhanh
+                        </p>
+                      </article>
+                    </div>
+                  </div>
+
+                  <div class="tdmu-team-pagination">
+                    <button
+                      class="tdmu-team-dot is-active"
+                      type="button"
+                      data-page="0"
+                    ></button>
+                    <button
+                      class="tdmu-team-dot"
+                      type="button"
+                      data-page="1"
+                    ></button>
+                    <button
+                      class="tdmu-team-dot"
+                      type="button"
+                      data-page="2"
+                    ></button>
+                    <button
+                      class="tdmu-team-dot"
+                      type="button"
+                      data-page="3"
+                    ></button>
+                    <button
+                      class="tdmu-team-dot"
+                      type="button"
+                      data-page="4"
+                    ></button>
+                    <button
+                      class="tdmu-team-dot"
+                      type="button"
+                      data-page="5"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="student-utilities-slot">
+        <section class="tdmu-section tdmu-section-tight-top">
+          <div class="container">
+            <section class="tdmu-panel tdmu-panel--utilities">
+              <div class="tdmu-section-head">
+                <h2 class="tdmu-section-title">Tiện ích</h2>
+              </div>
+              <div id="utility-grid" class="tdmu-utility-grid">
+                <a class="tdmu-utility-item tdmu-utility-item--study" href="#">
+                  <span class="material-symbols-rounded tdmu-utility-icon"
+                    >edit_note</span
+                  >
+                  <h3 class="tdmu-utility-title">Đăng ký môn học</h3>
+                </a>
+                <a class="tdmu-utility-item tdmu-utility-item--online" href="#">
+                  <span class="material-symbols-rounded tdmu-utility-icon"
+                    >school</span
+                  >
+                  <h3 class="tdmu-utility-title">E-learning</h3>
+                </a>
+                <a
+                  class="tdmu-utility-item tdmu-utility-item--certificate"
+                  href="#"
+                >
+                  <span class="material-symbols-rounded tdmu-utility-icon"
+                    >workspace_premium</span
+                  >
+                  <h3 class="tdmu-utility-title">Ứng dụng CNTT</h3>
+                </a>
+                <a class="tdmu-utility-item tdmu-utility-item--form" href="#">
+                  <span class="material-symbols-rounded tdmu-utility-icon"
+                    >description</span
+                  >
+                  <h3 class="tdmu-utility-title">Biểu mẫu</h3>
+                </a>
+                <a class="tdmu-utility-item tdmu-utility-item--media" href="#">
+                  <span class="material-symbols-rounded tdmu-utility-icon"
+                    >photo_library</span
+                  >
+                  <h3 class="tdmu-utility-title">Thư viện ảnh</h3>
+                </a>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="faq-slot">
+        <section class="tdmu-section section-pad-sm tdmu-faq-section">
+          <div class="container">
+            <section class="tdmu-panel tdmu-faq-panel" id="faq-section-content">
+              <div class="tdmu-faq-layout">
+                <div class="tdmu-faq-copy">
+                  <p class="tdmu-faq-kicker">Câu hỏi thường gặp</p>
+                </div>
+
+                <div class="tdmu-faq-list">
+                  <article class="tdmu-faq-item is-open">
+                    <button class="tdmu-faq-question" type="button">
+                      <span
+                        >Làm thế nào để cập nhật tin tức hoặc thông báo lên
+                        website đơn vị?</span
+                      >
+                      <span class="material-symbols-rounded">add</span>
+                    </button>
+                    <div class="tdmu-faq-answer-wrap">
+                      <div class="tdmu-faq-answer">
+                        <p>
+                          Đơn vị có thể chuẩn bị nội dung theo mẫu biên tập
+                          chung, sau đó gửi đầu mối quản trị hoặc tích hợp trực
+                          tiếp vào luồng vận hành nội bộ khi triển khai thực tế.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-faq-item">
+                    <button class="tdmu-faq-question" type="button">
+                      <span
+                        >Section này có dùng được cho khoa, viện, phòng ban khác
+                        không?</span
+                      >
+                      <span class="material-symbols-rounded">add</span>
+                    </button>
+                    <div class="tdmu-faq-answer-wrap">
+                      <div class="tdmu-faq-answer">
+                        <p>
+                          Có. Cấu trúc FAQ được thiết kế theo hướng tái sử dụng,
+                          chỉ cần thay đổi câu hỏi, câu trả lời và nhóm nội dung
+                          mà không phải sửa lại layout.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-faq-item">
+                    <button class="tdmu-faq-question" type="button">
+                      <span
+                        >Có thể nhóm câu hỏi theo học vụ, tuyển sinh hoặc liên
+                        hệ không?</span
+                      >
+                      <span class="material-symbols-rounded">add</span>
+                    </button>
+                    <div class="tdmu-faq-answer-wrap">
+                      <div class="tdmu-faq-answer">
+                        <p>
+                          Có thể. Khi áp dụng thực tế, FAQ có thể chia theo nhóm
+                          chủ đề để người dùng tìm nhanh hơn trên desktop lẫn
+                          mobile.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="tdmu-faq-item">
+                    <button class="tdmu-faq-question" type="button">
+                      <span
+                        >Nếu câu trả lời dài thì có ảnh hưởng đến giao diện
+                        không?</span
+                      >
+                      <span class="material-symbols-rounded">add</span>
+                    </button>
+                    <div class="tdmu-faq-answer-wrap">
+                      <div class="tdmu-faq-answer">
+                        <p>
+                          Accordion được tối ưu để mở theo từng mục, nên nội
+                          dung dài vẫn gọn trên trang và không làm section mất
+                          nhịp trình bày tổng thể.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <div class="tdmu-home-slot" id="tdmu-map-slot">
+        <section class="tdmu-map-section">
+          <div class="container">
+            <div class="tdmu-map-shell">
+              <div class="tdmu-map-copy">
+                <p class="tdmu-map-kicker">Khám phá nhanh</p>
+                <h2 class="tdmu-map-title">Khám phá</h2>
+              </div>
+
+              <div class="tdmu-map-grid">
+                <div class="tdmu-map-card">
+                  <div class="tdmu-map-card-head">
+                    <h3 class="tdmu-map-card-title">Giới thiệu</h3>
+                  </div>
+
+                  <div class="tdmu-map-frame tdmu-map-frame--video">
+                    <iframe
+                      src="https://www.youtube.com/embed/74OeDErqnY0?si=yCFbBRPSJF4zk1RT"
+                      loading="lazy"
+                      allow="
+                        accelerometer;
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        gyroscope;
+                        picture-in-picture;
+                        web-share;
+                      "
+                      allowfullscreen
+                      title="Video"
+                    ></iframe>
+                  </div>
+                </div>
+
+                <div class="tdmu-map-card">
+                  <div class="tdmu-map-card-head">
+                    <h3 class="tdmu-map-card-title">Bản đồ trường</h3>
+                  </div>
+
+                  <div class="tdmu-map-frame">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.770200633684!2d106.6752891!3d10.9807104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1085e2b1c37%3A0x73bfa5616464d0ee!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBUaOG7pyBE4bqndSBN4buZdA!5e0!3m2!1svi!2s!4v1776330445645!5m2!1svi!2s"
+                      loading="lazy"
+                      allowfullscreen
+                      title="Bản đồ Trường Đại học Thủ Dầu Một"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <footer id="site-footer"></footer>
+    <footer class="tdmu-site-footer">
+      <div class="container">
+        <div class="tdmu-footer-grid">
+          <div class="tdmu-footer-brand">
+            <a class="tdmu-footer-logo-link" href="index.html">
+              <img
+                src="assets/img/logo-white.png"
+                alt="Logo Trường Đại học Thủ Dầu Một - Viện Công nghệ số"
+                class="tdmu-footer-logo"
+                loading="lazy"
+              />
+            </a>
+            <p class="tdmu-footer-copy">
+              Số 06, Trần Văn Ơn, Phường Phú Lợi, Thành phố Hồ Chí Minh
+            </p>
+            <p class="tdmu-footer-copy">Email: vcns@tdmu.edu.vn</p>
+            <p class="tdmu-footer-copy">Điện thoại: (0274) 3822 518</p>
+          </div>
 
-    <script type="module" src="js/main.js"></script>
+          <div class="tdmu-footer-connect">
+            <h3>Kết nối</h3>
+            <div class="tdmu-footer-socials">
+              <a
+                class="tdmu-footer-social"
+                href="https://www.facebook.com/itdt.tdmu"
+                title="Facebook"
+              >
+                <img
+                  src="assets/img/svgs/facebook.svg"
+                  alt="Facebook fanpage"
+                />
+              </a>
+              <a
+                class="tdmu-footer-social"
+                href="https://www.youtube.com/"
+                title="YouTube"
+              >
+                <img src="assets/img/svgs/youtube.svg" alt="Youtube channel" />
+              </a>
+              <a
+                class="tdmu-footer-social"
+                href="mailto:vcns@tdmu.edu.vn"
+                title="Email"
+              >
+                <img src="assets/img/svgs/mail.svg" alt="Mail contact" />
+              </a>
+              <a
+                class="tdmu-footer-social"
+                href="tel:02743822518"
+                title="Liên hệ"
+              >
+                <img src="assets/img/svgs/telephone.svg" alt="Phone contact" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tdmu-footer-bottom">
+          <p>
+            © <span id="year"></span> Viện Công nghệ số - Trường Đại học Thủ Dầu
+            Một
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="tdmu-contact-modal-root" id="contactModalRoot" hidden>
+      <div class="tdmu-contact-modal-backdrop" data-contact-close></div>
+
+      <section class="tdmu-contact-modal">
+        <button
+          class="tdmu-contact-modal-close"
+          type="button"
+          data-contact-close
+        >
+          <span class="material-symbols-rounded">close</span>
+        </button>
+
+        <div class="tdmu-contact-modal-head">
+          <p class="tdmu-contact-modal-kicker">Liên hệ</p>
+          <h2 class="tdmu-contact-modal-title" id="tdmuContactTitle">
+            Để lại thông tin
+          </h2>
+          <p class="tdmu-contact-modal-copy">
+            Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
+          </p>
+        </div>
+
+        <form class="tdmu-contact-form" id="tdmuContactForm">
+          <div class="tdmu-contact-field">
+            <label for="contactFullName">Họ và tên</label>
+            <input id="contactFullName" name="fullName" type="text" required />
+          </div>
+
+          <div class="tdmu-contact-field">
+            <label for="contactEmail">Email</label>
+            <input id="contactEmail" name="email" type="email" required />
+          </div>
+
+          <div class="tdmu-contact-field">
+            <label for="contactMessage">Nội dung</label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div class="tdmu-contact-actions">
+            <button class="tdmu-contact-submit" type="submit">
+              Gửi thông tin
+            </button>
+          </div>
+
+          <p class="tdmu-contact-feedback" id="tdmuContactFeedback" hidden>
+            Thông tin của bạn đã được ghi nhận.
+          </p>
+        </form>
+      </section>
+    </div>
+
+    <button
+      class="tdmu-scroll-top"
+      id="btnTop"
+      type="button"
+      title="Lên đầu trang"
+      tabindex="-1"
+    >
+      <span class="material-symbols-rounded">arrow_upward</span>
+    </button>
+    <script src="js/init.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/notices.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/research.js"></script>
+    <script src="js/team.js"></script>
+    <script src="js/faq.js"></script>
   </body>
 </html>

@@ -1,0 +1,100 @@
+function getVisibleCount() {
+  if (window.innerWidth <= 767.98) return 1;
+  if (window.innerWidth <= 1199.98) return 2;
+  return 3;
+}
+
+function initTeamAdvisors() {
+  const shell = document.getElementById("team-advisors-carousel");
+  if (!shell) return;
+
+  const rail = shell.querySelector(".tdmu-team-rail");
+  const items = Array.from(shell.querySelectorAll(".tdmu-team-profile"));
+  const prevButton = shell.querySelector(".tdmu-team-nav--prev");
+  const nextButton = shell.querySelector(".tdmu-team-nav--next");
+  const dots = Array.from(shell.querySelectorAll(".tdmu-team-dot"));
+
+  if (!rail || !items.length || !prevButton || !nextButton || !dots.length) {
+    return;
+  }
+
+  let visibleCount = getVisibleCount();
+  let currentIndex = 0;
+  let autoTimer = null;
+
+  const getMaxIndex = () => Math.max(0, items.length - visibleCount);
+  const getTotalPages = () => Math.max(1, getMaxIndex() + 1);
+
+  const getTranslateOffset = () => {
+    const firstOffset = items[0]?.offsetLeft || 0;
+    const activeOffset = items[currentIndex]?.offsetLeft || 0;
+    return Math.round(activeOffset - firstOffset);
+  };
+
+  const updatePagination = () => {
+    const totalPages = getTotalPages();
+    dots.forEach((dot, index) => {
+      dot.hidden = index >= totalPages;
+      dot.classList.toggle("is-active", index === currentIndex);
+    });
+  };
+
+  const update = () => {
+    rail.style.transform = `translateX(-${getTranslateOffset()}px)`;
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex >= getMaxIndex();
+    updatePagination();
+  };
+
+  const syncLayout = () => {
+    visibleCount = getVisibleCount();
+    currentIndex = Math.min(currentIndex, getMaxIndex());
+    update();
+  };
+
+  const stopAuto = () => {
+    if (!autoTimer) return;
+    window.clearInterval(autoTimer);
+    autoTimer = null;
+  };
+
+  const startAuto = () => {
+    stopAuto();
+    if (items.length <= visibleCount) return;
+
+    autoTimer = window.setInterval(() => {
+      currentIndex = currentIndex >= getMaxIndex() ? 0 : currentIndex + 1;
+      update();
+    }, 3000);
+  };
+
+  prevButton.addEventListener("click", () => {
+    currentIndex = Math.max(0, currentIndex - 1);
+    update();
+    startAuto();
+  });
+
+  nextButton.addEventListener("click", () => {
+    currentIndex = Math.min(getMaxIndex(), currentIndex + 1);
+    update();
+    startAuto();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      currentIndex = Number(dot.dataset.page || 0);
+      update();
+      startAuto();
+    });
+  });
+
+  window.addEventListener("resize", syncLayout);
+  shell.addEventListener("mouseenter", stopAuto);
+  shell.addEventListener("mouseleave", startAuto);
+  shell.addEventListener("focusin", stopAuto);
+  shell.addEventListener("focusout", startAuto);
+  update();
+  startAuto();
+}
+
+initTeamAdvisors();
