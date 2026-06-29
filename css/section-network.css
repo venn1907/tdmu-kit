@@ -1,3 +1,17 @@
+#tdmu-network-slot {
+  position: relative;
+  border-top: 1px solid var(--tdmu-border-light);
+  padding-top: var(--tdmu-slot-spacing);
+  padding-bottom: var(--tdmu-slot-spacing);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--tdmu-accent-rgb), 0.06),
+      rgba(var(--tdmu-accent-rgb), 0)
+    ),
+    var(--tdmu-surface-alt);
+}
+
 .tdmu-network-copy {
   display: grid;
   align-content: start;

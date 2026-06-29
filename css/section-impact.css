@@ -1,3 +1,11 @@
+#tdmu-impact-slot {
+  position: relative;
+  border-top: 1px solid var(--tdmu-border-light);
+  padding-top: var(--tdmu-slot-spacing);
+  padding-bottom: var(--tdmu-slot-spacing);
+  background: var(--tdmu-surface-alt);
+}
+
 .tdmu-impact-head {
   display: grid;
   gap: 0.75rem;

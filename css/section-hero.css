@@ -1,3 +1,11 @@
+#featured-slider-slot {
+  position: relative;
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .tdmu-section--hero {
   padding-top: 0;
   padding-bottom: 0;

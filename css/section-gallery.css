@@ -1,3 +1,10 @@
+#gallery-slot {
+  position: relative;
+  border-top: 1px solid var(--tdmu-border-light);
+  padding-top: var(--tdmu-slot-spacing);
+  padding-bottom: var(--tdmu-slot-spacing);
+}
+
 .tdmu-section--gallery-band {
   background:
     linear-gradient(

@@ -1,3 +1,10 @@
+#tdmu-map-slot {
+  position: relative;
+  border-top: 1px solid var(--tdmu-border-light);
+  padding-top: var(--tdmu-slot-spacing);
+  padding-bottom: var(--tdmu-slot-spacing);
+}
+
 .tdmu-map-section {
   padding: 0 0 3.5rem;
 }
