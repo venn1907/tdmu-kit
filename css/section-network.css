@@ -51,8 +51,7 @@
   margin-top: 0.5rem;
 }
 
-.tdmu-network-tags span,
-.tdmu-network-partner {
+.tdmu-network-tags span {
   display: inline-flex;
   align-items: center;
   min-height: 32px;
@@ -68,8 +67,7 @@
   transition: all var(--transition-base);
 }
 
-.tdmu-network-tags span:hover,
-.tdmu-network-partner:hover {
+.tdmu-network-tags span:hover {
   background: var(--tdmu-surface);
   border-color: var(--tdmu-border);
 }
@@ -140,15 +138,6 @@
 .tdmu-network-story:focus-within img {
   transform: scale(1.05);
   filter: brightness(1.08);
-}
-
-.tdmu-network-partners {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--tdmu-border-light);
 }
 
 @media (max-width: 1199.98px) {
